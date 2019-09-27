@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
-language: en
+title: 一韵七声
+subtitle:上云台去
+description:开始学习一种新的魔法
+keywords:"Java, Python, C++"
+author: 青实
+language: zh-CN
 timezone:
 
 # URL
