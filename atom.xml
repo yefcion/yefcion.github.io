@@ -338,9 +338,9 @@
     
       <category term="OpenCV" scheme="http://yoursite.com/tags/OpenCV/"/>
     
-      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-    
       <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
       <category term="视频" scheme="http://yoursite.com/tags/%E8%A7%86%E9%A2%91/"/>
     
@@ -396,11 +396,11 @@
     
       <category term="OpenCV" scheme="http://yoursite.com/tags/OpenCV/"/>
     
+      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
       <category term="matplot" scheme="http://yoursite.com/tags/matplot/"/>
-    
-      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
