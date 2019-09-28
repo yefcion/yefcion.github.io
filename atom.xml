@@ -424,9 +424,9 @@
       <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
     
     
-      <category term="大学" scheme="http://yoursite.com/tags/%E5%A4%A7%E5%AD%A6/"/>
-    
       <category term="时间" scheme="http://yoursite.com/tags/%E6%97%B6%E9%97%B4/"/>
+    
+      <category term="大学" scheme="http://yoursite.com/tags/%E5%A4%A7%E5%AD%A6/"/>
     
   </entry>
   
@@ -476,13 +476,13 @@
       <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
     
     
+      <category term="高中" scheme="http://yoursite.com/tags/%E9%AB%98%E4%B8%AD/"/>
+    
       <category term="师兄" scheme="http://yoursite.com/tags/%E5%B8%88%E5%85%84/"/>
     
       <category term="同学" scheme="http://yoursite.com/tags/%E5%90%8C%E5%AD%A6/"/>
     
       <category term="牛振岭" scheme="http://yoursite.com/tags/%E7%89%9B%E6%8C%AF%E5%B2%AD/"/>
-    
-      <category term="高中" scheme="http://yoursite.com/tags/%E9%AB%98%E4%B8%AD/"/>
     
   </entry>
   
@@ -505,13 +505,13 @@
       <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
     
     
-      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="高中" scheme="http://yoursite.com/tags/%E9%AB%98%E4%B8%AD/"/>
-    
       <category term="年记" scheme="http://yoursite.com/tags/%E5%B9%B4%E8%AE%B0/"/>
     
+      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
       <category term="青春" scheme="http://yoursite.com/tags/%E9%9D%92%E6%98%A5/"/>
+    
+      <category term="高中" scheme="http://yoursite.com/tags/%E9%AB%98%E4%B8%AD/"/>
     
   </entry>
   
