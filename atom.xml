@@ -47,7 +47,7 @@
     <link href="http://yoursite.com/2019/09/27/000-BlogRule/"/>
     <id>http://yoursite.com/2019/09/27/000-BlogRule/</id>
     <published>2019-09-27T06:59:46.000Z</published>
-    <updated>2019-09-28T07:03:54.800Z</updated>
+    <updated>2019-09-28T07:13:01.974Z</updated>
     
     <content type="html"><![CDATA[<h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><ul><li>000 - 建站规约</li><li>100 - 技术向</li><li>200 - 书评向</li><li>300 - 影评向</li><li>400 - 游记向</li><li>500 - 文学向</li><li>600 - 日记向</li><li>700 - 纪年</li></ul>]]></content>
     
@@ -64,6 +64,91 @@
       <category term="网站" scheme="http://yoursite.com/tags/%E7%BD%91%E7%AB%99/"/>
     
       <category term="规则" scheme="http://yoursite.com/tags/%E8%A7%84%E5%88%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从迅雷玩客云想到的网速制约因素及一点思考</title>
+    <link href="http://yoursite.com/2019/06/30/140-%E4%BB%8E%E8%BF%85%E9%9B%B7%E7%8E%A9%E5%AE%A2%E4%BA%91%E6%83%B3%E5%88%B0%E7%9A%84%E7%BD%91%E9%80%9F%E5%88%B6%E7%BA%A6%E5%9B%A0%E7%B4%A0%E5%8F%8A%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/"/>
+    <id>http://yoursite.com/2019/06/30/140-从迅雷玩客云想到的网速制约因素及一点思考/</id>
+    <published>2019-06-30T04:45:17.000Z</published>
+    <updated>2019-09-28T07:24:41.986Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote><p>最近看到迅雷玩客云的广告，起了组建简易家庭NAS的心思，就下手了。结果使用效果不理想，局域网内看视频卡顿。仔细思考了一下，大概梳理了效果不佳的原因，如有缺漏请指正。</p></blockquote><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>首先画了一张玩客云的设备连接示意图，囊括玩客云的大部分使用场景（除电视）。</p><p><img src="https://raw.githubusercontent.com/yefcion/PicData/master/img/20190629163258.png" alt="网络连接示意图"></p><p>如上图所示，图中黄、绿、蓝三种颜色画出部分代表了制约网速的关键部分，其中路由器是网络的源头。按颜色梳理数据在网络传输中的关键节点。</p><ol><li>黄 - 有线网络：路由器 LAN 口 - 网线 - 电脑网口</li><li>绿 - 无线网络：路由器射频芯片/天线 - 介质（空气+墙） - 手机/平板</li><li>蓝 - 硬盘传输：玩客云USB口 - 数据线 - 硬盘/U盘</li></ol><blockquote><p>注：由于我电脑用的无线网卡，所以「1.网线」情况在本文与「2.」类似</p></blockquote><p>从上面梳理可以看出，传输基本是「发送口-传输介质-接受口」的模式，这样的话很容易进行测试实验。于是通过控制变量法进行了测试，为方便观察把测试结果用 Excel 统计如下。</p><p><img src="https://raw.githubusercontent.com/yefcion/PicData/master/img/20190629180300.png" alt="测试结果统计"></p><blockquote><p>注表中第二行 预测数据，本着同列最低传输速度除以2原则，这是凭经验设置的阈值，没理论依据。</p></blockquote><p>从上表可见，基于外网的测试结果基本还没有达到理论值的10%，预测值的20%。由此可见，很多设备的宣传不可轻信，网络数据传输基本遵循木桶效应，以最低传输速率为上限。再算上设备本身硬件损耗、软件负优化等，实际数据传输速率一般都很低，非常不好看。</p><p>内网（局域网）方面，最意外的是玩客云内部的数据复制测试，一部电影从外接玩客云的USB3.0的U盘里复制到同目录下，竟然才7.5MB/s，震惊了。后来分析了一下大概是因为玩客云设备性能太差，「ARM四核1.5GHz处理器，1GB+8GB内存组合」硬件差，系统肯定也不能跟Win比，所以落了这么个结果。真菜。</p><h2 id="支撑数据"><a href="#支撑数据" class="headerlink" title="支撑数据"></a>支撑数据</h2><p>首先科普一个概念「百兆网络」指100Mbps 即 100Mb/s=12.5MB/s。（因为 1Byte=8bit，读作 1 字节 等于 8 比特（位））</p><p>我们日常说的下载速度、视频缓存速度等，都是MB单位。所以有骂街「百兆网络」从没上「百兆」的同学，你们错怪他了，单位不同。</p><p><strong>路由器型号 TL-WDR5620</strong> [^1]支持 802.11ac，理论 2.4G 最高50MB/s，5G 最高 112.5MB/s</p><p><img src="https://raw.githubusercontent.com/yefcion/PicData/master/img/20190629160725.png" alt></p><p><strong>手机型号 iPhone 6S</strong> [^2]支持 802.11ac，理论 2.4G 最高50MB/s，5G 最高 112.5MB/s</p><p><img src="https://raw.githubusercontent.com/yefcion/PicData/master/img/20190629173900.png" alt></p><p><strong>网线类型 超五类</strong> [^3]传输带宽可高达1000Mb/s，但一般只应用在100Mb/s的网络中</p><p><strong>数据传输</strong> <strong>USB2.0</strong>[^4]的速率是60Mb/s，<strong>USB3.0</strong>[^5]的速率是640Mb/s</p><p><strong>无线网标准协议 802.11</strong></p><p><img src="https://raw.githubusercontent.com/yefcion/PicData/master/img/20190629182157.png" alt></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是这次的测试所得，可收获的知识点包括：<strong>无线网标准协议 802.11、网线类型、USB类型、百兆宽带通俗理解、网络传输顺序、理论与实际落差的思维准备、搭建伪NAS经验、玩客云踩雷</strong>。</p><p>然后说两句 5G，我个人期待没那么高。理论和实践的落差大家应该体验多次，该有一定的甄别和抗干扰能力，非常看不惯一些理由干瘪的 5G 吹。至于目前中兴、华为出的成果确实棒，但大家要理智啊，不要好好的事搞成了捧杀。</p><p>最后放两张百度百科截图。</p><p>（顺便再吐槽下这带的是什么单位 Mbps/s？？？ Mbps不就是 Mb per second么）</p><p><img src="https://raw.githubusercontent.com/yefcion/PicData/master/img/20190629185151.png" alt></p><p><img src="https://raw.githubusercontent.com/yefcion/PicData/master/img/20190629183322.png" alt></p><p>参考资料</p><p>[^1]: 路由器 TL-WDR5620 参数 <a href="http://detail.zol.com.cn/1162/1161644/param.shtml" target="_blank" rel="noopener">http://detail.zol.com.cn/1162/1161644/param.shtml</a><br>[^2]: 手机 iPhone 6s 参数 <a href="http://detail.zol.com.cn/369/368535/param.shtml" target="_blank" rel="noopener">http://detail.zol.com.cn/369/368535/param.shtml</a><br>[^3]: 网线类别 <a href="https://zhidao.baidu.com/question/464102059.html" target="_blank" rel="noopener">https://zhidao.baidu.com/question/464102059.html</a><br>[^4]: USB2.0 <a href="https://baike.baidu.com/item/USB%202.0?fromtitle=usb2.0&amp;fromid=8402158" target="_blank" rel="noopener">https://baike.baidu.com/item/USB%202.0?fromtitle=usb2.0&amp;fromid=8402158</a><br>[^5]: USB3.0 <a href="https://baike.baidu.com/item/USB%203.0?fromtitle=USB3.0&amp;fromid=8640396#2_1" target="_blank" rel="noopener">https://baike.baidu.com/item/USB%203.0?fromtitle=USB3.0&amp;fromid=8640396#2_1</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;最近看到迅雷玩客云的广告，起了组建简易家庭NAS的心思，就下手了。结果使用效果不理想，局域网内看视
+      
+    
+    </summary>
+    
+    
+      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+    
+    
+      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+      <category term="硬件" scheme="http://yoursite.com/tags/%E7%A1%AC%E4%BB%B6/"/>
+    
+      <category term="玩客云" scheme="http://yoursite.com/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>河海大学摄影指南</title>
+    <link href="http://yoursite.com/2019/06/03/401-%E6%B2%B3%E6%B5%B7%E5%A4%A7%E5%AD%A6%E6%91%84%E5%BD%B1%E6%8C%87%E5%8D%97/"/>
+    <id>http://yoursite.com/2019/06/03/401-河海大学摄影指南/</id>
+    <published>2019-06-03T04:45:17.000Z</published>
+    <updated>2019-09-28T07:58:12.352Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>写在前面</p><p>因为要拍毕业照，所以把准备过程记录一下，方便以后回忆。或者帮其他人提供参考资料。</p><p>注：此处河海大学特指江宁校区，本部和常州校区之后可能会补充。</p></blockquote><p>直接放干货，这是我踩点整个校园之后，按场景分类排出的河海拍照思维导图。</p><p><img src="https://raw.githubusercontent.com/yefcion/PicData/master/img/20198.png" alt="pic1.河海摄影场景分类"></p><p>如图所示，具体场景为 10 个，最后 1 个路为随处可见的场景。</p><p>具体拍摄路线可参考下图。</p><p><img src="https://raw.githubusercontent.com/yefcion/PicData/master/img/20190528224021.png" alt="pic2.拍摄路线"></p><p>按照上次拍照经验，1 点开拍，拍了 1、2、3、4、8、9 这 6 个点，所以一天的话是能拍完全部场景的。下面逐场景分析。</p><h3 id="01、校门草坪"><a href="#01、校门草坪" class="headerlink" title="01、校门草坪"></a>01、校门草坪</h3><ul><li><p>场景 校名、图书馆背景</p></li><li><p>着装 学位服、便装</p></li><li><p>姿势 标准姿势<a href="在开阔环境中，四人不使用道具可以摆出的姿势">^1</a></p></li></ul><h3 id="02、图书馆内"><a href="#02、图书馆内" class="headerlink" title="02、图书馆内"></a>02、图书馆内</h3><ul><li>场景<ul><li>一层 环形楼梯背景、俯拍</li><li>二层 西侧黄色格栅、灰色墙面、楼梯</li></ul></li><li>着装 便装</li><li>姿势 标准姿势、楼梯姿势<a href="楼梯场景有长腿效果">^2</a>、俯拍姿势<a href="摄影者从上往下拍，适合形状摆拍">^3</a></li><li>道具 书</li></ul><h3 id="03、小浪底"><a href="#03、小浪底" class="headerlink" title="03、小浪底"></a>03、小浪底</h3><ul><li><p>场景 </p><ul><li>石凳</li><li>水池、池岸</li><li>音乐台</li></ul></li><li><p>着装 学位服、便装</p></li><li><p>姿势 标准姿势、楼梯姿势、水岸姿势<a href="水边，可拍摄倒影">^4</a></p></li></ul><h3 id="04、致用楼"><a href="#04、致用楼" class="headerlink" title="04、致用楼"></a>04、致用楼</h3><ul><li>场景<ul><li>一楼 中间楼梯</li><li>二楼 阶梯教室、圆形拱门</li><li>三楼 走廊、普通教室（黑板、座位）</li></ul></li><li>着装 学位服、便装</li><li>姿势 标准姿势、黑板写画<a href="在黑板上写写画画，可事先准备内容">^5</a>、学习交流<a href="摄影对象间以学习为主的亲密互动">^6</a></li><li>道具 书</li></ul><h3 id="05、叠翠山"><a href="#05、叠翠山" class="headerlink" title="05、叠翠山"></a>05、叠翠山</h3><ul><li>场景 凉棚、草坪、蓝天</li><li>着装 便装</li><li>姿势 标准姿势</li></ul><h3 id="06、七食堂、思源楼"><a href="#06、七食堂、思源楼" class="headerlink" title="06、七食堂、思源楼"></a>06、七食堂、思源楼</h3><ul><li>场景 楼梯、双层楼梯</li><li>着装 便装</li><li>姿势 标准姿势</li></ul><h3 id="07、东湖"><a href="#07、东湖" class="headerlink" title="07、东湖"></a>07、东湖</h3><ul><li>场景<ul><li>桥</li><li>桥北</li><li>桥南楼上</li></ul></li><li>着装 便装</li><li>姿势 标准姿势、名作模仿<a href="事先选好要模仿的海报/插画/名画等">^7</a></li></ul><h3 id="08、操场"><a href="#08、操场" class="headerlink" title="08、操场"></a>08、操场</h3><ul><li>场景<ul><li>座位、楼梯</li><li>跑道</li><li>草坪</li><li>球网</li></ul></li><li>着装 学位服、便装</li><li>姿势 标准姿势、操场相关<a href="在操场这种颜色鲜艳、空间较大环境中的姿势">^8</a></li></ul><h3 id="09、勤学楼"><a href="#09、勤学楼" class="headerlink" title="09、勤学楼"></a>09、勤学楼</h3><ul><li>场景 天台</li><li>着装 学位服、便装</li><li>姿势 背影姿势<a href="以天空等为背景，适合背影、手势">^9</a></li></ul><h3 id="10、商院楼梯"><a href="#10、商院楼梯" class="headerlink" title="10、商院楼梯"></a>10、商院楼梯</h3><ul><li>场景 红色旋转楼梯</li><li>着装 学位服、便装</li><li>姿势 楼梯姿势</li></ul><p>综上，主要拍照姿势暂时9种，主要就是标准姿势<a href="在开阔环境中，四人不使用道具可以摆出的姿势">^1</a>，这个自己设定的空间很大，请务必自己想想有哪些想拍的姿势。其他的如名作模仿，需要选好自己想要的模仿对象。</p><p>按场景分类的姿势参考<a href="https://www.jianguoyun.com/p/DfExcm8QipPtBRjdt8gB" target="_blank" rel="noopener">链接</a>。</p>]]></content>
+    
+    <summary type="html">
+    
+      河海大学拍摄指南
+    
+    </summary>
+    
+    
+      <category term="游记向" scheme="http://yoursite.com/categories/%E6%B8%B8%E8%AE%B0%E5%90%91/"/>
+    
+    
+      <category term="河海大学" scheme="http://yoursite.com/tags/%E6%B2%B3%E6%B5%B7%E5%A4%A7%E5%AD%A6/"/>
+    
+      <category term="摄影" scheme="http://yoursite.com/tags/%E6%91%84%E5%BD%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>bat 批量移动文件到新文件夹</title>
+    <link href="http://yoursite.com/2019/04/23/104-%E6%89%B9%E5%A4%84%E7%90%86-%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E5%88%B0%E6%96%B0%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
+    <id>http://yoursite.com/2019/04/23/104-批处理-批量移动文件到新文件夹/</id>
+    <published>2019-04-23T04:45:17.000Z</published>
+    <updated>2019-09-28T07:43:54.759Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="0-命令说明"><a href="#0-命令说明" class="headerlink" title="0 命令说明"></a>0 命令说明</h3><p>移动文件 的batch命令格式是：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">move [文件名] [文件夹名]</span><br><span class="line">::例</span><br><span class="line">move [pic.jpg] [新建文件夹]</span><br></pre></td></tr></table></figure><h3 id="1-利用excel写批处理命令"><a href="#1-利用excel写批处理命令" class="headerlink" title="1 利用excel写批处理命令"></a>1 利用excel写批处理命令</h3><p>因此批量移动有规律的数字文件可以如下操作，以90001张图片（命名为0-90000.jpg）为例：</p><blockquote><p>有90001张图片，每隔25张移动一张到 <code>筛选</code> 文件夹</p></blockquote><p>在Excel表格中输入如下数据，第1、3列输入文字后直接拉取，第2列数字间隔25向下拉取</p><table><thead><tr><th>move</th><th><strong>0.jpg</strong></th><th><strong>筛选</strong></th></tr></thead><tbody><tr><td>move</td><td>25.jpg</td><td>筛选</td></tr><tr><td>move</td><td>50.jpg</td><td>筛选</td></tr><tr><td>move</td><td>75.jpg</td><td>筛选</td></tr><tr><td>…</td><td>… +25</td><td>…</td></tr><tr><td>move</td><td>90000.jpg</td><td>筛选</td></tr></tbody></table><h3 id="2-命令写入bat"><a href="#2-命令写入bat" class="headerlink" title="2 命令写入bat"></a>2 命令写入bat</h3><p>Excel中 <strong>ctrl + A</strong> 选中所有数据复制，到桌面（或其他地方）新建 <strong>move.txt</strong> 文件，打开后 将Excel中复制的数据粘贴进该 move.txt 文件，得到如下格式的内容</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">move0.jpg筛选</span><br><span class="line">move25.jpg筛选</span><br><span class="line">move50.jpg筛选</span><br><span class="line">move75.jpg筛选</span><br><span class="line">move100.jpg筛选</span><br><span class="line">move125.jpg筛选</span><br></pre></td></tr></table></figure><p>保存 move.txt 文件后重命名，将txt文件后缀改为bat，即 <code>move.bat</code> 。</p><h3 id="3-运行-bat-文件"><a href="#3-运行-bat-文件" class="headerlink" title="3 运行 bat 文件"></a>3 运行 bat 文件</h3><p>双击 move.bat 开始批处理移动操作。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;0-命令说明&quot;&gt;&lt;a href=&quot;#0-命令说明&quot; class=&quot;headerlink&quot; title=&quot;0 命令说明&quot;&gt;&lt;/a&gt;0 命令说明&lt;/h3&gt;&lt;p&gt;移动文件 的batch命令格式是：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table
+      
+    
+    </summary>
+    
+    
+      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+    
+    
+      <category term="bat" scheme="http://yoursite.com/tags/bat/"/>
+    
+      <category term="Excel" scheme="http://yoursite.com/tags/Excel/"/>
     
   </entry>
   
@@ -118,6 +203,153 @@
       <category term="研究生" scheme="http://yoursite.com/tags/%E7%A0%94%E7%A9%B6%E7%94%9F/"/>
     
       <category term="统计" scheme="http://yoursite.com/tags/%E7%BB%9F%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一场源自豆瓣的：西湖夜奔</title>
+    <link href="http://yoursite.com/2018/12/09/403-%E8%A5%BF%E6%B9%96%E5%A4%9C%E5%A5%94/"/>
+    <id>http://yoursite.com/2018/12/09/403-西湖夜奔/</id>
+    <published>2018-12-09T04:45:17.000Z</published>
+    <updated>2019-09-28T07:55:39.083Z</updated>
+    
+    <content type="html"><![CDATA[<p>余拏一小友，拥毳衣炉火，往湖心亭看雪</p><p>这次杭州之旅源于张岱的《湖心亭看雪》，契机是豆瓣主题 #视频·冬天里的第一场雪#，一位豆友的回复。</p><p>下午一点获悉西湖初雪，随即与好友商量一番，便起了夜奔西湖的心思。五点定了行程筹备出发，赶了赶高铁，晚九点半抵达杭州。出地铁寒气扑面、雪花纷飞、惊喜万分，便觉我这场湖心亭梦寻成了。到宾馆安顿收拾停当，十一点出发西湖，开始一场雪夜漫步。</p><p>从南宋御街出发，路古朴、银杏宜人，见到了这次旅途中成百上千雪人中的第一个。外面天极冷，初时雪落如撒盐，打在伞上沙沙作响，随后雪花渐大，看到了我对冬天的第一意象：路灯下的雪花纷飞。</p><p>后于涌金公园近西湖畔，顺时针环湖向前。撑伞、踩雪，到柳月优风，看到小朋友凌晨堆雪，到柳浪闻莺，遇夫妻一双，雪夜极似红拂。我与阿毛互叹，莫说相公痴，更有痴似相公者何止二人。</p><p><img src="https://img3.doubanio.com/view/note/l/public/p56391285.webp" alt="红拂夜奔"><br>继续向前，目标雷峰塔。一路谈金庸、红楼、八卦、歌曲，像极了曲苑杂坛，好友博闻强识且健谈，我开心且享受。看着雷峰塔的影子行至景区，结果景区关闭。于是夜闯雷峰塔景区，躲过一波巡逻人员见到一面“夕照毓秀”的墙壁，便哼起了河海校歌，钟灵毓秀石头城。之后继续违规在景区内晃荡，又来了一波巡查，无奈只能退出去，回去的路上才发现有座亭子下面吊了三颗摄像头😂</p><p>出雷峰塔看看时间靠近两点，行程约西湖四分之一，纠结一会是否要走完西湖，想一想还得留余力第二天泛舟湖心亭便放弃了。于是返程，哼唱冰雨、校歌，途中偶遇两个跌落凡尘的柚子，捡一颗好看的带了回去。</p><p>至此西湖夜奔结束。是夜，满足了我对雪夜、西湖的意象，勾起了看通行红楼梦和87红楼梦剧的兴趣。</p><p>第二日，从观荷区近西湖，逆时针行走。看孤山、行白堤、过断桥，进平湖秋月，乘游船、登湖心亭。路上行人比肩接踵，绿杨白堤，断桥踩雪。</p><p>张岱崇祯五年，用一篇《湖心亭看雪》写下人生之大寂寞，386年后哄来我们看雪。登岸，湖心亭极小，10分钟即可绕行一周。见虫二碑，见湖心亭牌，见一姑娘美丽动人。</p><p><img src="https://img3.doubanio.com/view/note/l/public/p56391286.webp" alt="湖心姑娘"><br>回望西湖景色，雾凇沆砀，天与云与山与水，上下一白。湖上影子，惟长堤一痕、断桥两座，其上人影绰绰，便知隔世。</p><p><img src="https://img1.doubanio.com/view/note/l/public/p56391287.webp" alt="上下一白"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;余拏一小友，拥毳衣炉火，往湖心亭看雪&lt;/p&gt;
+&lt;p&gt;这次杭州之旅源于张岱的《湖心亭看雪》，契机是豆瓣主题 #视频·冬天里的第一场雪#，一位豆友的回复。&lt;/p&gt;
+&lt;p&gt;下午一点获悉西湖初雪，随即与好友商量一番，便起了夜奔西湖的心思。五点定了行程筹备出发，赶了赶高铁，晚九点半抵
+      
+    
+    </summary>
+    
+    
+      <category term="游记向" scheme="http://yoursite.com/categories/%E6%B8%B8%E8%AE%B0%E5%90%91/"/>
+    
+    
+      <category term="西湖" scheme="http://yoursite.com/tags/%E8%A5%BF%E6%B9%96/"/>
+    
+      <category term="豆瓣" scheme="http://yoursite.com/tags/%E8%B1%86%E7%93%A3/"/>
+    
+      <category term="夜行" scheme="http://yoursite.com/tags/%E5%A4%9C%E8%A1%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenCV 读取视频并跳帧保存为图片</title>
+    <link href="http://yoursite.com/2018/07/31/102-OpenCV%E8%AF%BB%E5%8F%96%E8%A7%86%E9%A2%91%E5%B9%B6%E8%B7%B3%E5%B8%A7%E4%BF%9D%E5%AD%98%E4%B8%BA%E5%9B%BE%E7%89%87/"/>
+    <id>http://yoursite.com/2018/07/31/102-OpenCV读取视频并跳帧保存为图片/</id>
+    <published>2018-07-31T04:45:17.000Z</published>
+    <updated>2019-09-28T07:41:14.512Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="OpenCV读取视频并跳帧保存为图片"><a href="#OpenCV读取视频并跳帧保存为图片" class="headerlink" title="OpenCV读取视频并跳帧保存为图片"></a>OpenCV读取视频并跳帧保存为图片</h1><p>[TOC]</p><h3 id="介绍几个有关视频读取的函数："><a href="#介绍几个有关视频读取的函数：" class="headerlink" title="介绍几个有关视频读取的函数："></a>介绍几个有关视频读取的函数：</h3><h4 id="VideoCapture-VideoCapture"><a href="#VideoCapture-VideoCapture" class="headerlink" title="VideoCapture::VideoCapture"></a><strong>VideoCapture::VideoCapture</strong></h4><p>​    VideoCapture可以从文件中或者摄像头中读取视频，这是提供给C++的接口的，C的接口是CvCapture结构。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VideoCapture::VideoCapture(conststring&amp; filename)</span><br><span class="line">VideoCapture::VideoCapture(<span class="keyword">int</span> device)</span><br></pre></td></tr></table></figure><p>上面是初始化VideoCapture对象的，第一个是从文件中读取，第二个是从设备中读取，默认设备在这里是0；</p><p>例子：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VideoCapturecapture(“sample.avi”); <span class="comment">/*读取sample.avi文件*/</span></span><br><span class="line">VideoCapturecapture(<span class="number">0</span>); <span class="comment">/*如果只有一个摄像头，capture会得到摄像头的视频*/</span></span><br></pre></td></tr></table></figure><h4 id="VideoCapture-Open"><a href="#VideoCapture-Open" class="headerlink" title="VideoCapture::Open"></a><strong>VideoCapture::Open</strong></h4><p>​    打开视频文件或者视频设备（例如摄像头）。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> VideoCapture::open(<span class="keyword">const</span> <span class="built_in">string</span>&amp; filename)</span><br><span class="line"><span class="keyword">bool</span> VideoCapture::open(<span class="keyword">int</span> device)</span><br></pre></td></tr></table></figure><p>例子：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">VideoCapturecapture;</span><br><span class="line">capture.open(<span class="string">"sample.avi"</span>);</span><br><span class="line"><span class="comment">/*这里的两句等效于上面的VideoCapturecapture("sample.avi")，capture.open(0)*/</span></span><br></pre></td></tr></table></figure><blockquote><p>上面的视频文件打开，用完后，最好调用 <strong>capture.release()</strong> 来关闭刚刚打开的文件</p></blockquote><h4 id="VideoCapture-release"><a href="#VideoCapture-release" class="headerlink" title="VideoCapture::release"></a><strong>VideoCapture::release</strong></h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> VideoCapture::release()</span><br></pre></td></tr></table></figure><p>例子：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">capture.release(); <span class="comment">/*释放打开的视频*/</span></span><br></pre></td></tr></table></figure><h4 id="VideoCapture-isOpened"><a href="#VideoCapture-isOpened" class="headerlink" title="VideoCapture::isOpened"></a><strong>VideoCapture::isOpened</strong></h4><p>判断视频是否被打开，成功打开返回ture，否则false。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> VideoCapture::open(<span class="keyword">const</span> <span class="built_in">string</span>&amp; filename)</span><br><span class="line"><span class="keyword">bool</span> VideoCapture::open(<span class="keyword">int</span> device)</span><br></pre></td></tr></table></figure><h4 id="VideoCapture-grab"><a href="#VideoCapture-grab" class="headerlink" title="VideoCapture::grab"></a><strong>VideoCapture::grab</strong></h4><p>从视频文件中或者设备中获取下一帧，该方法成功调用返回ture；主要用于多摄像头情况下，特别当那些摄像头没有实现硬件同步。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> VideoCapture::grab()</span><br></pre></td></tr></table></figure><p>grab之后，需要调用retrive对获取的帧进行解码。</p><h4 id="VideoCapture-retrieve"><a href="#VideoCapture-retrieve" class="headerlink" title="VideoCapture::retrieve"></a><strong>VideoCapture::retrieve</strong></h4><p>对grab()得到的帧进行解码。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> VideoCapture::retrieve(Mat&amp; image, <span class="keyword">int</span> channel=<span class="number">0</span>)</span><br></pre></td></tr></table></figure><h4 id="VideoCapture-read"><a href="#VideoCapture-read" class="headerlink" title="VideoCapture::read"></a><strong>VideoCapture::read</strong></h4><p>获取、解码，这个方法结合了grab和retrieve，比较方便，</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VideoCapture&amp; VideoCapture::<span class="keyword">operator</span>&gt;&gt;(Mat&amp; image)</span><br><span class="line"><span class="keyword">bool</span> VideoCapture::read(Mat&amp; image)</span><br></pre></td></tr></table></figure><p>例子1：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一</span></span><br><span class="line"><span class="keyword">if</span>(!capture.read(frame))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"读取视频失败"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span><span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line">capture &gt;&gt;frame;</span><br></pre></td></tr></table></figure><p> 这两个方法都可以，不过第一个能够判断，建议使用第一个，程序更健壮。</p><h4 id="VideoCapture-get"><a href="#VideoCapture-get" class="headerlink" title="VideoCapture::get"></a><strong>VideoCapture::get</strong></h4><p>返回VideoCapture的一些属性</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> VideoCapture::get(<span class="keyword">int</span> propId)</span><br></pre></td></tr></table></figure><p>probId可以是下面的：</p><p>·  <strong>CV_CAP_PROP_POS_MSEC</strong> Current position of the video file in milliseconds or video capture timestamp.</p><p>·  <strong>CV_CAP_PROP_POS_FRAMES</strong> 0-basedindex of the frame to be decoded/captured next.</p><p>·  <strong>CV_CAP_PROP_POS_AVI_RATIO</strong> Relativeposition of the video file: 0 - start of the film, 1 - end of the film.</p><p>·  <strong>CV_CAP_PROP_FRAME_WIDTH</strong> Width of theframes in the video stream.</p><p>·  <strong>CV_CAP_PROP_FRAME_HEIGHT</strong> Height ofthe frames in the video stream.</p><p>·  <strong>CV_CAP_PROP_FPS</strong> Frame rate.</p><p>·  <strong>CV_CAP_PROP_FOURCC</strong> 4-character code of codec.</p><p>·  <strong>CV_CAP_PROP_FRAME_COUNT</strong> Number of frames in the video file.</p><p>·  <strong>CV_CAP_PROP_FORMAT</strong> Format ofthe Mat objects returned by retrieve() .</p><p>·  <strong>CV_CAP_PROP_MODE</strong> Backend-specificvalue indicating the current capture mode.</p><p>·  <strong>CV_CAP_PROP_BRIGHTNESS</strong> Brightness of the image (only for cameras).</p><p>·  <strong>CV_CAP_PROP_CONTRAST</strong> Contrast of the image (only for cameras).</p><p>·  <strong>CV_CAP_PROP_SATURATION</strong> Saturation of the image (only for cameras).</p><p>·  <strong>CV_CAP_PROP_HUE</strong> Hue of theimage (only for cameras).</p><p>·  <strong>CV_CAP_PROP_GAIN</strong> Gain of theimage (only for cameras).</p><p>·  <strong>CV_CAP_PROP_EXPOSURE</strong> Exposure(only for cameras).</p><p>·  <strong>CV_CAP_PROP_CONVERT_RGB</strong> Boolean flags indicating whether images should be converted to RGB.</p><p>·  <strong>CV_CAP_PROP_WHITE_BALANCE</strong> Currently not supported</p><p>·  <strong>CV_CAP_PROP_RECTIFICATION</strong> Rectification flag for stereo cameras (note: only supported by DC1394 v 2.x backendcurrently)</p><h4 id="VideoCapture-set"><a href="#VideoCapture-set" class="headerlink" title="VideoCapture::set"></a><strong>VideoCapture::set</strong></h4><p>VideoCapture类的set方法可以允许我们取出视频中某个位置的帧，它有一些参数，可以按时间，也可以按帧号，还可以按视频长短的比例。 </p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> VideoCapture::<span class="built_in">set</span>(<span class="keyword">int</span> propId, <span class="keyword">double</span> value)</span><br></pre></td></tr></table></figure><p>例子：</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第100帧</span></span><br><span class="line"><span class="keyword">double</span> position=<span class="number">100.0</span>;</span><br><span class="line">capture.<span class="built_in">set</span>(CV_CAP_PROP_POS_FRAMES,position);</span><br><span class="line"><span class="comment">// 第1e6毫秒</span></span><br><span class="line"><span class="keyword">double</span> position=<span class="number">1e6</span>;</span><br><span class="line">capture.<span class="built_in">set</span>(CV_CAP_PROP_POS_MSEC,position);</span><br><span class="line"><span class="comment">// 视频1/2位置</span></span><br><span class="line"><span class="keyword">double</span> position=<span class="number">0.5</span>;</span><br><span class="line">capture.<span class="built_in">set</span>(CV_CAP_PROP_POS_AVI_RATIO,position);</span><br></pre></td></tr></table></figure><h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><p>下面的是视频读取和将视频内的画面转化为图片的代码，里面的注释应该足够解释了。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/core/core.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/highgui/highgui.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/imgproc/imgproc.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="function">VideoCapture <span class="title">capture</span><span class="params">( <span class="string">"E:/Data/警戒线/@20180727105959_20180727115959_2502.avi"</span> )</span></span>;<span class="comment">/*打开视频文件：其实就是建立一个VideoCapture结构*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ( !capture.isOpened( ) )<span class="comment">/*检测是否正常打开:成功打开时，isOpened返回ture*/</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"fail toopen!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> totalFrameNumber = capture.get( CV_CAP_PROP_FRAME_COUNT );<span class="comment">/*获取视频帧数*/</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"整个视频共"</span> &lt;&lt; totalFrameNumber &lt;&lt; <span class="string">"帧"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> frameToStart = <span class="number">1</span>;</span><br><span class="line">capture.<span class="built_in">set</span>( CV_CAP_PROP_POS_FRAMES, frameToStart );<span class="comment">/*设置开始帧*/</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"从第"</span> &lt;&lt; frameToStart &lt;&lt; <span class="string">"帧开始读"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> frameToStop = <span class="number">300</span>;<span class="comment">/*设置结束帧*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> ( frameToStop &lt; frameToStart )</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"结束帧小于开始帧，程序错误，即将退出！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"结束帧为：第"</span> &lt;&lt; frameToStop &lt;&lt; <span class="string">"帧"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> rate = capture.get( CV_CAP_PROP_FPS );<span class="comment">/*获取帧率*/</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"帧率为:"</span> &lt;&lt; rate &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Mat frame;<span class="comment">/*承载每一帧的图像*/</span></span><br><span class="line"><span class="keyword">bool</span> stop = <span class="literal">false</span>;<span class="comment">/*定义一个用来控制读取视频循环结束的变量*/</span></span><br><span class="line"><span class="keyword">double</span> delay = <span class="number">1000</span> / rate;<span class="comment">/*两帧间的间隔时间:waitKey(intdelay=0)当delay≤ 0时会永远等待；当delay&gt;0时会等待delay毫秒*/</span></span><br><span class="line"><span class="keyword">long</span> currentFrame = frameToStart;<span class="comment">/*currentFrame是在循环体中控制读取到指定的帧后循环结束的变量*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//利用while循环读取帧</span></span><br><span class="line"><span class="keyword">while</span> ( !stop )</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//读取下一帧</span></span><br><span class="line"><span class="keyword">if</span> ( !capture.read( frame ) )</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"读取视频失败"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//cout &lt;&lt; "正在读取第" &lt;&lt; currentFrame &lt;&lt; "帧" &lt;&lt; endl;</span></span><br><span class="line"><span class="comment">//namedWindow( "Extractedframe" );</span></span><br><span class="line"><span class="comment">//imshow( "Extractedframe", frame );</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 每隔50帧写一次图片</span></span><br><span class="line"><span class="keyword">if</span> ( currentFrame % <span class="number">50</span> == <span class="number">0</span> )</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="string">"正在写第"</span> &lt;&lt; currentFrame &lt;&lt; <span class="string">"帧"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">stringstream</span> str;</span><br><span class="line">str &lt;&lt; <span class="string">"G:/test_pic/"</span> &lt;&lt; currentFrame &lt;&lt; <span class="string">".png"</span>;<span class="comment">/*图片存储位置*/</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.str( ) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">imwrite( str.str( ), frame );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当时间结束前没有按键按下时，返回值为-1；否则返回按键</span></span><br><span class="line"><span class="keyword">int</span> c = waitKey( delay );</span><br><span class="line"><span class="keyword">if</span> ( ( <span class="keyword">char</span> )c == <span class="number">27</span> || currentFrame &gt; frameToStop )<span class="comment">/*按下ESC或者到达指定的结束帧后退出读取视频*/</span></span><br><span class="line">&#123;</span><br><span class="line">stop = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> ( c &gt;= <span class="number">0</span> )<span class="comment">/*按下按键后会停留在当前帧，等待下一次按键*/</span></span><br><span class="line">&#123;</span><br><span class="line">waitKey( <span class="number">0</span> );</span><br><span class="line">&#125;</span><br><span class="line">currentFrame++;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//关闭视频文件</span></span><br><span class="line">capture.release( );</span><br><span class="line">waitKey( <span class="number">0</span> );</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><p>读取后的图片，因为图片很多，上面代码在设置的时候，只读取了300帧</p>]]></content>
+    
+    <summary type="html">
+    
+      opencv
+    
+    </summary>
+    
+    
+      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+    
+    
+      <category term="OpenCV" scheme="http://yoursite.com/tags/OpenCV/"/>
+    
+      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+      <category term="视频" scheme="http://yoursite.com/tags/%E8%A7%86%E9%A2%91/"/>
+    
+      <category term="帧" scheme="http://yoursite.com/tags/%E5%B8%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大报恩寺导览</title>
+    <link href="http://yoursite.com/2018/07/22/402-%E5%A4%A7%E6%8A%A5%E6%81%A9%E5%AF%BA%E5%AF%BC%E8%A7%88/"/>
+    <id>http://yoursite.com/2018/07/22/402-大报恩寺导览/</id>
+    <published>2018-07-22T04:45:17.000Z</published>
+    <updated>2019-09-28T07:57:45.816Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="大报恩寺"><a href="#大报恩寺" class="headerlink" title="大报恩寺"></a>大报恩寺</h1><blockquote><p>科技为骨，宗教、历史为肉体，灯光玻璃掩映，形意兼备，神清气朗</p></blockquote><p>张岱在陶庵梦忆里写报恩塔，称之大国古董、永乐窑器，以小喻大，足见精致。张先生是个审美品位刁钻且精准的人，他很推崇的点我很想去见识一下。</p><p>想了两三次，去了一次被拒，今天终于进了大报恩寺景区。不同于去过的其他露天寺、庙，大报恩寺算是一处室内景点。进景区，过走道，入场馆，左手边是游览起点。</p><p><img src="https://img3.doubanio.com/view/note/l/public/p52457284.webp" alt="景区入口"></p><p>场馆整体用玻璃造就，透光好。室内BGM选的好，大气不疏离，慈祥不随意。向前第一处是<code>长干佛脉</code>，见琉璃璀璨、见毁弃残存的基底、见历史传说。</p><p><img src="https://img3.doubanio.com/view/note/l/public/p52457292.webp" alt="景区入口"></p><p>而后转角，转身即是<code>千年对望</code>，佛祖头像与玄奘对望凝视非常震撼。从长廊向玄奘走去，脚下步步生莲，一共七朵，一步一莲花这种意境真是被阐述地恰到好处。(<em>我想看看原理，特意试着踩灯芯莲花不开，确认了传感器在玻璃下地灯的边缘，这种结合真是漂亮。</em>)</p><p><img src="https://img3.doubanio.com/view/note/l/public/p52457300.webp" alt="千年对望"></p><p>再往前是《国家宝藏》中秦海璐守护的国宝<code>琉璃拱门</code>。拱门华丽闪光，门上雕刻栩栩如生有威严。而后<code>莲池海会</code>，灯光与科技营造出的景象当真使人深陷其中无法自拔，在此尤其佩服大报恩寺遗址的建设团队。（<em>这里我没有拍好，必须身历其境才能体会</em>）</p><p><img src="https://img1.doubanio.com/view/note/l/public/p52457157.webp" alt="莲池海会"></p><p>而后<code>南朝四百八十寺</code>，一座座知名的古寺模型陈列在展厅：鸡鸣寺、栖霞寺、灵谷寺等。</p><p><img src="https://img3.doubanio.com/view/note/l/public/p52457343.webp" alt="寺庙陈列"></p><p>往前，过飞天走廊，迎面<code>舍利佛光</code>相当梦幻，一方空间里全是闪烁的星星，中心设有佛像从而使这里不至于轻浮。关于佛光，也是有着典故，用现代科技去还原历史故事，而且做的不过分这是最难的地方。</p><p><img src="http://pb8ci5khn.bkt.clouddn.com/blog/180722/lECADb2lfG.png" alt="舍利佛光"></p><p>再往后到一处令我震撼最深的地方<code>感恩众生</code>，这里像是种了《阿凡达》里的神树，树枝条状垂下，树下众生芸芸，整个场景如梦般美丽与震撼，自己化成了树下众生之一，面对天道轮回。也是在这里我有心向佛了。为了不破意境，这里放一张看不出什么的图。有机会一定要去亲身体会，大报恩寺-感恩众生。</p><p><img src="https://img3.doubanio.com/view/note/l/public/p52457161.webp" alt="感恩众生"></p><p>出这方空间，迎来一个比较安静祥和的画面，菩提树下释迦摩尼参禅。这时候遇到一个小姑娘，很是应景。</p><p> <img src="https://img3.doubanio.com/view/note/l/public/p52457164.webp" alt="菩提树"></p><p>之后，走古色古香的文化长廊，两边有风趣的画作，可以留意看一下。</p><p><img src="http://pb8ci5khn.bkt.clouddn.com/blog/180722/h2BI28jjHc.png" alt="文化长廊"></p><p>最后便是终点，可以买些纪念品。</p><p>另外提一句，晚上7点半开始会有报恩寺感恩演出，据说质量很高不亚于话剧表演。</p><p>大报恩寺是我见过现代科技和宗教文化结合最好的地方，用科技还原精神世界中的可能，真是太美妙了。千年对望、莲池海会、舍利佛光、感恩众生，处处是对光的运用和对科技的把控。这种创新与设计感，非常值得尊重。</p><p>我逛过千篇一律的古镇、摊点相同文化小街、遮遮掩掩的园林故里、泰安的山、连云港的海，真正喜欢的却并不多。</p><p>法起寺、灵谷寺、金山寺、大报恩寺，可能我的审美品味都交给这几座寺庙了吧。</p><blockquote><p>千年对望那一处，确认下眼神</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      大报恩寺
+    
+    </summary>
+    
+    
+      <category term="游记向" scheme="http://yoursite.com/categories/%E6%B8%B8%E8%AE%B0%E5%90%91/"/>
+    
+    
+      <category term="大报恩寺" scheme="http://yoursite.com/tags/%E5%A4%A7%E6%8A%A5%E6%81%A9%E5%AF%BA/"/>
+    
+      <category term="景点" scheme="http://yoursite.com/tags/%E6%99%AF%E7%82%B9/"/>
+    
+      <category term="建筑" scheme="http://yoursite.com/tags/%E5%BB%BA%E7%AD%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>OpenCV 绘制图片的三维空间显示图</title>
+    <link href="http://yoursite.com/2018/07/02/103-OpenCV-%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E7%9A%84%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E6%98%BE%E7%A4%BA%E5%9B%BE/"/>
+    <id>http://yoursite.com/2018/07/02/103-OpenCV-绘制图片的三维空间显示图/</id>
+    <published>2018-07-02T04:45:17.000Z</published>
+    <updated>2019-09-28T07:37:04.018Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>python 3.6 + opencv</p></blockquote><p>输入图片转为灰度图，使用numpy将其转化为数字矩阵<br>用matplot将矩阵在三维空间中绘制出来</p><p>输入图片：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nL3RpbmEuanBn?x-oss-process=image/format,png" alt></p><p>输出效果：<br>俯视<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nLzIwMTkwMzIxMTQwOTA2LnBuZw?x-oss-process=image/format,png" alt></p><p>仰视<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nLzIwMTkwMzIxMTQwODQ0LnBuZw?x-oss-process=image/format,png" alt><br>侧面看<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nLzIwMTkwMzIxMTQxMDE4LnBuZw?x-oss-process=image/format,png" alt></p><p>代码如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">import numpy as np</span><br><span class="line">import cv2 as cv</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">from mpl_toolkits.mplot3d import Axes3D</span><br><span class="line">from matplotlib import cm</span><br><span class="line">from matplotlib.ticker import LinearLocator, FormatStrFormatter</span><br><span class="line"></span><br><span class="line">fig = plt.figure(figsize=(16,12))</span><br><span class="line">ax = fig.gca(projection=&quot;3d&quot;)</span><br><span class="line"></span><br><span class="line">img = cv.imread(&quot;tina.jpg&quot;)# 修改图片位置</span><br><span class="line">img = cv.cvtColor(img,cv.COLOR_BGR2GRAY)</span><br><span class="line">imgd = np.array(img)      # image类 转 numpy</span><br><span class="line"></span><br><span class="line"># 准备数据</span><br><span class="line">sp = img.shape</span><br><span class="line">h = int(sp[0])#height(rows) of image</span><br><span class="line">w = int(sp[1])#width(colums) of image</span><br><span class="line"></span><br><span class="line">x = np.arange(0,w,1)</span><br><span class="line">y = np.arange(0,h,1)</span><br><span class="line">x,y = np.meshgrid(x,y)</span><br><span class="line">z = imgd</span><br><span class="line">surf = ax.plot_surface(x, y, z, cmap=cm.coolwarm)  # cmap指color map</span><br><span class="line"></span><br><span class="line"># 自定义z轴</span><br><span class="line">ax.set_zlim(-10, 255)</span><br><span class="line">ax.zaxis.set_major_locator(LinearLocator(10))  # z轴网格线的疏密，刻度的疏密，20表示刻度的个数</span><br><span class="line">ax.zaxis.set_major_formatter(FormatStrFormatter(&apos;%.02f&apos;))  # 将z的value字符串转为float，保留2位小数</span><br><span class="line"></span><br><span class="line"># 设置坐标轴的label和标题</span><br><span class="line">ax.set_xlabel(&apos;x&apos;, size=15)</span><br><span class="line">ax.set_ylabel(&apos;y&apos;, size=15)</span><br><span class="line">ax.set_zlabel(&apos;z&apos;, size=15)</span><br><span class="line">ax.set_title(&quot;Surface plot&quot;, weight=&apos;bold&apos;, size=20)</span><br><span class="line"></span><br><span class="line"># 添加右侧的色卡条</span><br><span class="line">fig.colorbar(surf, shrink=0.6, aspect=8)  # shrink表示整体收缩比例，aspect仅对bar的宽度有影响，aspect值越大，bar越窄</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure><p>源码地址：<a href="https://github.com/yefcion/OpenCV-VS/tree/master/python-cv" target="_blank" rel="noopener">GitHub</a><br>CSDN下载地址：<a href="https://download.csdn.net/download/yefcion/10524135" target="_blank" rel="noopener">源码+图片</a></p>]]></content>
+    
+    <summary type="html">
+    
+      opencv
+    
+    </summary>
+    
+    
+      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+    
+    
+      <category term="OpenCV" scheme="http://yoursite.com/tags/OpenCV/"/>
+    
+      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+      <category term="matplot" scheme="http://yoursite.com/tags/matplot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typro 使用入门</title>
+    <link href="http://yoursite.com/2018/05/24/105-Typora%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/"/>
+    <id>http://yoursite.com/2018/05/24/105-Typora使用入门/</id>
+    <published>2018-05-24T04:45:17.000Z</published>
+    <updated>2019-09-28T07:51:28.050Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Typora-语法结构与功能"><a href="#Typora-语法结构与功能" class="headerlink" title="Typora 语法结构与功能"></a>Typora 语法结构与功能</h1><h4 id="数学表达式"><a href="#数学表达式" class="headerlink" title="数学表达式"></a>数学表达式</h4><p>要启用这个功能，首先到<code>Preference</code>-&gt;<code>Editor</code>中启用。然后使用<code>$</code>符号包裹Tex命令，例如：<code>$lim_{x \to \infty} \ exp(-x)=0$</code>将产生如下的数学表达式：</p><p>​    $lim_{x \to \infty} \ exp(-x)=0$</p><p>Typora支持Latex的公式编辑，公式编辑几乎和代码编辑的使用方法相同，同样分行内公式和行间公式，行内公式用两个<code>$</code>包裹起来，行间公式可以使用快捷键<code>command + alt + b</code>和<code>$$ + enter</code>插入：</p><h4 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h4><p>下标使用<code>~</code>包裹，例如：<code>H~2~O</code>将产生水的分子式。</p><p>​    H<del>2</del>O</p><h4 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h4><p>​    x ^2^</p><h4 id="插入表情"><a href="#插入表情" class="headerlink" title="插入表情"></a>插入表情</h4><p>使用<code>:happy:</code>输入高兴的表情，使用<code>:sad:</code>输入悲伤的表情，使用<code>:cry:</code>输入哭的表情等。以此类推！</p><p>:happy:</p><p>:sad:</p><h4 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h4><p>用HTML的语法<code>&lt;u&gt;underline&lt;/u&gt;</code>将产生下划线Underline.</p><p><u>underline</u></p><h4 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h4><p>GFM添加了删除文本的语法，这是标准的Markdown语法木有的。使用``<del>包裹的文本将会具有删除的样式，例如`</del>删除文本<del>`将产生</del>删除文本~~的样式。</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><p>输入<code>~~~</code>或者“`然后回车，可以输入代码块，并且可以选择代码的语言。例如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public Class HelloWorld&#123;</span><br><span class="line"></span><br><span class="line">  System.out.println(&quot;Hello World!&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">123456</span><br></pre></td></tr></table></figure><p>插入代码的语法和其他markdown并没有区别，同样支持行内代码和行间代码块，语法是相同的，只是在插入行间代码时可以选择快捷键<code>command + alt + c</code>和输入“`后按回车两种方式，效果是一样的:</p><p>右下角可以输入代码的语言，可以根据不同的语言自动高亮显示。</p><h4 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**使用两个*号强调内容**</span><br><span class="line">__使用两个下划线强调内容__12</span><br></pre></td></tr></table></figure><p><strong>使用两个*号强调内容</strong><br><strong>使用两个下划线强调内容</strong></p><h4 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h4><p>在标准的Markdown语法中，*和_包裹的内容会是斜体显示，但是GFM下划线一般用来分隔人名和代码变量名，因此我们推荐是用星号来包裹斜体内容。如果要显示星号，则使用转义：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\*1</span><br></pre></td></tr></table></figure><h4 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h4><p>这个功能和简书的拖入图片即可插入图片功能是一样的，但是这个功能默认是关闭的需要在设置中手动开启，设置的路径为:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Preferences -&gt; Editor1</span><br></pre></td></tr></table></figure><p>在<code>Image Drag &amp; Drop</code>后打上勾就可以了，如图所示：</p><p><img src="http://upload-images.jianshu.io/upload_images/1182605-1cbd9bb6f1ed0be4.gif?imageMogr2/auto-orient/strip" alt="img"></p><h4 id="插入URL连接"><a href="#插入URL连接" class="headerlink" title="插入URL连接"></a>插入URL连接</h4><p>使用尖括号包裹的url将产生一个连接，例如：<code>&lt;www.baidu.com&gt;</code>将产生连接:<a href="http://www.baidu.com/" target="_blank" rel="noopener">www.baidu.com</a>.</p><p>如果是标准的url，则会自动产生连接，例如:<a href="http://www.google.com/" target="_blank" rel="noopener">www.google.com</a></p><h4 id="目录列表Table-of-Contents（TOC）"><a href="#目录列表Table-of-Contents（TOC）" class="headerlink" title="目录列表Table of Contents（TOC）"></a>目录列表Table of Contents（TOC）</h4><p>输入[toc]然后回车，将会产生一个目录，这个目录抽取了文章的所有标题，自动更新内容。</p><h4 id="水平分割线"><a href="#水平分割线" class="headerlink" title="水平分割线"></a>水平分割线</h4><p>使用<code>***</code>或者<code>---</code>，然后回车，来产生水平分割线。</p><h4 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h4><p>我们可以对某一个词语进行标注。例如</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">某些人用过了才知道[^注释]</span><br><span class="line">[^注释]:Somebody that I used to know.12</span><br></pre></td></tr></table></figure><p>把鼠标放在<code>注释</code>上，将会有提示内容<a href="http://blog.csdn.net/moonclearner/article/details/52842679#fn:" target="_blank" rel="noopener">1</a>。</p><h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|姓名|性别|毕业学校|工资|</span><br><span class="line">|:---|:---:|:---:|---:|</span><br><span class="line">|杨洋|男|重庆交通大学|3200|</span><br><span class="line">|峰哥|男|贵州大学|5000|</span><br><span class="line">|坑货|女|北京大学|2000|12345</span><br></pre></td></tr></table></figure><p>其中代码的第二行指定对齐的方式，第一个是左对齐，第二个和第三个是居中，最后一个是右对齐。</p><table><thead><tr><th>姓名</th><th>性别</th><th>毕业学校</th><th>工资</th></tr></thead><tbody><tr><td>杨洋</td><td>男</td><td>重庆交通大学</td><td>3200</td></tr><tr><td>峰哥</td><td>男</td><td>贵州大学</td><td>5000</td></tr><tr><td>坑货</td><td>女</td><td>北京大学</td><td>2000</td></tr></tbody></table><p>使用快捷键<code>ctrl+T</code>可以快速插入表格，最上面可以选择行列数、没一列的对齐方式，并且支持在表格中使用<code>tab</code>键跳到下一单元格。</p><h4 id="数学表达式块"><a href="#数学表达式块" class="headerlink" title="数学表达式块"></a>数学表达式块</h4><p>输入两个美元符号，然后回车，就可以输入数学表达式块了。例如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\mathbf&#123;V&#125;_1 \times \mathbf&#123;V&#125;_2 =  \begin&#123;vmatrix&#125; \mathbf&#123;i&#125; &amp; \mathbf&#123;j&#125; &amp; \mathbf&#123;k&#125; \\\frac&#123;\partial X&#125;&#123;\partial u&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial u&#125; &amp; 0 \\\frac&#123;\partial X&#125;&#123;\partial v&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial v&#125; &amp; 0 \\\end&#123;vmatrix&#125;$$1</span><br></pre></td></tr></table></figure><p>V1×V2=∣∣∣∣∣i∂X∂u∂X∂vj∂Y∂u∂Y∂vk00∣∣∣∣∣V1×V2=|ijk∂X∂u∂Y∂u0∂X∂v∂Y∂v0|</p><h4 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [ ] 吃饭</span><br><span class="line">- [x] 逛街</span><br><span class="line">- [ ] 看电影123</span><br></pre></td></tr></table></figure><ul><li><input disabled type="checkbox"> 吃饭</li><li><input checked disabled type="checkbox"> 逛街</li><li><input disabled type="checkbox"> 看电影</li></ul><h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4><p>输入+, -, *,创建无序的列表，使用任意数字开头，创建有序列表，例如：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**无序的列表**</span><br><span class="line">* tfboys</span><br><span class="line">* 杨洋</span><br><span class="line">* 我爱你1234</span><br></pre></td></tr></table></figure><h4 id="块引用"><a href="#块引用" class="headerlink" title="块引用"></a>块引用</h4><p>使用&gt;来插入块引用。例如：</p><blockquote><p>这是一个块引用！</p></blockquote><h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><p>使用#表示一级标题，##表示二级标题，以此类推，有6个标题。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Typora-语法结构与功能&quot;&gt;&lt;a href=&quot;#Typora-语法结构与功能&quot; class=&quot;headerlink&quot; title=&quot;Typora 语法结构与功能&quot;&gt;&lt;/a&gt;Typora 语法结构与功能&lt;/h1&gt;&lt;h4 id=&quot;数学表达式&quot;&gt;&lt;a href=&quot;#
+      
+    
+    </summary>
+    
+    
+      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+    
+    
+      <category term="Typro" scheme="http://yoursite.com/tags/Typro/"/>
+    
+      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
     
   </entry>
   
@@ -192,9 +424,9 @@
       <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
     
     
-      <category term="时间" scheme="http://yoursite.com/tags/%E6%97%B6%E9%97%B4/"/>
-    
       <category term="大学" scheme="http://yoursite.com/tags/%E5%A4%A7%E5%AD%A6/"/>
+    
+      <category term="时间" scheme="http://yoursite.com/tags/%E6%97%B6%E9%97%B4/"/>
     
   </entry>
   
@@ -244,13 +476,13 @@
       <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
     
     
-      <category term="高中" scheme="http://yoursite.com/tags/%E9%AB%98%E4%B8%AD/"/>
-    
       <category term="师兄" scheme="http://yoursite.com/tags/%E5%B8%88%E5%85%84/"/>
     
       <category term="同学" scheme="http://yoursite.com/tags/%E5%90%8C%E5%AD%A6/"/>
     
       <category term="牛振岭" scheme="http://yoursite.com/tags/%E7%89%9B%E6%8C%AF%E5%B2%AD/"/>
+    
+      <category term="高中" scheme="http://yoursite.com/tags/%E9%AB%98%E4%B8%AD/"/>
     
   </entry>
   
@@ -273,13 +505,13 @@
       <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
     
     
-      <category term="年记" scheme="http://yoursite.com/tags/%E5%B9%B4%E8%AE%B0/"/>
-    
       <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="青春" scheme="http://yoursite.com/tags/%E9%9D%92%E6%98%A5/"/>
-    
       <category term="高中" scheme="http://yoursite.com/tags/%E9%AB%98%E4%B8%AD/"/>
+    
+      <category term="年记" scheme="http://yoursite.com/tags/%E5%B9%B4%E8%AE%B0/"/>
+    
+      <category term="青春" scheme="http://yoursite.com/tags/%E9%9D%92%E6%98%A5/"/>
     
   </entry>
   

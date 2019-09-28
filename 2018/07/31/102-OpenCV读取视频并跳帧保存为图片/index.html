@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="//www.googletagmanager.com">
+	<link rel="preconnect" href="//zz.bdstatic.com">
+	<link rel="preconnect" href="//sp0.baidu.com">
+	<link rel="preconnect" href="//www.google-analytics.com">
+	<link rel="preconnect" href="//cdn1.lncld.net">
+	<link rel="preconnect" href="//unpkg.com">
+	<link rel="preconnect" href="//app-router.leancloud.cn">
+	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
+	<link rel="preconnect" href="//gravatar.loli.net">
+
+	<title>OpenCV 读取视频并跳帧保存为图片 | 一均七声</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="青实">
+	<meta name="description" content="opencv">
+
+	
+	<meta name="keywords" content>
+	
+
+	
+	<link rel="shortcut icon" href="https://raw.githubusercontent.com/yefcion/PicData/master/img/a.png">
+	<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/yefcion/PicData/master/img/a.png">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+
+	<meta property="og:site_name" content="一均七声">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="OpenCV 读取视频并跳帧保存为图片 | 一均七声">
+	<meta property="og:description" content="opencv">
+	<meta property="og:url" content="http://yoursite.com/2018/07/31/102-OpenCV读取视频并跳帧保存为图片/">
+
+	
+	<meta property="article:published_time" content="2018-07-31T12:07:00+08:00"> 
+	<meta property="article:author" content="青实">
+	<meta property="article:published_first" content="一均七声, /2018/07/31/102-OpenCV读取视频并跳帧保存为图片/">
+	
+
+	
+	
+	<link rel="stylesheet" href="/css/allinonecss.min.css">
+
+	
+	
+	
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header post-site-header outer">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                
+                <a class="site-nav-logo" href="/" title="一均七声">
+                    <img src="https://raw.githubusercontent.com/yefcion/PicData/master/img/header.png" alt="一均七声">
+                </a>
+                
+                
+            </li>
+            
+            
+            <li>
+                <a href="/about" title="ABOUT">ABOUT</a>
+            </li>
+            
+            <li>
+                <a href="/archives" title="ARCHIVES">ARCHIVES</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button-area">
+        <a href="#search" class="search-button">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="search-button">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    
+    
+    
+    
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<div id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <div class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2018-07-31T04:45:17.000Z">
+                    2018-07-31
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                <a href="/categories/技术向/">技术向</a>&nbsp;&nbsp;
+                
+                
+            </div>
+            <h1 class="post-full-title">OpenCV 读取视频并跳帧保存为图片</h1>
+        </header>
+        <div class="post-full no-image">
+            
+            <div class="post-full-content">
+                <article id="photoswipe" class="markdown-body">
+                    <h1 id="OpenCV读取视频并跳帧保存为图片"><a href="#OpenCV读取视频并跳帧保存为图片" class="headerlink" title="OpenCV读取视频并跳帧保存为图片"></a>OpenCV读取视频并跳帧保存为图片</h1><p>[TOC]</p>
+<h3 id="介绍几个有关视频读取的函数："><a href="#介绍几个有关视频读取的函数：" class="headerlink" title="介绍几个有关视频读取的函数："></a>介绍几个有关视频读取的函数：</h3><h4 id="VideoCapture-VideoCapture"><a href="#VideoCapture-VideoCapture" class="headerlink" title="VideoCapture::VideoCapture"></a><strong>VideoCapture::VideoCapture</strong></h4><p>​    VideoCapture可以从文件中或者摄像头中读取视频，这是提供给C++的接口的，C的接口是CvCapture结构。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VideoCapture::VideoCapture(conststring&amp; filename)</span><br><span class="line">VideoCapture::VideoCapture(<span class="keyword">int</span> device)</span><br></pre></td></tr></table></figure>
+
+<p>上面是初始化VideoCapture对象的，第一个是从文件中读取，第二个是从设备中读取，默认设备在这里是0；</p>
+<p>例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VideoCapturecapture(“sample.avi”); <span class="comment">/*读取sample.avi文件*/</span></span><br><span class="line">VideoCapturecapture(<span class="number">0</span>); <span class="comment">/*如果只有一个摄像头，capture会得到摄像头的视频*/</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="VideoCapture-Open"><a href="#VideoCapture-Open" class="headerlink" title="VideoCapture::Open"></a><strong>VideoCapture::Open</strong></h4><p>​    打开视频文件或者视频设备（例如摄像头）。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> VideoCapture::open(<span class="keyword">const</span> <span class="built_in">string</span>&amp; filename)</span><br><span class="line"><span class="keyword">bool</span> VideoCapture::open(<span class="keyword">int</span> device)</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">VideoCapturecapture;</span><br><span class="line">capture.open(<span class="string">"sample.avi"</span>);</span><br><span class="line"><span class="comment">/*这里的两句等效于上面的VideoCapturecapture("sample.avi")，capture.open(0)*/</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>上面的视频文件打开，用完后，最好调用 <strong>capture.release()</strong> 来关闭刚刚打开的文件</p>
+</blockquote>
+<h4 id="VideoCapture-release"><a href="#VideoCapture-release" class="headerlink" title="VideoCapture::release"></a><strong>VideoCapture::release</strong></h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> VideoCapture::release()</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">capture.release(); <span class="comment">/*释放打开的视频*/</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="VideoCapture-isOpened"><a href="#VideoCapture-isOpened" class="headerlink" title="VideoCapture::isOpened"></a><strong>VideoCapture::isOpened</strong></h4><p>判断视频是否被打开，成功打开返回ture，否则false。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> VideoCapture::open(<span class="keyword">const</span> <span class="built_in">string</span>&amp; filename)</span><br><span class="line"><span class="keyword">bool</span> VideoCapture::open(<span class="keyword">int</span> device)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="VideoCapture-grab"><a href="#VideoCapture-grab" class="headerlink" title="VideoCapture::grab"></a><strong>VideoCapture::grab</strong></h4><p>从视频文件中或者设备中获取下一帧，该方法成功调用返回ture；主要用于多摄像头情况下，特别当那些摄像头没有实现硬件同步。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> VideoCapture::grab()</span><br></pre></td></tr></table></figure>
+
+<p>grab之后，需要调用retrive对获取的帧进行解码。</p>
+<h4 id="VideoCapture-retrieve"><a href="#VideoCapture-retrieve" class="headerlink" title="VideoCapture::retrieve"></a><strong>VideoCapture::retrieve</strong></h4><p>对grab()得到的帧进行解码。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> VideoCapture::retrieve(Mat&amp; image, <span class="keyword">int</span> channel=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="VideoCapture-read"><a href="#VideoCapture-read" class="headerlink" title="VideoCapture::read"></a><strong>VideoCapture::read</strong></h4><p>获取、解码，这个方法结合了grab和retrieve，比较方便，</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">VideoCapture&amp; VideoCapture::<span class="keyword">operator</span>&gt;&gt;(Mat&amp; image)</span><br><span class="line"><span class="keyword">bool</span> VideoCapture::read(Mat&amp; image)</span><br></pre></td></tr></table></figure>
+
+<p>例子1：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一</span></span><br><span class="line"><span class="keyword">if</span>(!capture.read(frame))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"读取视频失败"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span><span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line">capture &gt;&gt;frame;</span><br></pre></td></tr></table></figure>
+
+<p> 这两个方法都可以，不过第一个能够判断，建议使用第一个，程序更健壮。</p>
+<h4 id="VideoCapture-get"><a href="#VideoCapture-get" class="headerlink" title="VideoCapture::get"></a><strong>VideoCapture::get</strong></h4><p>返回VideoCapture的一些属性</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> VideoCapture::get(<span class="keyword">int</span> propId)</span><br></pre></td></tr></table></figure>
+
+<p>probId可以是下面的：</p>
+<p>·  <strong>CV_CAP_PROP_POS_MSEC</strong> Current position of the video file in milliseconds or video capture timestamp.</p>
+<p>·  <strong>CV_CAP_PROP_POS_FRAMES</strong> 0-basedindex of the frame to be decoded/captured next.</p>
+<p>·  <strong>CV_CAP_PROP_POS_AVI_RATIO</strong> Relativeposition of the video file: 0 - start of the film, 1 - end of the film.</p>
+<p>·  <strong>CV_CAP_PROP_FRAME_WIDTH</strong> Width of theframes in the video stream.</p>
+<p>·  <strong>CV_CAP_PROP_FRAME_HEIGHT</strong> Height ofthe frames in the video stream.</p>
+<p>·  <strong>CV_CAP_PROP_FPS</strong> Frame rate.</p>
+<p>·  <strong>CV_CAP_PROP_FOURCC</strong> 4-character code of codec.</p>
+<p>·  <strong>CV_CAP_PROP_FRAME_COUNT</strong> Number of frames in the video file.</p>
+<p>·  <strong>CV_CAP_PROP_FORMAT</strong> Format ofthe Mat objects returned by retrieve() .</p>
+<p>·  <strong>CV_CAP_PROP_MODE</strong> Backend-specificvalue indicating the current capture mode.</p>
+<p>·  <strong>CV_CAP_PROP_BRIGHTNESS</strong> Brightness of the image (only for cameras).</p>
+<p>·  <strong>CV_CAP_PROP_CONTRAST</strong> Contrast of the image (only for cameras).</p>
+<p>·  <strong>CV_CAP_PROP_SATURATION</strong> Saturation of the image (only for cameras).</p>
+<p>·  <strong>CV_CAP_PROP_HUE</strong> Hue of theimage (only for cameras).</p>
+<p>·  <strong>CV_CAP_PROP_GAIN</strong> Gain of theimage (only for cameras).</p>
+<p>·  <strong>CV_CAP_PROP_EXPOSURE</strong> Exposure(only for cameras).</p>
+<p>·  <strong>CV_CAP_PROP_CONVERT_RGB</strong> Boolean flags indicating whether images should be converted to RGB.</p>
+<p>·  <strong>CV_CAP_PROP_WHITE_BALANCE</strong> Currently not supported</p>
+<p>·  <strong>CV_CAP_PROP_RECTIFICATION</strong> Rectification flag for stereo cameras (note: only supported by DC1394 v 2.x backendcurrently)</p>
+<h4 id="VideoCapture-set"><a href="#VideoCapture-set" class="headerlink" title="VideoCapture::set"></a><strong>VideoCapture::set</strong></h4><p>VideoCapture类的set方法可以允许我们取出视频中某个位置的帧，它有一些参数，可以按时间，也可以按帧号，还可以按视频长短的比例。 </p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">bool</span> VideoCapture::<span class="built_in">set</span>(<span class="keyword">int</span> propId, <span class="keyword">double</span> value)</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第100帧</span></span><br><span class="line"><span class="keyword">double</span> position=<span class="number">100.0</span>;</span><br><span class="line">capture.<span class="built_in">set</span>(CV_CAP_PROP_POS_FRAMES,position);</span><br><span class="line"><span class="comment">// 第1e6毫秒</span></span><br><span class="line"><span class="keyword">double</span> position=<span class="number">1e6</span>;</span><br><span class="line">capture.<span class="built_in">set</span>(CV_CAP_PROP_POS_MSEC,position);</span><br><span class="line"><span class="comment">// 视频1/2位置</span></span><br><span class="line"><span class="keyword">double</span> position=<span class="number">0.5</span>;</span><br><span class="line">capture.<span class="built_in">set</span>(CV_CAP_PROP_POS_AVI_RATIO,position);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><p>下面的是视频读取和将视频内的画面转化为图片的代码，里面的注释应该足够解释了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/core/core.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/highgui/highgui.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/imgproc/imgproc.hpp&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="function">VideoCapture <span class="title">capture</span><span class="params">( <span class="string">"E:/Data/警戒线/@20180727105959_20180727115959_2502.avi"</span> )</span></span>;	<span class="comment">/*打开视频文件：其实就是建立一个VideoCapture结构*/</span></span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> ( !capture.isOpened( ) )<span class="comment">/*检测是否正常打开:成功打开时，isOpened返回ture*/</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"fail toopen!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">long</span> totalFrameNumber = capture.get( CV_CAP_PROP_FRAME_COUNT );	<span class="comment">/*获取视频帧数*/</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"整个视频共"</span> &lt;&lt; totalFrameNumber &lt;&lt; <span class="string">"帧"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">long</span> frameToStart = <span class="number">1</span>;</span><br><span class="line">	capture.<span class="built_in">set</span>( CV_CAP_PROP_POS_FRAMES, frameToStart );<span class="comment">/*设置开始帧*/</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"从第"</span> &lt;&lt; frameToStart &lt;&lt; <span class="string">"帧开始读"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> frameToStop = <span class="number">300</span>;<span class="comment">/*设置结束帧*/</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> ( frameToStop &lt; frameToStart )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"结束帧小于开始帧，程序错误，即将退出！"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"结束帧为：第"</span> &lt;&lt; frameToStop &lt;&lt; <span class="string">"帧"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">double</span> rate = capture.get( CV_CAP_PROP_FPS );<span class="comment">/*获取帧率*/</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"帧率为:"</span> &lt;&lt; rate &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	Mat frame;<span class="comment">/*承载每一帧的图像*/</span></span><br><span class="line">	<span class="keyword">bool</span> stop = <span class="literal">false</span>;	<span class="comment">/*定义一个用来控制读取视频循环结束的变量*/</span></span><br><span class="line">	<span class="keyword">double</span> delay = <span class="number">1000</span> / rate;<span class="comment">/*两帧间的间隔时间:waitKey(intdelay=0)当delay≤ 0时会永远等待；当delay&gt;0时会等待delay毫秒*/</span></span><br><span class="line">	<span class="keyword">long</span> currentFrame = frameToStart;<span class="comment">/*currentFrame是在循环体中控制读取到指定的帧后循环结束的变量*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">//利用while循环读取帧</span></span><br><span class="line">	<span class="keyword">while</span> ( !stop )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//读取下一帧</span></span><br><span class="line">		<span class="keyword">if</span> ( !capture.read( frame ) )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"读取视频失败"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//cout &lt;&lt; "正在读取第" &lt;&lt; currentFrame &lt;&lt; "帧" &lt;&lt; endl;</span></span><br><span class="line">		<span class="comment">//namedWindow( "Extractedframe" );</span></span><br><span class="line">		<span class="comment">//imshow( "Extractedframe", frame );</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// 每隔50帧写一次图片</span></span><br><span class="line">		<span class="keyword">if</span> ( currentFrame % <span class="number">50</span> == <span class="number">0</span> )</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"正在写第"</span> &lt;&lt; currentFrame &lt;&lt; <span class="string">"帧"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="built_in">stringstream</span> str;</span><br><span class="line">			str &lt;&lt; <span class="string">"G:/test_pic/"</span> &lt;&lt; currentFrame &lt;&lt; <span class="string">".png"</span>;<span class="comment">/*图片存储位置*/</span></span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; str.str( ) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			imwrite( str.str( ), frame );</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//当时间结束前没有按键按下时，返回值为-1；否则返回按键</span></span><br><span class="line">		<span class="keyword">int</span> c = waitKey( delay );</span><br><span class="line">		<span class="keyword">if</span> ( ( <span class="keyword">char</span> )c == <span class="number">27</span> || currentFrame &gt; frameToStop )<span class="comment">/*按下ESC或者到达指定的结束帧后退出读取视频*/</span></span><br><span class="line">		&#123;</span><br><span class="line">			stop = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> ( c &gt;= <span class="number">0</span> )<span class="comment">/*按下按键后会停留在当前帧，等待下一次按键*/</span></span><br><span class="line">		&#123;</span><br><span class="line">			waitKey( <span class="number">0</span> );</span><br><span class="line">		&#125;</span><br><span class="line">		currentFrame++;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//关闭视频文件</span></span><br><span class="line">	capture.release( );</span><br><span class="line">	waitKey( <span class="number">0</span> );</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h3><p>读取后的图片，因为图片很多，上面代码在设置的时候，只读取了300帧</p>
+
+                </article>
+                <ul class="tags-postTags">
+                    
+                    <li>
+                        <a href="/tags/OpenCV/" rel="tag"># OpenCV</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/C/" rel="tag"># C++</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/图像处理/" rel="tag"># 图像处理</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/视频/" rel="tag"># 视频</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/帧/" rel="tag"># 帧</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <nav id="gobottom" class="pagination">
+        
+        <a class="prev-post" title="一场源自豆瓣的：西湖夜奔" href="/2018/12/09/403-西湖夜奔/">
+            ← 一场源自豆瓣的：西湖夜奔
+        </a>
+        
+        <span class="prev-next-post">·</span>
+        
+        <a class="next-post" title="大报恩寺导览" href="/2018/07/22/402-大报恩寺导览/">
+            大报恩寺导览 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</div>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#OpenCV读取视频并跳帧保存为图片"><span class="toc-text">OpenCV读取视频并跳帧保存为图片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍几个有关视频读取的函数："><span class="toc-text">介绍几个有关视频读取的函数：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#VideoCapture-VideoCapture"><span class="toc-text">VideoCapture::VideoCapture</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VideoCapture-Open"><span class="toc-text">VideoCapture::Open</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VideoCapture-release"><span class="toc-text">VideoCapture::release</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VideoCapture-isOpened"><span class="toc-text">VideoCapture::isOpened</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VideoCapture-grab"><span class="toc-text">VideoCapture::grab</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VideoCapture-retrieve"><span class="toc-text">VideoCapture::retrieve</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VideoCapture-read"><span class="toc-text">VideoCapture::read</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VideoCapture-get"><span class="toc-text">VideoCapture::get</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VideoCapture-set"><span class="toc-text">VideoCapture::set</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例："><span class="toc-text">实例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结果："><span class="toc-text">结果：</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://i.loli.net/2017/11/26/5a19c56faa29f.jpg)">
+  <header class="read-next-card-header">
+    <small class="read-next-card-header-sitetitle">&mdash; 一均七声 &mdash;</small>
+    <h3 class="read-next-card-header-title">最新文章</h3>
+  </header>
+  <div class="read-next-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+      <path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/>
+    </svg>
+  </div>
+  <div class="read-next-card-content">
+    <ul>
+      
+      
+      
+      <li>
+        <a href="/2019/09/27/100-hello-hexo/">Hello Hexo</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/2019/09/27/000-BlogRule/">命名规则</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/2019/06/30/140-从迅雷玩客云想到的网速制约因素及一点思考/">从迅雷玩客云想到的网速制约因素及一点思考</a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+  </div>
+  <footer class="read-next-card-footer">
+    <a href="/archives">  MORE  → </a>
+  </footer>
+</article>
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://i.loli.net/2017/11/26/5a19c56faa29f.jpg)">
+    <header class="read-next-card-header tagcloud-card">
+        <h3 class="read-next-card-header-title">分类</h3>
+    </header>
+    <div class="read-next-card-content">
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/建站规约/">建站规约</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术向/">技术向</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/游记向/">游记向</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/纪年/">纪年</a></li></ul>
+    </div>
+</article>
+
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://i.loli.net/2017/11/26/5a19c56faa29f.jpg)">
+	<header class="read-next-card-header tagcloud-card">
+		<h3 class="read-next-card-header-title">标签云</h3>
+	</header>
+	<div class="read-next-card-content-ext">
+		<a href="/tags/Blog/" style="font-size: 14px;">Blog</a> <a href="/tags/C/" style="font-size: 14px;">C++</a> <a href="/tags/Excel/" style="font-size: 14px;">Excel</a> <a href="/tags/GitHub/" style="font-size: 14px;">GitHub</a> <a href="/tags/Markdown/" style="font-size: 14px;">Markdown</a> <a href="/tags/OpenCV/" style="font-size: 19px;">OpenCV</a> <a href="/tags/PicGo/" style="font-size: 14px;">PicGo</a> <a href="/tags/Typro/" style="font-size: 14px;">Typro</a> <a href="/tags/bat/" style="font-size: 14px;">bat</a> <a href="/tags/matplot/" style="font-size: 14px;">matplot</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/同学/" style="font-size: 14px;">同学</a> <a href="/tags/图像处理/" style="font-size: 19px;">图像处理</a> <a href="/tags/图床/" style="font-size: 14px;">图床</a> <a href="/tags/夜行/" style="font-size: 14px;">夜行</a> <a href="/tags/大学/" style="font-size: 24px;">大学</a> <a href="/tags/大报恩寺/" style="font-size: 14px;">大报恩寺</a> <a href="/tags/家庭/" style="font-size: 14px;">家庭</a> <a href="/tags/师兄/" style="font-size: 14px;">师兄</a> <a href="/tags/帧/" style="font-size: 14px;">帧</a> <a href="/tags/年记/" style="font-size: 14px;">年记</a> <a href="/tags/建筑/" style="font-size: 14px;">建筑</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/总结/" style="font-size: 19px;">总结</a> <a href="/tags/摄影/" style="font-size: 14px;">摄影</a> <a href="/tags/时间/" style="font-size: 19px;">时间</a> <a href="/tags/景点/" style="font-size: 14px;">景点</a> <a href="/tags/毕业/" style="font-size: 14px;">毕业</a> <a href="/tags/河海大学/" style="font-size: 14px;">河海大学</a> <a href="/tags/牛振岭/" style="font-size: 14px;">牛振岭</a> <a href="/tags/玩客云/" style="font-size: 14px;">玩客云</a> <a href="/tags/研究生/" style="font-size: 14px;">研究生</a> <a href="/tags/硬件/" style="font-size: 14px;">硬件</a> <a href="/tags/统计/" style="font-size: 14px;">统计</a> <a href="/tags/网站/" style="font-size: 19px;">网站</a> <a href="/tags/网络/" style="font-size: 14px;">网络</a> <a href="/tags/西湖/" style="font-size: 14px;">西湖</a> <a href="/tags/规则/" style="font-size: 14px;">规则</a> <a href="/tags/视频/" style="font-size: 14px;">视频</a> <a href="/tags/诗词/" style="font-size: 14px;">诗词</a> <a href="/tags/豆瓣/" style="font-size: 14px;">豆瓣</a> <a href="/tags/青春/" style="font-size: 14px;">青春</a> <a href="/tags/高中/" style="font-size: 19px;">高中</a>
+	</div>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay">
+    <div class="search-form">
+        
+        <div class="search-overlay-logo">
+        	<img src="https://raw.githubusercontent.com/yefcion/PicData/master/img/a.png" alt="一均七声">
+        </div>
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<div class="copyright">
+			<a href="/" title="一均七声">一均七声 &copy; 2019</a>
+			
+				
+			        <span hidden="true" id="/2018/07/31/102-OpenCV读取视频并跳帧保存为图片/" class="leancloud-visitors" data-flag-title="OpenCV 读取视频并跳帧保存为图片">
+			            <span>阅读量 </span>
+			            <span class="leancloud-visitors-count">0</span>
+			        </span>
+	    		
+    		
+		</div>
+		<nav class="site-footer-nav">
+			
+			<a href="https://hexo.io" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+			<a href="https://github.com/xzhih/hexo-theme-casper" title="Casper" target="_blank" rel="noopener">Casper</a>
+		</nav>
+	</div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister()
+            }
+        })
+    }
+</script>
+
+
+<script id="scriptLoad" src="/js/allinone.min.js" async></script>
+
+
+
+
+
+
+<script>
+    document.getElementById('scriptLoad').addEventListener('load', function () {
+        var bLazy = new Blazy()
+    })
+</script>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+
+
+<script id="valineScript" src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+<script>
+    document.getElementById('valineScript').addEventListener("load", function() {
+        new Valine({
+            el: '#comment' ,
+            verify: false,
+            notify: false,
+            appId: '',
+            appKey: '',
+            placeholder: 'Just go go',
+            pageSize: 10,
+            avatar: 'mm',
+            visitor: true
+        })
+    });
+</script>
+
+
+
+
+
+<script>
+    document.getElementById('scriptLoad').addEventListener('load', function(){
+        searchFunc("/")
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
