@@ -47,9 +47,9 @@
     <link href="http://yoursite.com/2019/09/27/000-BlogRule/"/>
     <id>http://yoursite.com/2019/09/27/000-BlogRule/</id>
     <published>2019-09-27T06:59:46.000Z</published>
-    <updated>2019-09-28T07:13:01.974Z</updated>
+    <updated>2019-09-28T10:03:29.168Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><ul><li>000 - 建站规约</li><li>100 - 技术向</li><li>200 - 书评向</li><li>300 - 影评向</li><li>400 - 游记向</li><li>500 - 文学向</li><li>600 - 日记向</li><li>700 - 纪年</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h2><ul><li>000 - 建站规约</li><li>100 - 技术向</li><li>200 - 书评向</li><li>300 - 影评向</li><li>400 - 游记向</li><li>500 - 文学向</li><li>600 - 随笔向</li><li>700 - 纪年</li></ul>]]></content>
     
     <summary type="html">
     
@@ -64,6 +64,31 @@
       <category term="网站" scheme="http://yoursite.com/tags/%E7%BD%91%E7%AB%99/"/>
     
       <category term="规则" scheme="http://yoursite.com/tags/%E8%A7%84%E5%88%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java-开发常用工具清单</title>
+    <link href="http://yoursite.com/2019/09/17/107-Java-%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%B8%85%E5%8D%95/"/>
+    <id>http://yoursite.com/2019/09/17/107-Java-开发常用工具清单/</id>
+    <published>2019-09-17T05:00:58.000Z</published>
+    <updated>2019-09-28T10:28:42.768Z</updated>
+    
+    <content type="html"><![CDATA[<p>工具清单：</p><ul><li>IDE：IDEA、Eclipse</li><li>编辑器：VScode、Notepad++</li><li>数据库：MySQL、Redis、MyBatis</li><li>环境相关：Maven、Tomcat、docker</li><li>数据库工具：NaviCat</li><li>测试检查：JUnit、KW</li><li>版本管理：Git、Gerrit、Github、TortoiseGit</li></ul><p>技术栈（目前接触到的）：</p><ul><li>Java</li><li>Shell</li><li>SQL</li><li>Redis</li><li>MyBatis</li><li>docker</li><li>SpringWMC</li><li>python</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      Java 常用 IDE
+    
+    </summary>
+    
+    
+      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+    
+    
+      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+    
+      <category term="软件" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
@@ -153,6 +178,60 @@
   </entry>
   
   <entry>
+    <title>VPS-用搬瓦工（Bandwagon）搭建VPS实现科学上网</title>
+    <link href="http://yoursite.com/2019/04/12/106-VPS-%E7%94%A8%E6%90%AC%E7%93%A6%E5%B7%A5%EF%BC%88Bandwagon%EF%BC%89%E6%90%AD%E5%BB%BAVPS%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    <id>http://yoursite.com/2019/04/12/106-VPS-用搬瓦工（Bandwagon）搭建VPS实现科学上网/</id>
+    <published>2019-04-12T05:00:58.000Z</published>
+    <updated>2019-09-28T10:31:36.138Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><ol><li>FQ是为了学习交流、使用工具</li><li>以国为荣，不惹事端<h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3>网面上所有hosts（以<a href="https://laod.cn/hosts/2017-google-hosts.html" target="_blank" rel="noopener">老D博客</a>为例）不能用，各种VPN被封，导致我所使用的Google系列产品无法使用。最近看到一个朋友的技术贴，觉得FQ这种技术活掌握在手里也挺好，所以我也开始尝试了。<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3>这项活动不难，<code>按部就班</code>即可完成。当然，我的做法可能比较小白，无法发掘VPS全部功能，但是就我的初衷<code>顺利FQ</code>而言，完美稳定。<br>简单介绍一下梗概：</li><li>购买搬瓦工（Bandwagon）VPS</li><li>配置VPS</li><li>配置终端，PC/Android/IOS客户端</li><li>科学上网</li></ol><h3 id="1-购买VPS"><a href="#1-购买VPS" class="headerlink" title="1. 购买VPS"></a>1. 购买VPS</h3><pre><code>- 知名VPS服务商有：Bandwagon、Vultr 、 Linode。- 我使用Bandwagon，原因很简单：便宜，可支付宝。- KVM、$25.99 USD包年、USCA_2- 可以几个人合买哦，因为配置完之后理论上是没有使用人数限制的，只不过就像宽带一样，人多了速度自然就会慢了</code></pre><p>1.1 访问<a href="https://bwh1.net/index.php" target="_blank" rel="noopener">搬瓦工</a>网址<br><img src="http://upload-images.jianshu.io/upload_images/152050-448ccca37257ccf6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017-12-01-13-49-45.jpg"></p><p>1.2 选择套餐，加入购物车：<br>本着价格优先和稳定够用的原则，我选了第二便宜的套餐（最便宜的套餐常年断货）<br>至于<code>KVM</code>还是<code>OVZ</code>，推荐KVM，这是一番比较之后的结果。看过的文章忘记保存，以后有机会的话放网址。<br>之后是套餐内容：<br><img src="http://upload-images.jianshu.io/upload_images/152050-ceeda80f2fc999a5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017-12-01-13-50-52.jpg"></p><p>选择时长和服务器位置：包月、包年；洛杉矶、加拿大、日本等<br>我选择了<code>包年</code>、<code>洛杉矶_2</code></p><p>1.3 确认订单与付款<br><img src="http://upload-images.jianshu.io/upload_images/152050-7940554988367f0b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="搬瓦工主页"><br>这里可以填优惠码，用了会打折扣（和国内软件邀请机制一样，双方都有优惠），然后checkout<br>如果是新用户的话需要注册，要填的信息如下：姓名、邮件、地址、电话。这里可以选择支付宝(Alipay)付款，最后complete order完成。<br><img src="http://upload-images.jianshu.io/upload_images/152050-069211d54d513c03.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017-12-01-14-04-47.jpg"></p><p>购买成功后，邮箱收到三封邮件，里面有重要信息（SSH port、VPS IP、root 临时密码）需要记录。之后有用。<br>以上VPS的购买完成，下面进入配置。</p><h3 id="2-配置VPS"><a href="#2-配置VPS" class="headerlink" title="2. 配置VPS"></a>2. 配置VPS</h3><p>2.1 返回home，进入client area，找到service，<code>my services</code>,进入<code>KiwiVM</code>控制面板<br><img src="http://upload-images.jianshu.io/upload_images/152050-20cd309768f31124.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017-12-01-13-55-19.jpg"></p><p><img src="http://upload-images.jianshu.io/upload_images/152050-2089379a849ea0da.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017-12-01-14-09-36.jpg"></p><p><img src="http://upload-images.jianshu.io/upload_images/152050-d6f03a2f0ad69183.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017-12-01-14-11-46.jpg"></p><p>2.2 配置KiwiVM(核心在这里)<br>    面板中要用到的面板选项下图标出：<br><img src="http://upload-images.jianshu.io/upload_images/152050-9613cb6d0a43fc5d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017-12-01-14-13-33.jpg"></p><pre><code>- main controls(主控中心)- install OS(安装系统)- root password modification(根密码修改)- KiwiVM password modification(KiwiVM密码修改)- Shadowsocks serve(Shadowsocks服务)- ShadowsocksR serve(ShadowsocksR服务)</code></pre><p>首先，可以修改用户名，这个就是个人喜好的问题，可以不改，之后配置没什么用。（ <del>但如果你用 putty 的话，这个就是登陆的名字，由于这个教程面向我这种小白用户，所以这段话可以忽略</del>）<br><img src="http://upload-images.jianshu.io/upload_images/152050-3119906b81068f92.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017-12-01-14-29-50.jpg"></p><p>重装服务器系统。这里本来是默认装了CentOS的系统，但是清洁起见还是重装一下。<br>Main controls面板，单击Stop，然后Install new OS 这里，选择 CentOS-6-x86_64-bbr，勾选 I agree， 点击 Reload。然后看密码，或者修改。</p><pre><code>• Root password modification 这个是装系统之后，搬瓦工随机分配的密码，自己不能修改，`记录这里的信息`（邮箱里也会收到） • KiwiVM password modification 是登陆账号的密码，直接写新密码。这样的话最开始邮件收到的密码就可以不用了。从这步开始购买VPS时的邮件内容就不用了。</code></pre><p>常理的话控制面板应该如下，有ShadowsocksR Server和Shadowsocks serve，但是新装的服务器好像没了，因此要手动安装<br><img src="http://pb8ci5khn.bkt.clouddn.com/blog/20181201/wMC1ERhfiqAm.png" alt="mark"></p><p>安装 ShadowsocksR Server和Shadowsocks serve<br>直接点击<a href="https://kiwivm.64clouds.com/main-exec.php?mode=extras_shadowsocks" target="_blank" rel="noopener">链接</a>，快速啊安装shadowsocks服务<br>安装完成之后记录当前界面显示的消息，用客户端FQ就<code>靠这些信息</code>了。（另，保存该网址为书签，不知为什么安装shadowsocks后KiviVM面板上没有添加shadowsocks的菜单，所以为了以后方便查看，把这个网址保存书签把）<br>IP是首页’Main statistic’中的 ‘IP address’<br><img src="http://upload-images.jianshu.io/upload_images/152050-4411d763294d3c54.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017-12-01-14-43-52.jpg"><br>以上VPS配置工作就完成了，只要在终端登录就可以实现科学上网了</p><h3 id="3-配置终端"><a href="#3-配置终端" class="headerlink" title="3. 配置终端"></a>3. 配置终端</h3><p>客户端下载，点击关键词即可下载。</p><ul><li>PC<br>  <a href="https://cache.cdn.bydisk.com/ShadowsocksR-4.7.0-win.7z" target="_blank" rel="noopener">SSR-4.7.0</a></li><li>IOS<br>  <a href="https://itunes.apple.com/us/app/wingy-http-s-socks5-proxy-utility/id1178584911" target="_blank" rel="noopener">Wingy</a><br>  <a href="https://itunes.apple.com/us/app/shadowrocket/id932747118" target="_blank" rel="noopener">shadowrocket</a></li><li>Android<br>  <a href="https://qiniucloud.download.storage.bydisk.com/ssr-3.4.0.5.apk" target="_blank" rel="noopener">SSR-3.4.0.5</a></li><li>MAC<br>  <a href="https://github.com/qinyuhang/ShadowsocksX-NG-R/releases" target="_blank" rel="noopener">ShadowrocksX-NG-R</a><br>  <a href="https://github.com/erguotou520/electron-ssr/releases" target="_blank" rel="noopener">electron-ssr</a></li></ul><p>配置案例：</p><ol><li><p>以win为例：<br>把ShadowsocksR Server的信息填到客户端，完成单击确定即可。<br><img src="http://upload-images.jianshu.io/upload_images/152050-82f31cec772d6186.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017-12-01-14-58-39.jpg"></p></li><li><p>以IOS客户端Wing为例：<br>把ShadowsocksR Server的信息填到客户端，完成单击确定即可。<br><img src="http://upload-images.jianshu.io/upload_images/152050-06845dd196adc0e7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="2017-12-01-15-03-56.jpg"></p></li></ol><p>测试网页：<br><a href="www.google.com.hk/?hl=zh-cn">Google</a><br><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></p><p>愉快上网。</p><p><img src="http://m.qpic.cn/psb?/V10z9tn33iz4ON/C6K2XHPp5GsV0.nsYSfLEHvXAnU*9orxloyoKmkv56c!/b/dL8AAAAAAAAA&bo=1QS5AgAAAAARB1o!&rf=viewer_4" alt="Google"></p>]]></content>
+    
+    <summary type="html">
+    
+      关于如何上网
+    
+    </summary>
+    
+    
+      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+    
+    
+      <category term="Bandwagon" scheme="http://yoursite.com/tags/Bandwagon/"/>
+    
+      <category term="VPS" scheme="http://yoursite.com/tags/VPS/"/>
+    
+      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无声的告白译本对比</title>
+    <link href="http://yoursite.com/2019/04/04/201-%E6%97%A0%E5%A3%B0%E7%9A%84%E5%91%8A%E7%99%BD%E8%AF%91%E6%9C%AC%E5%AF%B9%E6%AF%94/"/>
+    <id>http://yoursite.com/2019/04/04/201-无声的告白译本对比/</id>
+    <published>2019-04-04T15:56:17.000Z</published>
+    <updated>2019-09-28T10:39:00.661Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文共<code>十一个</code>对比，原文+译文。资料来自豆瓣一个书评，<a href="[https://book.douban.com/review/9720804/](https://book.douban.com/review/9720804/)">译文链接</a>。</p><p>声明：本文只代表我的个人观点，可以点上面链接看无评论版译文对比。</p><p><img src="https://upload-images.jianshu.io/upload_images/152050-35522a4e09505c65.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="一"><br>个人译本：</p><blockquote><p>对此法国人有一种说法：说一声再见，就会死去一点。那帮混蛋法国人对什么都有说法，但他们往往都是对的。</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/152050-380685024d8dbe12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="二"><br>个人译本：</p><blockquote><p>别了，朋友。我不会说再见。在说它仍有意义时，在它悲伤、孤独、决绝时，我已经说过了。</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/152050-f0d24b12285fe50d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="三"><br>个人译本：</p><blockquote><p>就在这时，一个梦幻般女子走了进来。那一瞬间，我觉得酒吧里没有了任何声音，时代精英不再唇枪舌剑，高脚凳上的醉汉停下了滔滔不绝，仿佛指挥家轻敲乐谱后，双手停在半空中，悬而未发。</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/152050-12ac0e00bff63748.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="四"><br>个人译本：</p><blockquote><p>姚译很好</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/152050-434cfe6c40dcd912.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="五"><br>个人译本：</p><blockquote><p>我性格软弱，没胆识也没雄心。我抓住了一只黄铜戒指紧紧不放，结果却惊讶地发现它并不是黄金。我这种人一生中只有一个高光时刻，那就像是在高高秋千上的完美一荡。此后余生所追求的，不过是尽量不从人行道跌进水沟罢了。</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/152050-bd33ca6611dafa30.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="六"><br>个人译本：</p><blockquote><p>你丈夫是个能够严格审视自我，认清自我的男人，这种禀赋并不多见。大多数人终其一生，不过是用半数精力去维护他们从未有过的尊严。</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/152050-0c55c8bedf034931.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="七"><br>个人译本：</p><blockquote><p>卢译很好</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/152050-29f5601d5691114b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="八"><br>个人译本：</p><blockquote><p>一座相较而言并不特别糟糕的城市，它是富裕、繁荣、充满骄傲，还是失落、破败、充满空虚，完全取决于你，取决于你在其中的地位和你的个人成就。我没有。我不在乎。</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/152050-750d9123b8e27c59.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="九"><br>个人译本：</p><blockquote><p>姚译很好</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/152050-76702b96dfafd926.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="十"><br>个人译本：</p><blockquote><p>我打起精神。我刚才一直歪歪扭扭地站在这儿，张着嘴呼吸，活像个女学生。她确实是个尤物。在近处看，她让我几乎无法动弹。【这个翻的比较烂】</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/152050-6fc899ca53213b81.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="十一"><br>个人译本：</p><blockquote><p>你没胆量，没脑子，没门路，没见识，只能摆摆不值钱的态度，却还指望别人为你哭泣。</p></blockquote><p>最终结果对比如下图所示。<br><img src="https://upload-images.jianshu.io/upload_images/152050-c1a7061c95177a73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="评分图"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">分值评分标准</span><br><span class="line"> 5   完美</span><br><span class="line"> 4     贴切</span><br><span class="line"> 3   有病词</span><br><span class="line"> 2   有病句</span><br><span class="line"> 1   垃圾</span><br></pre></td></tr></table></figure><p>均分：<br>译文版（宋佥   译） 3.6<br>读客版（姚向辉译） 3.5<br>南海版（卢肖慧译） 3.3<br>新星版（宋碧云译） 2.5</p><p>综合评价：<br>宋佥 译本能最准确地还原作者意思。虽然有点累赘、缺乏金句，但表意做的最好。个人首选宋译本。<br>姚向辉 译本表意有时不准，但句子简明扼要，行文像作者风格。<br>卢肖慧 译本不稳定，有时能译出很好地句子（超越其他三人），但大多数时候不行。<br>宋碧云 译本看了脑壳痛。</p>]]></content>
+    
+    <summary type="html">
+    
+      无声的告白
+    
+    </summary>
+    
+    
+      <category term="书评向" scheme="http://yoursite.com/categories/%E4%B9%A6%E8%AF%84%E5%90%91/"/>
+    
+    
+      <category term="书籍" scheme="http://yoursite.com/tags/%E4%B9%A6%E7%B1%8D/"/>
+    
+      <category term="译本" scheme="http://yoursite.com/tags/%E8%AF%91%E6%9C%AC/"/>
+    
+      <category term="English" scheme="http://yoursite.com/tags/English/"/>
+    
+  </entry>
+  
+  <entry>
     <title>PicGo + GitHub 搭建个人图床工具</title>
     <link href="http://yoursite.com/2019/03/11/101-PicGo/"/>
     <id>http://yoursite.com/2019/03/11/101-PicGo/</id>
@@ -186,7 +265,7 @@
     <link href="http://yoursite.com/2018/12/31/707-18-%E5%B9%B4%E8%AE%B0/"/>
     <id>http://yoursite.com/2018/12/31/707-18-年记/</id>
     <published>2018-12-31T05:00:58.000Z</published>
-    <updated>2019-09-28T06:52:07.585Z</updated>
+    <updated>2019-09-28T10:26:09.547Z</updated>
     
     <content type="html"><![CDATA[<p><strong>娱乐：</strong></p><ul><li>读书 - 61本</li><li>影视 - 160 部 </li><li>摄影 - 每日一记 </li><li>出行 - 南京、上海、苏锡常、杭州 </li><li>线下 - 戏曲、话剧、演唱会、音乐节</li></ul><p><strong>推荐：</strong></p><ul><li>影 - 花样年华、重庆森林、方形</li><li>剧 - 请回答 1988、逃避虽可耻但有用</li><li>书 - 红楼梦、倚天屠龙记、长恨歌、北鸢、雪中悍刀行</li></ul><p>工作 - To be a ZTEr</p><p>学习 - 实验完成，待写论文</p><p>读书统计</p><p><img src="http://a3.qpic.cn/psb?/6ee074a0-6b62-4061-a4b1-8a668bfe6415/MQ76eg*QcGqDX1st9*nceTtS6lOpN.cZK6ybgwnYKBk!/b/dN4AAAAAAAAA&ek=1&kp=1&pt=0&tl=3&su=051176097&tm=1569643200&sce=0-12-12&rf=2-9" alt="读书统计"></p><p>观影统计</p><p><img src="http://a1.qpic.cn/psb?/6ee074a0-6b62-4061-a4b1-8a668bfe6415/FEeThGXEM05o0vIblqyriQqqE3s*dNg6xLLv7N3KFpM!/b/dIgBAAAAAAAA&ek=1&kp=1&pt=0&tl=3&su=094417553&tm=1569643200&sce=0-12-12&rf=2-9" alt="观影统计"></p><p>每日一记 365 日</p><p><img src="http://a2.qpic.cn/psb?/6ee074a0-6b62-4061-a4b1-8a668bfe6415/Fg0dHP4hmkbVAA2jxXyWGbEG*WlOsNNvFcTeDvi9gYE!/b/dA0BAAAAAAAA&ek=1&kp=1&pt=0&tl=3&su=028768833&tm=1569643200&sce=0-12-12&rf=2-9" alt="每日一记"></p><p>情绪曲线</p><p><img src="http://a4.qpic.cn/psb?/6ee074a0-6b62-4061-a4b1-8a668bfe6415/FxOW7lJlZbHsNLxtI7iJHA5lssGpgpwpoXHnsYRql4M!/b/dAsAAAAAAAAA&ek=1&kp=1&pt=0&tl=3&su=064824353&tm=1569643200&sce=0-12-12&rf=2-9" alt="情绪曲线"></p><blockquote><p>待你们从学校毕业，地上的瓜分之事自会找上门来，纵使厌恶也必须接受。你们会成为商人，成为编辑，成为官员。但在神的宝座上与神并肩而坐这种事，走过学生时代便不会再有，错过后便永远不再来。</p></blockquote>]]></content>
     
@@ -274,7 +353,7 @@
     <link href="http://yoursite.com/2018/07/22/402-%E5%A4%A7%E6%8A%A5%E6%81%A9%E5%AF%BA%E5%AF%BC%E8%A7%88/"/>
     <id>http://yoursite.com/2018/07/22/402-大报恩寺导览/</id>
     <published>2018-07-22T04:45:17.000Z</published>
-    <updated>2019-09-28T07:57:45.816Z</updated>
+    <updated>2019-09-28T10:20:46.364Z</updated>
     
     <content type="html"><![CDATA[<h1 id="大报恩寺"><a href="#大报恩寺" class="headerlink" title="大报恩寺"></a>大报恩寺</h1><blockquote><p>科技为骨，宗教、历史为肉体，灯光玻璃掩映，形意兼备，神清气朗</p></blockquote><p>张岱在陶庵梦忆里写报恩塔，称之大国古董、永乐窑器，以小喻大，足见精致。张先生是个审美品位刁钻且精准的人，他很推崇的点我很想去见识一下。</p><p>想了两三次，去了一次被拒，今天终于进了大报恩寺景区。不同于去过的其他露天寺、庙，大报恩寺算是一处室内景点。进景区，过走道，入场馆，左手边是游览起点。</p><p><img src="https://img3.doubanio.com/view/note/l/public/p52457284.webp" alt="景区入口"></p><p>场馆整体用玻璃造就，透光好。室内BGM选的好，大气不疏离，慈祥不随意。向前第一处是<code>长干佛脉</code>，见琉璃璀璨、见毁弃残存的基底、见历史传说。</p><p><img src="https://img3.doubanio.com/view/note/l/public/p52457292.webp" alt="景区入口"></p><p>而后转角，转身即是<code>千年对望</code>，佛祖头像与玄奘对望凝视非常震撼。从长廊向玄奘走去，脚下步步生莲，一共七朵，一步一莲花这种意境真是被阐述地恰到好处。(<em>我想看看原理，特意试着踩灯芯莲花不开，确认了传感器在玻璃下地灯的边缘，这种结合真是漂亮。</em>)</p><p><img src="https://img3.doubanio.com/view/note/l/public/p52457300.webp" alt="千年对望"></p><p>再往前是《国家宝藏》中秦海璐守护的国宝<code>琉璃拱门</code>。拱门华丽闪光，门上雕刻栩栩如生有威严。而后<code>莲池海会</code>，灯光与科技营造出的景象当真使人深陷其中无法自拔，在此尤其佩服大报恩寺遗址的建设团队。（<em>这里我没有拍好，必须身历其境才能体会</em>）</p><p><img src="https://img1.doubanio.com/view/note/l/public/p52457157.webp" alt="莲池海会"></p><p>而后<code>南朝四百八十寺</code>，一座座知名的古寺模型陈列在展厅：鸡鸣寺、栖霞寺、灵谷寺等。</p><p><img src="https://img3.doubanio.com/view/note/l/public/p52457343.webp" alt="寺庙陈列"></p><p>往前，过飞天走廊，迎面<code>舍利佛光</code>相当梦幻，一方空间里全是闪烁的星星，中心设有佛像从而使这里不至于轻浮。关于佛光，也是有着典故，用现代科技去还原历史故事，而且做的不过分这是最难的地方。</p><p><img src="http://pb8ci5khn.bkt.clouddn.com/blog/180722/lECADb2lfG.png" alt="舍利佛光"></p><p>再往后到一处令我震撼最深的地方<code>感恩众生</code>，这里像是种了《阿凡达》里的神树，树枝条状垂下，树下众生芸芸，整个场景如梦般美丽与震撼，自己化成了树下众生之一，面对天道轮回。也是在这里我有心向佛了。为了不破意境，这里放一张看不出什么的图。有机会一定要去亲身体会，大报恩寺-感恩众生。</p><p><img src="https://img3.doubanio.com/view/note/l/public/p52457161.webp" alt="感恩众生"></p><p>出这方空间，迎来一个比较安静祥和的画面，菩提树下释迦摩尼参禅。这时候遇到一个小姑娘，很是应景。</p><p> <img src="https://img3.doubanio.com/view/note/l/public/p52457164.webp" alt="菩提树"></p><p>之后，走古色古香的文化长廊，两边有风趣的画作，可以留意看一下。</p><p><img src="http://pb8ci5khn.bkt.clouddn.com/blog/180722/h2BI28jjHc.png" alt="文化长廊"></p><p>最后便是终点，可以买些纪念品。</p><p>另外提一句，晚上7点半开始会有报恩寺感恩演出，据说质量很高不亚于话剧表演。</p><p>大报恩寺是我见过现代科技和宗教文化结合最好的地方，用科技还原精神世界中的可能，真是太美妙了。千年对望、莲池海会、舍利佛光、感恩众生，处处是对光的运用和对科技的把控。这种创新与设计感，非常值得尊重。</p><p>我逛过千篇一律的古镇、摊点相同文化小街、遮遮掩掩的园林故里、泰安的山、连云港的海，真正喜欢的却并不多。</p><p>法起寺、灵谷寺、金山寺、大报恩寺，可能我的审美品味都交给这几座寺庙了吧。</p><blockquote><p>千年对望那一处，确认下眼神</p></blockquote>]]></content>
     
@@ -354,164 +433,137 @@
   </entry>
   
   <entry>
-    <title>17_行者</title>
-    <link href="http://yoursite.com/2017/06/27/706-17-%E8%A1%8C%E8%80%85/"/>
-    <id>http://yoursite.com/2017/06/27/706-17-行者/</id>
-    <published>2017-06-27T04:58:05.000Z</published>
-    <updated>2019-09-28T06:24:16.635Z</updated>
+    <title>继往开来，梳理人生，寻找自己的使命</title>
+    <link href="http://yoursite.com/2017/12/13/602-%E4%BD%9C%E4%B8%9A-%E6%A2%B3%E7%90%86%E4%BA%BA%E7%94%9F%EF%BC%8C%E5%AF%BB%E6%89%BE%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BD%BF%E5%91%BD/"/>
+    <id>http://yoursite.com/2017/12/13/602-作业-梳理人生，寻找自己的使命/</id>
+    <published>2017-12-13T04:45:17.000Z</published>
+    <updated>2019-09-28T11:08:16.754Z</updated>
     
-    <content type="html"><![CDATA[<p>是年，得扁舟，行江河淮海</p><p>闻鸡鸣作坊喧声起，闻车马酒肉朱门臭</p><p>闻炎凉，知世事，踌躇闪避</p><p>闻岸上踏歌</p><p>登岸，得友两三</p><p>诗歌 吟唱 伐木</p><p>习文武</p><p>喝酒 掼蛋 推塔</p><p>养骄奢</p><p>走，呼朋引伴；行，歌者于途</p><p>享喜乐，得人生欢愉二五</p><p>后佳侣偶得</p><p>后茶淫橘虐</p><p>后力博功名</p><p>后中流击水</p><p>后不论浮沉</p><p>四载砥砺，江河渐去，山海临门</p><p>与友期：前途宽广，来日方长</p><p>终，逾山岗</p><p>山前不见，山后难逢</p><p>偶他乡遇，执襟寒暄</p><p>推杯换盏</p><p>言今日重逢，有酒有肉，有情义三千</p><p>问际遇，问妻儿</p><p>谓关山难越</p><p>或萍水相逢</p><p>或扯扯有来日</p><p>但经年何处有少年</p><p>唯有元方，入门不顾</p>]]></content>
+    <content type="html"><![CDATA[<p>我已经生活的这20多年大致可以用三个时间点来划分，中考之后性格觉醒、大二开始认识生活和思考自己、大学毕业后去生活。</p><h3 id="从孩提到初中毕业"><a href="#从孩提到初中毕业" class="headerlink" title="从孩提到初中毕业"></a>从孩提到初中毕业</h3><p>这是一段清澈透明的生活经历。这时候心智发育不全，价值体系为空，成长的主要方式就是接受从外界传输的知识、经验。在父母的照顾下无任何目的成长，逐渐掌握生存与学习的能力。这是生命的积累阶段，慢慢生存、体验，不做甄别地接受各种事物。</p><h3 id="进入高中"><a href="#进入高中" class="headerlink" title="进入高中"></a>进入高中</h3><p>高中时开始了以自己为主导的对生活的探索，同时生活中混入不清楚的东西。这段时间逐渐对自己、对身边的人和事有了观察，并会产生粗浅的推测，发现生活的面目不再是它表现出来的样子。开始有初步的思考，有时会陷入迷茫。</p><h3 id="大二之后"><a href="#大二之后" class="headerlink" title="大二之后"></a>大二之后</h3><p>浊者沉淀，穿过迷茫。摆脱了老师、家长监管，能自己支配行动、对自己的行为负责。开始了解生活背后的原因、开始思索自己的行为、在探索中矫正自己、规划以后的生活。</p><h3 id="大学毕业"><a href="#大学毕业" class="headerlink" title="大学毕业"></a>大学毕业</h3><p>浊者再起。离开学校的环境，慢慢实践此前的规划，开始用经济独立来融入社会。这段时间要适应环境的变化，将此前学到的和推演的东西用到实处，保证养活自己、满足自己。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">无知-接受  |   探索-迷茫   |   思考-规划  |  实践-生活</span><br><span class="line">15 | 4  | 3 | 1</span><br></pre></td></tr></table></figure><p>以上就是我对自己人生的梳理，没有具体时间作为佐证，是纯粹的总结和比喻。</p><p>在自然辩证法的课上，我们讨论的需求层次是：<code>物质需求</code>、<code>爱的需求</code>、<code>自我实现</code>。<br>我觉得自己一毕业就同时面临了这三种需求。对物质的渴望，我需要租房以住宿、需要音响以自我愉悦、需要电脑以满足自己的学习需要；对爱的完善，我希望别人对我的尊重更高、我想与女朋友的爱情更加和谐；自我实现的需求，我想学习更精深的知识、结识更高层次的人、想整理一套自己的价值观和行为模式、想要改变自己人性的缺点。<br>此前不久，我做了一个曾经风靡但是有些幼稚的游戏：罗列词汇，逐个删减。</p><h2 id="我的价值观选择"><a href="#我的价值观选择" class="headerlink" title="我的价值观选择"></a>我的价值观选择</h2><h3 id="一、题目描述"><a href="#一、题目描述" class="headerlink" title="一、题目描述"></a>一、题目描述</h3><p>以下 12 个词代表了我所珍视的东西：<br><strong>成就、项目、科研、地位、学习、独立、交流、追求、金钱、爱情、条理、资源</strong></p><h3 id="二、答题步骤"><a href="#二、答题步骤" class="headerlink" title="二、答题步骤"></a>二、答题步骤</h3><p>第一步：请复制这 12 个词，保持位置顺序不变，然后挑选 4 个最不重要的词，加删除线<br>第二步：在第一步剩下的 8 个词中，保持位置顺序不变，挑 3 个最不重要的词，加删除线<br>第三步：在第二步剩下的 5 个词中，保持位置顺序不变，挑 2 个最不重要的词，加删除线<br>第四步：在第三步剩下的 3 个词中，按最重要-最不重要的顺序，将 3 个词排序<br>写下每个步骤的考虑是什么，尽量详细一些：<br>你认为设置这项任务的目的是什么，你的想法？</p><h3 id="三、我的答案"><a href="#三、我的答案" class="headerlink" title="三、我的答案"></a>三、我的答案</h3><h4 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h4><p>成就、项目、 <del>科研</del>、 <del>地位</del>、学习、独立、交流、追求、 <del>金钱</del>、爱情、条理、 <del>资源</del></p><h4 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a>第二步</h4><p>成就、项目、学习、 <del>独立</del>、交流、追求、 <del>爱情</del>、 <del>条理</del></p><p>####第三步<br><del>成就</del>、项目、学习、交流、 <del>追求</del></p><h4 id="第四步"><a href="#第四步" class="headerlink" title="第四步"></a>第四步</h4><p>学习、项目、交流</p><h3 id="四、我的考虑"><a href="#四、我的考虑" class="headerlink" title="四、我的考虑"></a>四、我的考虑</h3><h4 id="1-第一步的考虑"><a href="#1-第一步的考虑" class="headerlink" title="1.第一步的考虑"></a>1.第一步的考虑</h4><ul><li>科研<ul><li>科研是学习的一种，可被取代 </li></ul></li><li>金钱<ul><li>我的人生追求应该是实现自我满足，金钱可带来享受，但我并不需要太多享受</li></ul></li><li>地位<ul><li>与成就冲突，我需要成就</li></ul></li><li>资源<ul><li>掌握资源会让我实现功能获得更多便利，但是我可以自己创造</li></ul></li></ul><h4 id="2-第二步的考虑"><a href="#2-第二步的考虑" class="headerlink" title="2.第二步的考虑"></a>2.第二步的考虑</h4><ul><li>独立<ul><li>独立可以帮我独自完成一项任务和生活</li><li>但是一人独行是不可行的，我需要别人</li></ul></li><li>爱情<ul><li>爱情的妙处在于润物细无声</li><li>对此我很遗憾</li></ul></li><li>条理<ul><li>条理让我自己身心舒畅，让我有别他人</li><li>没有条理的学习也是可以的</li></ul></li></ul><h4 id="3-第三步的考虑"><a href="#3-第三步的考虑" class="headerlink" title="3.第三步的考虑"></a>3.第三步的考虑</h4><ul><li>成就<ul><li>成就是我对自己要求，要能做出一番事业，适当的成就能激励我学习</li><li>也许成就是一种虚荣的体现</li></ul></li><li>追求<ul><li>追求是最好的规划，人生要有目标，没有目标的话我会像无头苍蝇</li></ul></li></ul><h4 id="4-第四步的考虑"><a href="#4-第四步的考虑" class="headerlink" title="4.第四步的考虑"></a>4.第四步的考虑</h4><ul><li>学习<ul><li>我爱学习</li><li>我想掌握知识</li></ul></li><li>项目<ul><li>项目是践行学习的最好办法</li></ul></li><li>交流<ul><li>学习和交流是分不开的，在学习的路上我需要他人的引导与交流</li></ul></li></ul><p>我的使命是成为一个<strong>高段位的学习者</strong>吗？仅就现在这个阶段而言是这个样子，但是以后会改变吗，我不能确定。因为在做个选择游戏的时候每做一次选择我都顾虑重重，像是走了很多条弗洛斯特的林中路，犹豫踌躇，以至于最后得出结论的时候竟有些期期艾艾。</p>]]></content>
     
     <summary type="html">
     
-      山前不相见，山后难相逢
+      自然辩证法的一次作业
     
     </summary>
     
     
-      <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
+      <category term="随笔向" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94%E5%90%91/"/>
     
     
-      <category term="大学" scheme="http://yoursite.com/tags/%E5%A4%A7%E5%AD%A6/"/>
-    
-      <category term="毕业" scheme="http://yoursite.com/tags/%E6%AF%95%E4%B8%9A/"/>
-    
-      <category term="诗词" scheme="http://yoursite.com/tags/%E8%AF%97%E8%AF%8D/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>16_半年记</title>
-    <link href="http://yoursite.com/2016/01/02/705-16-%E5%8D%8A%E5%B9%B4%E8%AE%B0/"/>
-    <id>http://yoursite.com/2016/01/02/705-16-半年记/</id>
-    <published>2016-01-02T04:56:22.000Z</published>
-    <updated>2019-09-28T06:24:26.992Z</updated>
-    
-    <content type="html"><![CDATA[<p>暑假是个节点，记忆以此划区间。</p><p>这半年收获颇丰，像是布了两年的局终于收盘。追到玲玲、领各种证和牌子，当上主席拿回优秀学生会，看了几乎所有校内大型晚会、讲座，比赛赢了辆自行车。</p><p>这半年也丢了很多，比如时间、比如学习，再比如长篇累牍的文艺。</p><p>得失与否，学生会是重头，占了生活的一半。整理年鉴时发现，对于材料我比对自己的袜子都熟悉。以至于一轮答辩上，自己吧啦吧啦讲了40分钟还浑然不知。年鉴同期的排版、修图、整文字，后期的PPT加答辩，再碰上通信原理。密集的内容把时间瓜分个干净，连洗澡都得见缝插针。这是缩影，也约等于常态。</p><p>我记得去年这个时段，和梁军陪着燃哥在电子楼过了一夜，我还记得去年此时落败的悔与痛。不亲身经历，不得其中辛酸滋味。所以考评那天我做好了准备，赢了就笑，输了就哭，现场直播。</p><p>或许是实力或许是运气，我赢了。</p><p>只是留了点后遗症，现在只要给我开个“大家好”的头，我能把剩下的2608字背完，不带标点。</p><p>这一年学生会有很多值得骄傲的地方，找回优秀历史、设计院徽、成立新闻部、孵化新媒体，全年无过。</p><p>除去学生会，自己的生活和周边乐趣横生。</p><p>徐圩马拉松错过的那块金牌，倒是帮我培养了长跑的爱好，也算是塞翁失马焉知非福。受了阿毛的感染与点拨，今年跑了两个10公里，领了两块牌子。牌子实际价值不大，对于这紧凑而平淡的生活而言算是一种嘉奖。</p><p>拿到七堇年、叶兆言亲笔签名，拿到书法六级证，拿到读书节奖品。我和我滞后的文艺落到了奖品的实处。</p><p>去了渔湾，去了海上云台山、去了孔望山、逛了法起寺，和女朋友一起。从此开始了新的体验。</p><p>还有比这更美的事吗？我就知道没有。</p><p>这一年的尾收在了夕林小院，相较以往很奇特。像小院旁边的那条地下通道，黑暗中酝酿着深邃与静谧，蔓延到繁华的入口。2016年开始的新奇。</p><p>之前在MONO上看过一个视频，创作者以几个山脉的形状为谱做了首曲子，激昂与舒缓落有致，很精妙。</p><p>愿我这四年如山如曲，升有形，落有势，掷地有声。</p><p><img src="http://r.photo.store.qq.com/psb?/6ee074a0-6b62-4061-a4b1-8a668bfe6415/O1QOWXcdeQUmi2trOqQZrJ5evISDoSRv3OZfSA*qkNc!/o/dFsBAAAAAAAA&ek=1&kp=1&pt=0&bo=gALfApIDGgQFAPM!&tl=3&su=0517841&tm=1569643200&sce=0-12-12&rf=2-9" alt="山之形"></p><p>愿</p><p>生活游刃有余，前途乐观可控</p>]]></content>
-    
-    <summary type="html">
-    
-      暑假是个节点，记忆以此划区间
-    
-    </summary>
-    
-    
-      <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
-    
+      <category term="人生" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F/"/>
     
       <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="大学" scheme="http://yoursite.com/tags/%E5%A4%A7%E5%AD%A6/"/>
+      <category term="使命" scheme="http://yoursite.com/tags/%E4%BD%BF%E5%91%BD/"/>
     
   </entry>
   
   <entry>
-    <title>15_学年志</title>
-    <link href="http://yoursite.com/2015/06/18/704-15-%E5%AD%A6%E5%B9%B4%E5%BF%97/"/>
-    <id>http://yoursite.com/2015/06/18/704-15-学年志/</id>
-    <published>2015-06-18T04:54:16.000Z</published>
-    <updated>2019-09-28T06:24:52.370Z</updated>
+    <title>关于夕阳之我见</title>
+    <link href="http://yoursite.com/2017/10/29/604-%E5%85%B3%E4%BA%8E%E5%A4%95%E9%98%B3/"/>
+    <id>http://yoursite.com/2017/10/29/604-关于夕阳/</id>
+    <published>2017-10-29T04:45:17.000Z</published>
+    <updated>2019-09-28T11:01:04.676Z</updated>
     
-    <content type="html"><![CDATA[<p>看着一群大四女师姐在男生宿舍楼下卖着最后一点青春荷尔萌，不由闭眼悲从耳边生。终于，摸头当小孩的日子到了头。</p><p>照着她们的轮廓想想22岁那条线，划分出去的人生将如何面对由剩下60年区间里人组建的社会规则。习惯了同龄与平等，这次离开去适应那更广阔的年龄与等级，并一路深入不再回来，着实一阵害怕。</p><p>模仿他们的处境预演自己，以作防备。前途晦烁不明而无力把握，眼下不可说，唯有曾半推半就的过去已完全定型还有参考的价值。于是回头看看来路，资本如何、功过几许。</p><p>文艺时，写过长文，填过词，读过《追忆》，写过歌，吹过牛逼，上过报。想想也是年轻。现在，把引用当习惯，把资讯当书看，才气成了烂笙，一振浮云散。</p><p>自由时间渐少，经历反比增多，消磨的文艺落到了设计的实处，有时风评颇好，有时一塌糊涂。慌慌张张，匆匆忙忙，我的海报贴在了很多地方。</p><p>跳着回头看过被坎坷遮住的一把回忆，这回抓住了少年文艺，成全了青年经历，除了学习的寒冬一切春风如意。这一年大二，乱七八糟从四面三方汇聚，抽刀断水般迎刃而解者少、风卷残云般暴脾气比比皆是。大一的耕种迎来大二的汗水，唯有到了大三才能收获可又面临年老色衰的中年悲剧，简直不忍直视。</p><p>目睹时间的钟摆离那条线又近一步，像是绑在表盘的利刃，随时间下移。切断是分分钟的事，但等那分分钟却是Pay了荒唐青春的bill。想到西班牙女裁缝的好小说《时间的针脚》，各种比喻和隐喻做了生活的间谍盗窃着时间的概念，唯有生活、和为了生活的阴谋，虽亦步亦趋各式各样的时间却一心只为生存真正不变。</p><p>今天出门，又看到大四学长在拍毕业照，天气晴朗云像风箱一样汇聚远方。他们抱着、啃着、嬉笑着，痛了、哭了、滚蛋了。想来站在大学尾巴上，赖着不走也是一种幸福。接触的大四学长中，最具特色的便是老况。从他口中我知道了夏雨襄陵的淮工，从他那里我触摸到了国风的门槛。然而，那些年走遍冬夏的西装男，这次走玩西安便再也回不来了；那张说好代代相传的海滩艳照也随之一骑绝尘，唯有的一条裤衩的印象，也被我深藏内里不愿示人。毕竟，本来在笑的人都走了。哪能再让人笑。</p><p>有句话说：若让那最幸福的青年遇见自己生命的轨迹，让他知晓过去的艰险，看到未来的挫折，他也会宁愿阖卷等死。</p><p>还有句话说: 生而为人，时光漫长，我辈年轻人，却何其不幸。</p><p>我感觉上面每句话都弥漫着悲哀，像是老况还小却不忘西装的那年夏天漫上淮工宿舍一楼的水。我可以忽视漂在水中的鞋子和袜子，却不能停止发现沉在水底的犹如砂金般隐隐发光的幸福感。而这那幸福感或许就是青春。</p><p>又到了收尾的时候，我决定写一个异于以往简练习惯而沿袭本文以上风格的长句来为今天絮絮叨叨的文本做最后了结以表达我因依依不舍于过去而辗转反侧于现在并不忘考虑将来的精神状态和挑战自己文本技巧以及目送大四的目的。93学长再见，已泪目。</p>]]></content>
+    <content type="html"><![CDATA[<p>日记上记着那天。云彩让夕阳浸染，轻如纱、艳如血，黄昏美艳无双。</p><p>夕阳硕大，平稳停在西天，从我的角度看，像是悬在女生宿舍楼999个窗户前。随意一扇窗户打开，迎接着她的便是无比真实的太阳，触手可及。血色云菲像是涂抹满天的心情，呆呆伫立在篮球场为这景象默默赞叹。</p><p>目送夕阳下山，落日坠在凸凹不平的地平线上，似浮似沉，晕影昏暗。站在半轮落日前，我觉得非常难过，我总觉得，应该是两个人站在那里，一种相思从心底逆生长。记得还在高三的那个下午，天空呈现红酒般的玫瑰红，迷醉了深陷作业的我们。怔怔盯着云霞直至红色消散天际，身边才有人回过神。</p><p>夕阳每天都有，却并不是每天都这么美；篮球场每天都有很多人，却不是每个人都会抬头看见夕阳；每天都会有人看见夕阳，却不是没人都看得到如此美的时刻；在那一时刻有很多人在看同一个夕阳，却必然会有每人发于自身的不同感触。</p><p>审美活动是人与世界的精神交流，人应世界表现出的形象做出结合自身经历的反映，面对世上之物若无审视之心则往往不能感受到交流的存在。因为我若不能主动搭建与夕阳的关系，那么我与夕阳的审美关系就不能成立，则精神交流更无从谈起。同时，面对同一个夕阳，即便是同一个人也会生出不同感情，从此种审美关系中可见人作为审美主体的自由性。因此这种交流如非刻意为之则往往更具偶然性，这正是人与世界交流本己性的体现。</p><p>面对曾经的酒红色夕阳，我和身边的同学沉浸在诗意的审美交流中，从而忘掉了现实生活中的痛苦，即便回神之后依然会在未来某个时刻回味。显然这种单纯的活动超越物质与现实，击败时间与空间，升华为一种心灵体验。而当我面对夕阳，生出“应该是两个人”的想法时，则是对精神活动中构建出的诗意世界的主观反映。当人处于其他活动中时，个人精神的独特性存在往往会受到外界的规范，而在单纯的审美活动中人却有高度独立性。因此审美是最具个性化色彩的精神活动。</p><p>面对夕阳我不会去想从夕阳中我可以得到什么，就像曾经的我们不会再漫天瑰色云霞里寻找二元函数的答案。这就是审美的有限无功利性，它不以某一有限目的为目的。但审美确确实实是自我完善的活动，是最高功利性的体现。就像童年时，父母讲英雄故事给你听，并不是一定要你成为英雄，而是希望你具有高尚的品德。少年时，父母让你接触诗歌、绘画、音乐，是为了让你的心灵充满情趣。这些情趣会支撑你的一生。这样，即使在最严酷的冬天，你也不会忘记玫瑰的芳香。 审美，是有限无功利性和最高功利性的统一。</p><p>审美活动，是人类最具本质性的存在方式。对于这点我认为包扩两方面：一，不受压制的活动的主动性，这点与审美活动的的本己性相符；二，是人类发展的源动力。对于前者，审美可以誉为人生的节日，是对生活安全的逃离。人类的精神世界在审美关系中得到最大化保护，能毫无羁绊的畅所欲言，是人作为个体不受约束的最后净土。对于后者，人类的发展是最好的论证。审美活动的进行不断带来人类文明的不断崛起与创新，诗歌、舞蹈、绘画、文字…如果审美活动不是本质，那么这些创造从何而来，人类又如何由茹毛饮血进化至诗书礼仪。</p>]]></content>
     
     <summary type="html">
     
-      沉在水底的犹如砂金般隐隐发光的幸福感，而这那幸福感或许就是青春
+      关于夕阳的所见所闻
     
     </summary>
     
     
-      <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
+      <category term="随笔向" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94%E5%90%91/"/>
     
     
-      <category term="时间" scheme="http://yoursite.com/tags/%E6%97%B6%E9%97%B4/"/>
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
-      <category term="大学" scheme="http://yoursite.com/tags/%E5%A4%A7%E5%AD%A6/"/>
+      <category term="感悟" scheme="http://yoursite.com/tags/%E6%84%9F%E6%82%9F/"/>
+    
+      <category term="夕阳" scheme="http://yoursite.com/tags/%E5%A4%95%E9%98%B3/"/>
     
   </entry>
   
   <entry>
-    <title>14_画布与脚气</title>
-    <link href="http://yoursite.com/2014/02/22/703-14-%E7%94%BB%E5%B8%83%E4%B8%8E%E8%84%9A%E6%B0%94/"/>
-    <id>http://yoursite.com/2014/02/22/703-14-画布与脚气/</id>
-    <published>2014-02-22T04:50:12.000Z</published>
-    <updated>2019-09-28T06:27:12.744Z</updated>
+    <title>2017.10.29 日记</title>
+    <link href="http://yoursite.com/2017/10/29/603-2017.10.29%E6%97%A5%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/10/29/603-2017.10.29日记/</id>
+    <published>2017-10-29T04:45:17.000Z</published>
+    <updated>2019-09-28T10:12:22.932Z</updated>
     
-    <content type="html"><![CDATA[<p>初一早晨一个老头手提收音机穿过雾霾时，与他擦肩而过。我感觉太快。</p><p>属马的许辰马上结婚，前几天还和我一起坐在床上看春晚的姐姐，大后天就成了别人家人，明年还要和别人一起看春晚。我感觉太快。</p><p>人事推移似画布流转，无谓休止停歇。稳步推移中，看谁抓的准时间，妙笔生花其间。有那一笔自落下便未曾提起，绵延至今。有那一痕，曾经匆匆刻下的记号，却终究再没雕成花。</p><p>既已走远，只会越走越远。</p><p>某蓓蓓说：任何事物都会随着时间远去，消逝，对此我深信不疑。</p><p>某蓓蓓还说：春天刮着风 秋天下着雨 春风秋雨多少海誓山盟随风远去。一切都会因时间而冲淡</p><p>我说：脚气</p><p>我还说：脚气</p><p>美丽画布的处境被两只脚弄的尴尬，但当伟大如自由、爱情、生命，都在时间中坠毁，不屈不挠地死皮赖脸活在脚底的确确实实只有脚气。这就是现实的气度，容忍超现实的存在，给它以自生自灭的时间。</p><p>现在我与浪漫美妙格格不入，所有东西都想建立在身体力行的实践上，不然就怕太假太累抓不住。因而最近一年，我所说的每一句话都不是空话，我所做的每一个承诺都有它既定的雏形。我认为该有人理解我，理解我就像娴熟的裁缝看见一件衣服便知针脚以何种方式排布。知道我每一个看似不着边际的华美服饰中，都有着最真实准确的密实针脚。</p><p>顺藤摸瓜，我愿意赠你藤蔓，只是你应该摸得清楚。不要说我小资文艺不着边际，实际上我踏实勤劳真实可靠。</p><p>回到画布上说。去年，“待我长发及腰，少年取我可好”，这句话就像待嫁红妆，未有青丝三千已然铺满十里。在那个年末，在这个年初，未待青丝及腰，有情人终成眷属，许辰终于结婚。本来设想着的阳春三月，春风十里有了九里半的偏差，不过阳春似有白雪来配，匆匆赶巧亦美。</p><p>第一次如此近距离地接触筹备现场，切实了解到其中事宜繁琐流程复杂，如同玫瑰，用精心浇灌帮它长出枝桠嫩芽，再用针刺生成棘手却美好的防守。但是玫瑰，花在它身上的时间让玫瑰更美，因为她是我的玫瑰。</p><p>现在，坐西朝东抛出一句：我当何年置此身？结婚如此繁复奢华，谁能绾优雅如鬓。</p><p>接着谈谈脚气的问题。这个我是有的，不严重，好不了。所以对于我们这种人来说，立足当下，首先必须是立足脚下。因而说我踏实一点不假。我比张燚早工作几天，也比他早结束好几天，除去医药费算是赚了一千块。十几二十天我基本辛苦，只是我怕张燚太辛苦。发的短信没时间回，不知道是怎么了，请知情人士告知。张燚如此辛苦我知道了，他家里人却可能不知道，就像我这么辛苦他家里人也确实都不知道。</p><p>男人的温柔像海洋，爱在沉默中隐藏，苦还是风平浪静的模样。张燚，是这种有责任有担当的温柔男人，长的很帅，现在单身，为他代言一次，不收费。</p><p>最后用脚气浸染画布。我有自己所谓的理想，我踩着脚气坚定追逐自己的期望，只是我不能现在告诉你我的路的尽头，我怕又笑我不着边际。“慢慢的，走近它，抓住它”，这句话自从看上就喜欢上，我推荐给你。所以对于我会做到的东西，只能让我慢慢来，让你等，再等花开满楼三度，再等落月摇情双秋。</p><p>在最后，我向你和我自己明确下身份：<br>我是</p><p>王蒙蒙姐弟的姨哥<br>王驰弟俩的表哥<br>许诺、许小诺，武乐乐的叔叔<br>吴小蛋、吴蛋蛋，小小慧，小小山的表舅<br>即将的梁小牛的亲舅舅</p><p>每次想到我在插科打诨，卖萌装逼时，身后都有这么一群熊孩子一本正经的看着，就一阵寒颤两腿战战。因此对于身上某些不合标准的东西，向对待某些心情一样，鞭数十，驱之别院。</p>]]></content>
+    <content type="html"><![CDATA[<p>时间奇怪如很多东西，似箭、如梭、小白马。最近觉得像地铁，远看进站缓缓，从面前刮过才发觉极速呼啸的可怕。马上十月就过去了，这一号线不知刮走了我多少青春😂_硬性装逼，笑哭_。6月底毕业，7月1正式工作，_所谓的踏上社会_。如今三个月实习期已过，马上就能拿到我的正式工资，这下应该能余点钱了。</p><p>7月真是肆无忌惮的一个月。早早找到工作进入公司，新手保护期基本上没做什么正事。研究PCB板子，AD用了半个月，后来不了了之。唯一收获是刷完了七季<code>权力的游戏</code>。</p><p>8月开始干活、9月开始上学。认真做事了，学了些简单实用的东西。以前你问我怎么分零火线、UPS是干什么的、交换机怎么用，我肯定不知道。你问我学历是什么，本二通信专业毕业、研究生在读。上面那些问题都不会，羞愧、丢人，自觉辱没了_大学生<em>、</em>研究生_的名头。</p><p><strong>越来越高的年龄和学历</strong>与<strong>原地踏步的能力</strong>，是我在读书阶段最基本的矛盾。</p><p>工作内容属强电，说实话技术含量有一点，不高，危险性有一点，极低。好处是基本的生活用电常识是学到了，对于我这类生活白痴倒是挺受用的。这从一定程度上转化了一部分矛盾，但真正的转化还很远。对我自己而言，衡量这一矛盾转化进度的硬性指标是<code>赚到手的钱</code>……<em>我太实在了</em>  (-_-)</p><p>学校这边课程上没什么好说的，现阶段的课像本科一样上。在学校里认识新同学、师兄姐，这点是非常开心的，我非常珍惜。自我总结原因是，身处工作环境却不愿完全脱离学生身份，因而极力想保留一份在学校里的存在感。</p><p>出淮海入河海，唱完水之歌，我也是个水之子。只记得校歌里唱，<strong>大哉河海奔前程</strong>。像是在说学校非家，因而对你不挽留，前途广、竞争强，你就上吧。大概也是因为我这种奇怪的解读，所以对河海我也是没什么归属感😂</p><p>10月工作进正轨，做的活变多，深度也有增加，能认真审视自己。这4个月，工作上承蒙同事照顾，学了很多实用的东西；学习上怪自己想学的多且杂，又没韧性，毫无建树；生活上体会到经济独立的欢愉，除了被拖工资时有点煎熬。</p><p>我审视过自己的学习情况，有小聪明，没大智慧，追求技巧，想走捷径，喜欢规划和总结，却贪享安乐。</p><p>Quora上一个问题，<a href="http://www.zhangzishi.cc/20171029dl.html" target="_blank" rel="noopener">人们在20来岁时应该懂得的道理</a>。提到说记录 20 岁的自己，不然老之将至，今日将军战岂堪。</p>]]></content>
     
     <summary type="html">
     
-      任何事物都会随着时间远去，消逝
+      关于房子的所见所闻
     
     </summary>
     
     
-      <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
+      <category term="随笔向" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94%E5%90%91/"/>
     
     
-      <category term="时间" scheme="http://yoursite.com/tags/%E6%97%B6%E9%97%B4/"/>
-    
-      <category term="思考" scheme="http://yoursite.com/tags/%E6%80%9D%E8%80%83/"/>
-    
-      <category term="家庭" scheme="http://yoursite.com/tags/%E5%AE%B6%E5%BA%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>13_牛振岭传</title>
-    <link href="http://yoursite.com/2013/06/11/702-13-%E7%89%9B%E6%8C%AF%E5%B2%AD%E4%BC%A0/"/>
-    <id>http://yoursite.com/2013/06/11/702-13-牛振岭传/</id>
-    <published>2013-06-11T04:45:17.000Z</published>
-    <updated>2019-09-28T06:22:52.872Z</updated>
-    
-    <content type="html"><![CDATA[<p>师兄本姓杨，名振岭，相传杨五郎之后，睢宁岚山人。师兄为人低调，有傲人之能却从不炫耀，特做此传以彰其牛。</p><p>高二时和师兄同位，幸甚至哉，自此涛涛崇拜如江水连绵不绝。</p><p>师兄好学，课内学不够，总觉浅，便自发从课外读物中获取知识。课上总是苦心钻研《飞言情》、《花火》等杂志，问他为什么不看稍有偏向男生的《飞魔幻》，答曰：没有科学依据，太假。于是额首叹服。</p><p>高二，每个人人自危不自禁的化学课上（奇葩班主任方煜其人自然不必多言，深恶痛疾的说），师兄无视方煜，自顾自地研究。然每当一题诸多同学回答不出，方煜必然求助师兄。师兄只得卖班主任个面子，浪费几秒钟看题，然后声音洪亮娓娓道来，回答字字珠玑，然后就坐，继续看小说。我等庸人深深折服。于是真心称之大师。一旦有书，双手奉上。</p><p>适时回想，方知师兄何以坚持说《飞言情》、《花火》不假，贴近现实？盖师兄自己便是小说中那种“整天不学习，考试考高分”身体力行的实践者。</p><p>时至高三，师兄做事变本加厉。不看垃圾杂志上小说，开始看超长网络小说。上课看且罢，自习课仍看不弃！但是成绩，依旧令人痛骂苍天无眼。事情在期末时出现转机，师兄马失前蹄，考差。于是在寒假前最后一个自习，师兄亲自去找班主任。《2012，大师想和这个班主任谈谈》，这是他去年给我的最后印象。</p><p>然，高三下学期，师兄作风不改，成绩却回。“大师”称呼一直不变，直至一吃饱喝足午后，周练数学试卷发下，我等努力再次为师兄的能力所虐，体无完肤。</p><p>清水叹：杨振岭，你是五千分之一的犹太人</p><p>成龙叹：老沙，你是上帝为了打击我们这些人而设计的</p><p>师兄笑而不语。突然清水想到一词，牛B.黯然感叹：牛B今天改名字了，叫牛振岭！自此牛振岭之名不胫而走，牛振产业发展壮大。</p><p>理科是师兄强项，物理化学从来不听，但从来不考C，总在AB间徘徊。数学，噫，数学周练总不做，随便做一张难题卷却得高分。也无怪成龙发出“既生我等，何生牛振岭！”的感叹。除却英语稍差，总考70多，师兄无忧。师兄语文可是考过118。</p><p>然师兄本人却不喜别人喊他牛振岭，我便决定唤他师兄，我认为杨振岭是忠厚老实的长者。一日喝伊利纯牛奶，成龙问我喝的什么。我一不小心答：牛振奶。自此牛振产业蒸蒸日上，牛振胶、牛振笔、牛振水……如雨后春笋，一发不可收拾。然每当我喊牛振＃＃，师兄总不吝时间掐我脖子。</p><p>插一轶事</p><p>  一日清水看一笑话：一朋友很喜欢说，滚犊子。一日，一女生说这样很不文明，他思索片刻说：“我以后说，翻滚吧牛宝宝，可以不？”</p><p>大家都笑了，师兄却急了，因为两只手掐不了三根脖子。这时我们才反映过来，原来，牛犊子是师兄家宝宝。于是笑的一发不可收拾，自此，牛振振，小岭岭……甚嚣尘上。</p><p>师兄不太喜欢牛振产业，但我下决心要注册牛振商标，曾闻某人因为N年前注册个1000元“莫言醉”，结果挣了999,9000元。师兄是潜力股。</p><p>一模二模三模，师兄从未放弃过小说，就像好成绩从未放弃过他。即便是高考前，师兄依旧自顾自看小说。师兄说大学里他要写小说，鉴于《诛仙》，他写《诛天》。师兄让我以后等着看他的书红似《诛仙》，蔑视莫言那种破书。我对师兄怀有近似迷信式的相信。</p><p><img src="http://a4.qpic.cn/psb?/6ee074a0-6b62-4061-a4b1-8a668bfe6415/TSU16.kpqUr8iV0jKeetHX8EbjH6cWCjWl6WvHO6.C0!/b/dOeuBZj5CQAA&ek=1&kp=1&pt=0&bo=WAIgA1gCIAMBACc!&tl=3&su=5147337217&tm=1569643200&sce=0-12-12&rf=2-9" alt="师兄"></p>]]></content>
-    
-    <summary type="html">
-    
-      师兄本姓杨，名振岭，相传杨五郎之后，睢宁岚山人
-    
-    </summary>
-    
-    
-      <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
-    
-    
-      <category term="高中" scheme="http://yoursite.com/tags/%E9%AB%98%E4%B8%AD/"/>
-    
-      <category term="师兄" scheme="http://yoursite.com/tags/%E5%B8%88%E5%85%84/"/>
-    
-      <category term="同学" scheme="http://yoursite.com/tags/%E5%90%8C%E5%AD%A6/"/>
-    
-      <category term="牛振岭" scheme="http://yoursite.com/tags/%E7%89%9B%E6%8C%AF%E5%B2%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>11_前者20，后者11</title>
-    <link href="http://yoursite.com/2012/01/26/701-11-%E5%89%8D%E8%80%8520%EF%BC%8C%E5%90%8E%E8%80%8511/"/>
-    <id>http://yoursite.com/2012/01/26/701-11-前者20，后者11/</id>
-    <published>2012-01-26T04:39:51.000Z</published>
-    <updated>2019-09-28T06:25:28.781Z</updated>
-    
-    <content type="html"><![CDATA[<p>对于2012已至的感受源自表姐对于年的回忆。在那个烟花飞舞、残烟幻灭的夜，一些事物离我们远去，我亲手送走了很多。2010结束在那个如棒棒糖棍儿S般清晰的晚上，西庄之上充斥着无情绚烂的烟火。站在此地，遥望彼岸的夜空，华丽的升腾，划裂了岁月的缱绻，此去经年的决绝。</p><p>现在的我根本不具备谈论生死的经验与资本，可是对于过去与现在的理解，却一如我所知的生死。如是，生之短暂，死之绵长。一如那句“死并非生的对立面，而作为生的部分永存”，总有一些时间，人会活在对过去的回忆里。<br>作为一个学生，应该更习惯把暑假作为年的结束与开始。漫长的暑期之后，不得见的是相交一年的感情，需要直视的是全新的陌生。罩着暑假外衣的时间割刀，以令人安逸的方式小心割断了一些或有或无的联系。一季过后，目是人非。</p><p>“年前”，我们笑过、争过、吵过、打过、闹过，至少我没哭过。躲着大鹏的老板脸过活，戏谑着英语老师的胡侃玩乐，彼此熟络，你我意识淡薄，只有单一的概念，三班。亦或局限些，404文明宿舍。对于高一浑然一体的感觉，不必具体的佐证，只举一例即可证明:沉默如我的一个人尚且有这种感觉，那么其他同学的难以割舍的心情绝对经受不起别人无知的置疑。</p><p>暑假开始的那天，很多同学都发了日志、写了说说，表达着心中无可挑剔的不舍。或许我们都表达不清，或许只有极少数人懂得，但相信那时每个人都会爱上少有的真实自己。</p><p>“年后”，挣扎在陌生的气氛里，意欲解脱却不得。终日沉默着眼前，冥冥中却又在希冀着什么。9.25，我们希冀的共同指向，十七岁的开始，十七个人的相濡以沫，整个夏季的狂欢。那天的相聚，有声的最后一次喧泄，亦是荣华落尽的最后一场繁华。新生活萌生之时，旧日寂灭之始。前者20，我们阔别。</p><p>阿姐说，铭记此时 勿忘彼时</p><p>现在与过去亦是水与蒸汽的关系。水终会化为蒸汽，蒸汽中往往又孕育着水珠，循环往复，生生不息。过去依附着记忆的水滴渗透进现在的生活，你中有我，我中有你，不分彼此。是年，我们生活在这个比喻里。比喻中，融合的趋势不能遏止，新的生活中或多或少有了自己的依附。</p><p>“心里有一个人放在那里，是种收藏，如此才填充了生命的空白”，又是一个若即若离的比喻。这个喻体空空白白无所知，唯一能做的便是等待正确的解读。只是等，等到流星陨落，重说再见。后者11，以其光棍儿般的姿态杵在11年的尾巴上，坠得时光无力。</p><p>凌乱的时光，交织在落日的门口，窥探着一个冬天的秘密。</p><p>朝闻花落，惜拾可矣；无花折枝，死不足惜。</p><p>于文末，记下脑中反复出现的字句:　</p><blockquote><p>唯死者十七  </p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      唯死者十七
-    
-    </summary>
-    
-    
-      <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
-    
-    
-      <category term="年记" scheme="http://yoursite.com/tags/%E5%B9%B4%E8%AE%B0/"/>
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
       <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="青春" scheme="http://yoursite.com/tags/%E9%9D%92%E6%98%A5/"/>
+      <category term="日记" scheme="http://yoursite.com/tags/%E6%97%A5%E8%AE%B0/"/>
     
-      <category term="高中" scheme="http://yoursite.com/tags/%E9%AB%98%E4%B8%AD/"/>
+  </entry>
+  
+  <entry>
+    <title>有人住高楼</title>
+    <link href="http://yoursite.com/2017/10/13/601-%E6%9C%89%E4%BA%BA%E4%BD%8F%E9%AB%98%E6%A5%BC/"/>
+    <id>http://yoursite.com/2017/10/13/601-有人住高楼/</id>
+    <published>2017-10-13T04:45:17.000Z</published>
+    <updated>2019-09-28T10:05:56.485Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>有人住高楼，有人处深沟，有人光万丈，有人一身锈。  </p></blockquote><p>前天晚上到宿舍听歌没多久，被一阵急促有力敲门声惊醒，警察带着物业过来查危房。住的公司宿舍三室一厅，客厅隔成的一个单间属于违规改造是危房，检查、拍照、登记之后让拆除。我答应告知公司，又询问得知南京全市范围排查整改危房。我首先想到的是群租房，每个单间用学生床隔成3对上下铺，我宿舍规模的房最多可住20人。再问得知，上下铺也是违规，莫名担心。</p><p>政府排查违规改造住房是好事，减少安全隐患；房东一房低价多租没做错，钱能多收点；房客维持生存低价租房更是无可厚非。看上去谁都没错，可是政府排查，一堆人没房住这样的事情必然会发生。我没足够的知识去分辨对错，我只知道如非生活所迫没人会跟20个人挤一间房，灰色产业不知解决了多少政府没能解决的民生问题。这两天又被北京清理低端人口的新闻命中。低端人口这个名词真让人绝望，当它从政府流出的时那就太让人恶心了。</p><p>人生像杠杆，高走低收。小时候以为自己无所不能，因而立志高远，开始过人生才发觉自己的低能。越长大越意识到这点，不断调整自己的心理预期。现在我揣着走上中产的目标，活在知识、技能学习的焦虑里，以期走到杠杆的中心位置，让能力直视境遇，让目标等于现实。接着却被一堆现状围堵：幼儿园、学校、住房，每个新闻的出现都会引发媒体舆论的关注、媒体的高潮。但是事件却从未被根治，像走马灯一样，隔两年拉出来跑一圈，虐童幼儿园层出不穷、豫章书院不断接力、低端人口从北上广挨个清……</p><p>本想努力摆脱一种环境，结果却像从一种绝望向另一种绝望的奔忙，同时还会看到很多投机者妖异的表演。（我对一群搞直播的妖怪有很严格的看不上。但是资本和流量的倾轧很让人恶心。）不知是媒体让我焦虑还是事实确实如此，前者让人恼火，后者让人绝望。</p><p>我大概积累了很深的负面情绪，本来我只是想抱怨当下火热的知识经济让人痴迷又焦虑，可是一结合自己就想多了。</p>]]></content>
+    
+    <summary type="html">
+    
+      关于房子的所见所闻
+    
+    </summary>
+    
+    
+      <category term="随笔向" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94%E5%90%91/"/>
+    
+    
+      <category term="现实" scheme="http://yoursite.com/tags/%E7%8E%B0%E5%AE%9E/"/>
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+      <category term="社会" scheme="http://yoursite.com/tags/%E7%A4%BE%E4%BC%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一均之间，间有七声</title>
+    <link href="http://yoursite.com/2017/09/11/202-%E4%B9%A6%E8%AF%84-%E4%B8%83%E5%A3%B0/"/>
+    <id>http://yoursite.com/2017/09/11/202-书评-七声/</id>
+    <published>2017-09-11T15:56:17.000Z</published>
+    <updated>2019-09-28T10:43:49.430Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>均是中国古代乐器，七声则是乐器演奏的七个音律。香港大学博物馆陈列有一件出土文物的复制品，就是均。葛亮毕业于香港大学，因此猜测书名《七声》由此而来。</p></blockquote><p>《七声》，是葛亮的短篇小说集。小说以南京为背景，通过主角”毛果“的视角，以第一人称叙述。本书由七个短篇组成，按毛果的成长经历排列，从未出世到可为人父之年，记录了不同时期的故事。</p><p>本书叙述平静，贴近常态，看着十分舒畅。间有文气点缀，像是清澈溪流中偶尔出现的一尾银鱼，点出灵气和生机。在故事上，像是浮生六记，写的都是身边事，记童趣、记爱情、记民间艺术，也不避讳生活苦楚。</p><p>前四篇琴瑟、洪才、泥人尹、阿霞，可以读到从无到有的新奇，还有普通生活中的些许辛酸，生动而克制，极为精彩。行文间提及的南京地名很容易拉近距离，心中窃喜住在南京也成了一种幸运。后三篇记得是成年的一些事，似乎落了俗套，个人不太喜欢。</p><p>整体而言，《七声》无论是在故事性还是文笔上都很优秀，是本值得阅读的好书。80一代的青年作家中，韩寒有魏晋风，是个随性的人；七堇年、笛安多少有些小资情调，欠成熟；张悦然在写作技巧的研究上越陷越深；葛亮作品少有轻佻浮躁，出版《朱雀》、《北苑》两部长篇小说之后也更显稳重，似是最符合文人形象。</p>]]></content>
+    
+    <summary type="html">
+    
+      小说集 七声
+    
+    </summary>
+    
+    
+      <category term="书评向" scheme="http://yoursite.com/categories/%E4%B9%A6%E8%AF%84%E5%90%91/"/>
+    
+    
+      <category term="小说" scheme="http://yoursite.com/tags/%E5%B0%8F%E8%AF%B4/"/>
+    
+      <category term="书籍" scheme="http://yoursite.com/tags/%E4%B9%A6%E7%B1%8D/"/>
+    
+      <category term="葛亮" scheme="http://yoursite.com/tags/%E8%91%9B%E4%BA%AE/"/>
     
   </entry>
   
