@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-28T06:51:04.637Z</updated>
+  <updated>2019-10-09T15:47:30.960Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Win10 下安装 MySQL 8.0.17</title>
+    <link href="http://yoursite.com/2019/10/09/108-MySQLinWindows/"/>
+    <id>http://yoursite.com/2019/10/09/108-MySQLinWindows/</id>
+    <published>2019-10-09T14:56:37.000Z</published>
+    <updated>2019-10-09T15:47:30.960Z</updated>
+    
+    <content type="html"><![CDATA[<p>写在前面</p><blockquote><p>因为之前装过很多次，均以失败告终，这次一次成功很意外，所以记录一下。</p></blockquote><h2 id="1-下载-amp-安装"><a href="#1-下载-amp-安装" class="headerlink" title="1. 下载&amp;安装"></a>1. 下载&amp;安装</h2><p>下载地址：<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">https://dev.mysql.com/downloads/mysql/</a></p><p>MySQL 不需要安装，下载 zip 包解压放到指定路径即可。</p><p>如，我的解压路径是：<code>D:\ProjectV\mysql-8.0.17-winx64</code></p><h2 id="2-配置环境变量"><a href="#2-配置环境变量" class="headerlink" title="2. 配置环境变量"></a>2. 配置环境变量</h2><p><strong>首先</strong>新增变量：</p><p>变量名：MYSQL_HOME</p><p>变量值：D:\ProjectV\mysql-8.0.17-winx64</p><p><strong>然后</strong>到path里</p><p>添加：%MYSQL_HOME%\bin;</p><h2 id="3-生成-data-文件"><a href="#3-生成-data-文件" class="headerlink" title="3. 生成 data 文件"></a>3. 生成 data 文件</h2><p><code>以管理员身份</code>运行 cmd，一定要用管理员身份。进入 MySQL 安装目录的下 bin 目录，执行以下命令生成 data 目录。</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 进入 bin 目录</span><br><span class="line"><span class="built_in">cd</span> /d D:\ProjectV\mysql-<span class="number">8</span>.<span class="number">0</span>.<span class="number">17</span>-winx64\bin</span><br><span class="line"># 生成 data 目录</span><br><span class="line">mysqld --initialize-insecure --user=mysql</span><br></pre></td></tr></table></figure><h2 id="4-启动服务"><a href="#4-启动服务" class="headerlink" title="4. 启动服务"></a>4. 启动服务</h2><p>执行命令：<code>net start mysql</code> 启动mysql服务，若提示：服务名无效…(后面有解决方法==步骤：5）</p><h2 id="5-解决启动服务失败（报错）"><a href="#5-解决启动服务失败（报错）" class="headerlink" title="5. 解决启动服务失败（报错）"></a>5. 解决启动服务失败（报错）</h2><p>提示：服务名无效</p><p>解决方法：</p><p>执行命令：<code>mysqld -install</code>  即可</p><p>（不需要my.ini配置文件 注意：网上写的很多需要my.ini配置文件，其实不需要my.ini配置文件也可以，我之前放置了my.ini文件，反而提示服务无法启动，把my.ini删除后启动成功了）</p><p>若出现下图，需要去资源管理器中把mysql进程全结束了，重新启动即可。</p><p> <img src="https://images2018.cnblogs.com/blog/1283788/201803/1283788-20180312210208531-2077935748.png" alt="img"></p><h2 id="6-登录mysql"><a href="#6-登录mysql" class="headerlink" title="6. 登录mysql"></a>6. 登录mysql</h2><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br><span class="line"></span><br><span class="line"># Enter password:</span><br><span class="line"># 这里由于刚安装，所以密码为空，不用输入密码，直接回车即可</span><br></pre></td></tr></table></figure><p><img src="http://m.qpic.cn/psb?/V10z9tn33iz4ON/v6YRmEl8iLImvqOcJB0Mmyou5Lrv6qO8rrXZpg.hQy4!/b/dMMAAAAAAAAA&bo=owL0AAAAAAARB2U!&rf=viewer_4" alt="登录"></p><h2 id="7-查询用户密码"><a href="#7-查询用户密码" class="headerlink" title="7. 查询用户密码"></a>7. 查询用户密码</h2><p>查询用户密码命令：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select host,user,authentication_string from mysql.user;</span><br></pre></td></tr></table></figure><p> <img src="https://images2018.cnblogs.com/blog/1283788/201803/1283788-20180312210245857-1758917794.png" alt="img"></p><h2 id="8-设置（或修改）root用户密码"><a href="#8-设置（或修改）root用户密码" class="headerlink" title="8. 设置（或修改）root用户密码"></a>8. 设置（或修改）root用户密码</h2><p>设置（或修改）root用户密码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;123456&apos;;</span><br><span class="line"># BY 后引号中的内容是密码，自己可以随便设置</span><br><span class="line"></span><br><span class="line">flush privileges; </span><br><span class="line"># 相当于保存，执行此命令后，设置才生效，若不执行，还是之前的密码不变</span><br></pre></td></tr></table></figure><p>Query OK, 0 rows affected (0.01 sec) </p><h2 id="9-退出mysql"><a href="#9-退出mysql" class="headerlink" title="9. 退出mysql"></a>9. 退出mysql</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quit</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;写在前面&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因为之前装过很多次，均以失败告终，这次一次成功很意外，所以记录一下。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;1-下载-amp-安装&quot;&gt;&lt;a href=&quot;#1-下载-amp-安装&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+    
+    
+      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello Hexo</title>
@@ -223,9 +253,9 @@
       <category term="书评向" scheme="http://yoursite.com/categories/%E4%B9%A6%E8%AF%84%E5%90%91/"/>
     
     
-      <category term="译本" scheme="http://yoursite.com/tags/%E8%AF%91%E6%9C%AC/"/>
-    
       <category term="书籍" scheme="http://yoursite.com/tags/%E4%B9%A6%E7%B1%8D/"/>
+    
+      <category term="译本" scheme="http://yoursite.com/tags/%E8%AF%91%E6%9C%AC/"/>
     
       <category term="English" scheme="http://yoursite.com/tags/English/"/>
     
@@ -338,9 +368,9 @@
     
       <category term="OpenCV" scheme="http://yoursite.com/tags/OpenCV/"/>
     
-      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-    
       <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
       <category term="视频" scheme="http://yoursite.com/tags/%E8%A7%86%E9%A2%91/"/>
     
@@ -396,11 +426,11 @@
     
       <category term="OpenCV" scheme="http://yoursite.com/tags/OpenCV/"/>
     
+      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+    
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
       <category term="matplot" scheme="http://yoursite.com/tags/matplot/"/>
-    
-      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
@@ -480,9 +510,9 @@
     
       <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
     
-      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
       <category term="日记" scheme="http://yoursite.com/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
@@ -537,33 +567,6 @@
       <category term="小说" scheme="http://yoursite.com/tags/%E5%B0%8F%E8%AF%B4/"/>
     
       <category term="葛亮" scheme="http://yoursite.com/tags/%E8%91%9B%E4%BA%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>17_行者</title>
-    <link href="http://yoursite.com/2017/06/27/706-17-%E8%A1%8C%E8%80%85/"/>
-    <id>http://yoursite.com/2017/06/27/706-17-行者/</id>
-    <published>2017-06-27T04:58:05.000Z</published>
-    <updated>2019-09-28T06:24:16.635Z</updated>
-    
-    <content type="html"><![CDATA[<p>是年，得扁舟，行江河淮海</p><p>闻鸡鸣作坊喧声起，闻车马酒肉朱门臭</p><p>闻炎凉，知世事，踌躇闪避</p><p>闻岸上踏歌</p><p>登岸，得友两三</p><p>诗歌 吟唱 伐木</p><p>习文武</p><p>喝酒 掼蛋 推塔</p><p>养骄奢</p><p>走，呼朋引伴；行，歌者于途</p><p>享喜乐，得人生欢愉二五</p><p>后佳侣偶得</p><p>后茶淫橘虐</p><p>后力博功名</p><p>后中流击水</p><p>后不论浮沉</p><p>四载砥砺，江河渐去，山海临门</p><p>与友期：前途宽广，来日方长</p><p>终，逾山岗</p><p>山前不见，山后难逢</p><p>偶他乡遇，执襟寒暄</p><p>推杯换盏</p><p>言今日重逢，有酒有肉，有情义三千</p><p>问际遇，问妻儿</p><p>谓关山难越</p><p>或萍水相逢</p><p>或扯扯有来日</p><p>但经年何处有少年</p><p>唯有元方，入门不顾</p>]]></content>
-    
-    <summary type="html">
-    
-      山前不相见，山后难相逢
-    
-    </summary>
-    
-    
-      <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
-    
-    
-      <category term="大学" scheme="http://yoursite.com/tags/%E5%A4%A7%E5%AD%A6/"/>
-    
-      <category term="毕业" scheme="http://yoursite.com/tags/%E6%AF%95%E4%B8%9A/"/>
-    
-      <category term="诗词" scheme="http://yoursite.com/tags/%E8%AF%97%E8%AF%8D/"/>
     
   </entry>
   
