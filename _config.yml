@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 一韵七声
+title: 一均七声
 subtitle: 上云台去
 description: 开始学习一种新的魔法
 keywords: "Java, Python, C++"
@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://yefcion.gitee.io/blog
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,13 +73,14 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: hexo-casper
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:yefcion/yefcion.github.io.git
+  # repo: git@github.com:yefcion/yefcion.github.io.git
+  repo: https://gitee.com/yefcion/Blog
   branch: master
 
 codeblock:
