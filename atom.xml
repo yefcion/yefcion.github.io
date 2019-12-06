@@ -3,11 +3,11 @@
   <title>一均七声</title>
   
   <subtitle>上云台去</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="Blog/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2019-10-30T12:55:33.789Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://gitee.com/yefcion/Blog/"/>
+  <updated>2019-12-03T15:53:37.429Z</updated>
+  <id>https://gitee.com/yefcion/Blog/</id>
   
   <author>
     <name>青实</name>
@@ -17,9 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="https://gitee.com/yefcion/Blog/2019/12/03/751-20-flag/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/12/03/751-20-flag/</id>
+    <published>2019-12-03T14:50:21.574Z</published>
+    <updated>2019-12-03T15:53:37.429Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="修养"><a href="#修养" class="headerlink" title="修养"></a>修养</h3><p>观影量破 1000 部</p><p>保持读书 3 本/月，至少 6 本技术类</p><p>日常拍照 每日一张</p><p>节气摄影 24 组，理解节气特质</p><p>人像摄影 2组，真正的写真（男/女）</p><p>继续践行 中文排版指北规范，维护博客</p><h3 id="出行"><a href="#出行" class="headerlink" title="出行"></a>出行</h3><p>去一个想去的地方 成都、内蒙、海南、西藏</p><h3 id="养生"><a href="#养生" class="headerlink" title="养生"></a>养生</h3><p>认真吃饭 日常三餐不剩米饭</p><p>睡眠时间 年末稳定在最迟 12 点 30</p><p>爱护头发 用复方酮康唑</p><h3 id="理财"><a href="#理财" class="headerlink" title="理财"></a>理财</h3><p>记账持续 年中掌握规划预算的能力，具备理财基础知识</p><p>会看房子 年末达到给钱就知道买哪儿房子的能力</p><h3 id="技能"><a href="#技能" class="headerlink" title="技能"></a>技能</h3><p>Gitee 提交 至少平均 3 天 1 次</p><p>掌握 SSM 技术栈，开发独立项目</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;修养&quot;&gt;&lt;a href=&quot;#修养&quot; class=&quot;headerlink&quot; title=&quot;修养&quot;&gt;&lt;/a&gt;修养&lt;/h3&gt;&lt;p&gt;观影量破 1000 部&lt;/p&gt;
+&lt;p&gt;保持读书 3 本/月，至少 6 本技术类&lt;/p&gt;
+&lt;p&gt;日常拍照 每日一张&lt;/p&gt;
+&lt;p&gt;节气摄影 2
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>十大排序算法</title>
-    <link href="http://yoursite.com/2019/10/30/160-%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
-    <id>http://yoursite.com/2019/10/30/160-十大排序算法/</id>
+    <link href="https://gitee.com/yefcion/Blog/2019/10/30/160-%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/10/30/160-十大排序算法/</id>
     <published>2019-10-30T12:39:46.000Z</published>
     <updated>2019-10-30T12:55:33.789Z</updated>
     
@@ -32,19 +57,19 @@
     </summary>
     
     
-      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+      <category term="技术向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="算法" scheme="https://gitee.com/yefcion/Blog/tags/%E7%AE%97%E6%B3%95/"/>
     
-      <category term="排序" scheme="http://yoursite.com/tags/%E6%8E%92%E5%BA%8F/"/>
+      <category term="排序" scheme="https://gitee.com/yefcion/Blog/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
   <entry>
     <title>Win10 下安装 MySQL 8.0.17</title>
-    <link href="http://yoursite.com/2019/10/09/108-MySQLinWindows/"/>
-    <id>http://yoursite.com/2019/10/09/108-MySQLinWindows/</id>
+    <link href="https://gitee.com/yefcion/Blog/2019/10/09/108-MySQLinWindows/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/10/09/108-MySQLinWindows/</id>
     <published>2019-10-09T14:56:37.000Z</published>
     <updated>2019-10-09T15:47:30.960Z</updated>
     
@@ -64,17 +89,17 @@
     </summary>
     
     
-      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+      <category term="技术向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="MySQL" scheme="http://yoursite.com/tags/MySQL/"/>
+      <category term="MySQL" scheme="https://gitee.com/yefcion/Blog/tags/MySQL/"/>
     
   </entry>
   
   <entry>
     <title>Hello Hexo</title>
-    <link href="http://yoursite.com/2019/09/27/100-hello-hexo/"/>
-    <id>http://yoursite.com/2019/09/27/100-hello-hexo/</id>
+    <link href="https://gitee.com/yefcion/Blog/2019/09/27/100-hello-hexo/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/09/27/100-hello-hexo/</id>
     <published>2019-09-27T14:54:30.000Z</published>
     <updated>2019-09-28T06:51:04.637Z</updated>
     
@@ -90,17 +115,17 @@
     </summary>
     
     
-      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+      <category term="技术向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="网站" scheme="http://yoursite.com/tags/%E7%BD%91%E7%AB%99/"/>
+      <category term="网站" scheme="https://gitee.com/yefcion/Blog/tags/%E7%BD%91%E7%AB%99/"/>
     
   </entry>
   
   <entry>
     <title>命名规则</title>
-    <link href="http://yoursite.com/2019/09/27/000-BlogRule/"/>
-    <id>http://yoursite.com/2019/09/27/000-BlogRule/</id>
+    <link href="https://gitee.com/yefcion/Blog/2019/09/27/000-BlogRule/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/09/27/000-BlogRule/</id>
     <published>2019-09-27T06:59:46.000Z</published>
     <updated>2019-09-28T10:03:29.168Z</updated>
     
@@ -113,19 +138,19 @@
     </summary>
     
     
-      <category term="建站规约" scheme="http://yoursite.com/categories/%E5%BB%BA%E7%AB%99%E8%A7%84%E7%BA%A6/"/>
+      <category term="建站规约" scheme="https://gitee.com/yefcion/Blog/categories/%E5%BB%BA%E7%AB%99%E8%A7%84%E7%BA%A6/"/>
     
     
-      <category term="网站" scheme="http://yoursite.com/tags/%E7%BD%91%E7%AB%99/"/>
+      <category term="网站" scheme="https://gitee.com/yefcion/Blog/tags/%E7%BD%91%E7%AB%99/"/>
     
-      <category term="规则" scheme="http://yoursite.com/tags/%E8%A7%84%E5%88%99/"/>
+      <category term="规则" scheme="https://gitee.com/yefcion/Blog/tags/%E8%A7%84%E5%88%99/"/>
     
   </entry>
   
   <entry>
     <title>Java-开发常用工具清单</title>
-    <link href="http://yoursite.com/2019/09/17/107-Java-%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%B8%85%E5%8D%95/"/>
-    <id>http://yoursite.com/2019/09/17/107-Java-开发常用工具清单/</id>
+    <link href="https://gitee.com/yefcion/Blog/2019/09/17/107-Java-%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%B8%85%E5%8D%95/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/09/17/107-Java-开发常用工具清单/</id>
     <published>2019-09-17T05:00:58.000Z</published>
     <updated>2019-09-28T10:28:42.768Z</updated>
     
@@ -138,19 +163,19 @@
     </summary>
     
     
-      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+      <category term="技术向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="https://gitee.com/yefcion/Blog/tags/Java/"/>
     
-      <category term="软件" scheme="http://yoursite.com/tags/%E8%BD%AF%E4%BB%B6/"/>
+      <category term="软件" scheme="https://gitee.com/yefcion/Blog/tags/%E8%BD%AF%E4%BB%B6/"/>
     
   </entry>
   
   <entry>
     <title>从迅雷玩客云想到的网速制约因素及一点思考</title>
-    <link href="http://yoursite.com/2019/06/30/140-%E4%BB%8E%E8%BF%85%E9%9B%B7%E7%8E%A9%E5%AE%A2%E4%BA%91%E6%83%B3%E5%88%B0%E7%9A%84%E7%BD%91%E9%80%9F%E5%88%B6%E7%BA%A6%E5%9B%A0%E7%B4%A0%E5%8F%8A%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/"/>
-    <id>http://yoursite.com/2019/06/30/140-从迅雷玩客云想到的网速制约因素及一点思考/</id>
+    <link href="https://gitee.com/yefcion/Blog/2019/06/30/140-%E4%BB%8E%E8%BF%85%E9%9B%B7%E7%8E%A9%E5%AE%A2%E4%BA%91%E6%83%B3%E5%88%B0%E7%9A%84%E7%BD%91%E9%80%9F%E5%88%B6%E7%BA%A6%E5%9B%A0%E7%B4%A0%E5%8F%8A%E4%B8%80%E7%82%B9%E6%80%9D%E8%80%83/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/06/30/140-从迅雷玩客云想到的网速制约因素及一点思考/</id>
     <published>2019-06-30T04:45:17.000Z</published>
     <updated>2019-09-28T13:00:19.295Z</updated>
     
@@ -167,21 +192,21 @@
     </summary>
     
     
-      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+      <category term="技术向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
+      <category term="网络" scheme="https://gitee.com/yefcion/Blog/tags/%E7%BD%91%E7%BB%9C/"/>
     
-      <category term="硬件" scheme="http://yoursite.com/tags/%E7%A1%AC%E4%BB%B6/"/>
+      <category term="硬件" scheme="https://gitee.com/yefcion/Blog/tags/%E7%A1%AC%E4%BB%B6/"/>
     
-      <category term="玩客云" scheme="http://yoursite.com/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/"/>
+      <category term="玩客云" scheme="https://gitee.com/yefcion/Blog/tags/%E7%8E%A9%E5%AE%A2%E4%BA%91/"/>
     
   </entry>
   
   <entry>
     <title>河海大学摄影指南</title>
-    <link href="http://yoursite.com/2019/06/03/404-%E6%B2%B3%E6%B5%B7%E5%A4%A7%E5%AD%A6%E6%91%84%E5%BD%B1%E6%8C%87%E5%8D%97/"/>
-    <id>http://yoursite.com/2019/06/03/404-河海大学摄影指南/</id>
+    <link href="https://gitee.com/yefcion/Blog/2019/06/03/404-%E6%B2%B3%E6%B5%B7%E5%A4%A7%E5%AD%A6%E6%91%84%E5%BD%B1%E6%8C%87%E5%8D%97/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/06/03/404-河海大学摄影指南/</id>
     <published>2019-06-03T04:45:17.000Z</published>
     <updated>2019-09-28T07:58:12.352Z</updated>
     
@@ -194,19 +219,19 @@
     </summary>
     
     
-      <category term="游记向" scheme="http://yoursite.com/categories/%E6%B8%B8%E8%AE%B0%E5%90%91/"/>
+      <category term="游记向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%B8%B8%E8%AE%B0%E5%90%91/"/>
     
     
-      <category term="河海大学" scheme="http://yoursite.com/tags/%E6%B2%B3%E6%B5%B7%E5%A4%A7%E5%AD%A6/"/>
+      <category term="河海大学" scheme="https://gitee.com/yefcion/Blog/tags/%E6%B2%B3%E6%B5%B7%E5%A4%A7%E5%AD%A6/"/>
     
-      <category term="摄影" scheme="http://yoursite.com/tags/%E6%91%84%E5%BD%B1/"/>
+      <category term="摄影" scheme="https://gitee.com/yefcion/Blog/tags/%E6%91%84%E5%BD%B1/"/>
     
   </entry>
   
   <entry>
     <title>bat 批量移动文件到新文件夹</title>
-    <link href="http://yoursite.com/2019/04/23/106-%E6%89%B9%E5%A4%84%E7%90%86-%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E5%88%B0%E6%96%B0%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
-    <id>http://yoursite.com/2019/04/23/106-批处理-批量移动文件到新文件夹/</id>
+    <link href="https://gitee.com/yefcion/Blog/2019/04/23/106-%E6%89%B9%E5%A4%84%E7%90%86-%E6%89%B9%E9%87%8F%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E5%88%B0%E6%96%B0%E6%96%87%E4%BB%B6%E5%A4%B9/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/04/23/106-批处理-批量移动文件到新文件夹/</id>
     <published>2019-04-23T04:45:17.000Z</published>
     <updated>2019-09-28T07:43:54.759Z</updated>
     
@@ -223,19 +248,19 @@
     </summary>
     
     
-      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+      <category term="技术向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="bat" scheme="http://yoursite.com/tags/bat/"/>
+      <category term="bat" scheme="https://gitee.com/yefcion/Blog/tags/bat/"/>
     
-      <category term="Excel" scheme="http://yoursite.com/tags/Excel/"/>
+      <category term="Excel" scheme="https://gitee.com/yefcion/Blog/tags/Excel/"/>
     
   </entry>
   
   <entry>
     <title>VPS-用搬瓦工（Bandwagon）搭建VPS实现科学上网</title>
-    <link href="http://yoursite.com/2019/04/12/105-VPS-%E7%94%A8%E6%90%AC%E7%93%A6%E5%B7%A5%EF%BC%88Bandwagon%EF%BC%89%E6%90%AD%E5%BB%BAVPS%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
-    <id>http://yoursite.com/2019/04/12/105-VPS-用搬瓦工（Bandwagon）搭建VPS实现科学上网/</id>
+    <link href="https://gitee.com/yefcion/Blog/2019/04/12/105-VPS-%E7%94%A8%E6%90%AC%E7%93%A6%E5%B7%A5%EF%BC%88Bandwagon%EF%BC%89%E6%90%AD%E5%BB%BAVPS%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/04/12/105-VPS-用搬瓦工（Bandwagon）搭建VPS实现科学上网/</id>
     <published>2019-04-12T05:00:58.000Z</published>
     <updated>2019-09-28T13:10:38.913Z</updated>
     
@@ -248,21 +273,21 @@
     </summary>
     
     
-      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+      <category term="技术向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="Bandwagon" scheme="http://yoursite.com/tags/Bandwagon/"/>
+      <category term="Bandwagon" scheme="https://gitee.com/yefcion/Blog/tags/Bandwagon/"/>
     
-      <category term="VPS" scheme="http://yoursite.com/tags/VPS/"/>
+      <category term="VPS" scheme="https://gitee.com/yefcion/Blog/tags/VPS/"/>
     
-      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
+      <category term="网络" scheme="https://gitee.com/yefcion/Blog/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
     <title>无声的告白译本对比</title>
-    <link href="http://yoursite.com/2019/04/04/205-%E6%97%A0%E5%A3%B0%E7%9A%84%E5%91%8A%E7%99%BD%E8%AF%91%E6%9C%AC%E5%AF%B9%E6%AF%94/"/>
-    <id>http://yoursite.com/2019/04/04/205-无声的告白译本对比/</id>
+    <link href="https://gitee.com/yefcion/Blog/2019/04/04/205-%E6%97%A0%E5%A3%B0%E7%9A%84%E5%91%8A%E7%99%BD%E8%AF%91%E6%9C%AC%E5%AF%B9%E6%AF%94/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/04/04/205-无声的告白译本对比/</id>
     <published>2019-04-04T15:56:17.000Z</published>
     <updated>2019-10-14T15:34:34.983Z</updated>
     
@@ -275,21 +300,21 @@
     </summary>
     
     
-      <category term="书影向" scheme="http://yoursite.com/categories/%E4%B9%A6%E5%BD%B1%E5%90%91/"/>
+      <category term="书影向" scheme="https://gitee.com/yefcion/Blog/categories/%E4%B9%A6%E5%BD%B1%E5%90%91/"/>
     
     
-      <category term="书籍" scheme="http://yoursite.com/tags/%E4%B9%A6%E7%B1%8D/"/>
+      <category term="书籍" scheme="https://gitee.com/yefcion/Blog/tags/%E4%B9%A6%E7%B1%8D/"/>
     
-      <category term="译本" scheme="http://yoursite.com/tags/%E8%AF%91%E6%9C%AC/"/>
+      <category term="译本" scheme="https://gitee.com/yefcion/Blog/tags/%E8%AF%91%E6%9C%AC/"/>
     
-      <category term="English" scheme="http://yoursite.com/tags/English/"/>
+      <category term="English" scheme="https://gitee.com/yefcion/Blog/tags/English/"/>
     
   </entry>
   
   <entry>
     <title>PicGo + GitHub 搭建个人图床工具</title>
-    <link href="http://yoursite.com/2019/03/11/104-PicGo/"/>
-    <id>http://yoursite.com/2019/03/11/104-PicGo/</id>
+    <link href="https://gitee.com/yefcion/Blog/2019/03/11/104-PicGo/"/>
+    <id>https://gitee.com/yefcion/Blog/2019/03/11/104-PicGo/</id>
     <published>2019-03-11T14:56:37.000Z</published>
     <updated>2019-10-09T11:09:00.069Z</updated>
     
@@ -302,23 +327,50 @@
     </summary>
     
     
-      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+      <category term="技术向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="图床" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%BA%8A/"/>
+      <category term="图床" scheme="https://gitee.com/yefcion/Blog/tags/%E5%9B%BE%E5%BA%8A/"/>
     
-      <category term="Blog" scheme="http://yoursite.com/tags/Blog/"/>
+      <category term="Blog" scheme="https://gitee.com/yefcion/Blog/tags/Blog/"/>
     
-      <category term="GitHub" scheme="http://yoursite.com/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://gitee.com/yefcion/Blog/tags/GitHub/"/>
     
-      <category term="PicGo" scheme="http://yoursite.com/tags/PicGo/"/>
+      <category term="PicGo" scheme="https://gitee.com/yefcion/Blog/tags/PicGo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>19_统记</title>
+    <link href="https://gitee.com/yefcion/Blog/2018/12/31/708-19-%E7%BB%9F%E8%AE%B0/"/>
+    <id>https://gitee.com/yefcion/Blog/2018/12/31/708-19-统记/</id>
+    <published>2018-12-31T05:00:58.000Z</published>
+    <updated>2019-12-06T16:41:58.122Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>数据：</strong></p><ul><li>读书 - 36 本，字数 659.55w</li><li>影视 - 492 部，去掉补标应该有 400 部</li><li>摄影 - 每日一记 </li><li>出行 - 沪宁锡常</li></ul><p>今年我读完了我看过最厚<a href="天黑，《斗破苍穹》、《雪中悍刀行》请闭嘴">^1</a>的一本出版书《南渡北归》，151 万字，前后跨度约 4 年。</p><p>滴答清单上完成了很多整洁的 task，一些日常习惯已养成。</p><p>逃离 知乎、酷安，彻底埋葬微博。</p><p>王者荣耀，蔡姬王者。</p><p>跟小田出行</p><p>跟他们拍视频</p><p>跟珠珠清清买衣服</p><p>跟张燚阿毛彻夜长谈</p><p><strong>推荐：</strong></p><ul><li>影 - 红辣椒、海街日记</li><li>剧 - 红楼梦 87 版</li><li>书 - 繁花、彷徨、陶庵梦忆</li></ul><p>工作 - Been a ZTEr</p><p>学习 - 学业结束，半生学习</p><p>读书统计</p><p><img src="http://a3.qpic.cn/psb?/6ee074a0-6b62-4061-a4b1-8a668bfe6415/MQ76eg*QcGqDX1st9*nceTtS6lOpN.cZK6ybgwnYKBk!/b/dN4AAAAAAAAA&ek=1&kp=1&pt=0&tl=3&su=051176097&tm=1569643200&sce=0-12-12&rf=2-9" alt="读书统计"></p><p>观影统计</p><p><img src="http://a1.qpic.cn/psb?/6ee074a0-6b62-4061-a4b1-8a668bfe6415/FEeThGXEM05o0vIblqyriQqqE3s*dNg6xLLv7N3KFpM!/b/dIgBAAAAAAAA&ek=1&kp=1&pt=0&tl=3&su=094417553&tm=1569643200&sce=0-12-12&rf=2-9" alt="观影统计"></p><p>每日一记 365 日</p><p><img src="http://a2.qpic.cn/psb?/6ee074a0-6b62-4061-a4b1-8a668bfe6415/Fg0dHP4hmkbVAA2jxXyWGbEG*WlOsNNvFcTeDvi9gYE!/b/dA0BAAAAAAAA&ek=1&kp=1&pt=0&tl=3&su=028768833&tm=1569643200&sce=0-12-12&rf=2-9" alt="每日一记"></p><p>情绪曲线</p><p><img src="http://a4.qpic.cn/psb?/6ee074a0-6b62-4061-a4b1-8a668bfe6415/FxOW7lJlZbHsNLxtI7iJHA5lssGpgpwpoXHnsYRql4M!/b/dAsAAAAAAAAA&ek=1&kp=1&pt=0&tl=3&su=064824353&tm=1569643200&sce=0-12-12&rf=2-9" alt="情绪曲线"></p><p>互联网拾遗</p><p>可做的统计：</p><p>豆瓣的书电影</p><p>格志日记的贴图排行</p><p>明年 Gitee 年度截图</p><p>最满意的照片</p><p>结论是：</p><p>我</p>]]></content>
+    
+    <summary type="html">
+    
+      我的 2019 统计
+    
+    </summary>
+    
+    
+      <category term="纪年" scheme="https://gitee.com/yefcion/Blog/categories/%E7%BA%AA%E5%B9%B4/"/>
+    
+    
+      <category term="研究生" scheme="https://gitee.com/yefcion/Blog/tags/%E7%A0%94%E7%A9%B6%E7%94%9F/"/>
+    
+      <category term="统计" scheme="https://gitee.com/yefcion/Blog/tags/%E7%BB%9F%E8%AE%A1/"/>
+    
+      <category term="ZTE" scheme="https://gitee.com/yefcion/Blog/tags/ZTE/"/>
     
   </entry>
   
   <entry>
     <title>18_年记</title>
-    <link href="http://yoursite.com/2018/12/31/707-18-%E5%B9%B4%E8%AE%B0/"/>
-    <id>http://yoursite.com/2018/12/31/707-18-年记/</id>
+    <link href="https://gitee.com/yefcion/Blog/2018/12/31/707-18-%E5%B9%B4%E8%AE%B0/"/>
+    <id>https://gitee.com/yefcion/Blog/2018/12/31/707-18-年记/</id>
     <published>2018-12-31T05:00:58.000Z</published>
     <updated>2019-09-28T10:26:09.547Z</updated>
     
@@ -331,19 +383,19 @@
     </summary>
     
     
-      <category term="纪年" scheme="http://yoursite.com/categories/%E7%BA%AA%E5%B9%B4/"/>
+      <category term="纪年" scheme="https://gitee.com/yefcion/Blog/categories/%E7%BA%AA%E5%B9%B4/"/>
     
     
-      <category term="研究生" scheme="http://yoursite.com/tags/%E7%A0%94%E7%A9%B6%E7%94%9F/"/>
+      <category term="研究生" scheme="https://gitee.com/yefcion/Blog/tags/%E7%A0%94%E7%A9%B6%E7%94%9F/"/>
     
-      <category term="统计" scheme="http://yoursite.com/tags/%E7%BB%9F%E8%AE%A1/"/>
+      <category term="统计" scheme="https://gitee.com/yefcion/Blog/tags/%E7%BB%9F%E8%AE%A1/"/>
     
   </entry>
   
   <entry>
     <title>一场源自豆瓣的：西湖夜奔</title>
-    <link href="http://yoursite.com/2018/12/09/403-%E8%A5%BF%E6%B9%96%E5%A4%9C%E5%A5%94/"/>
-    <id>http://yoursite.com/2018/12/09/403-西湖夜奔/</id>
+    <link href="https://gitee.com/yefcion/Blog/2018/12/09/403-%E8%A5%BF%E6%B9%96%E5%A4%9C%E5%A5%94/"/>
+    <id>https://gitee.com/yefcion/Blog/2018/12/09/403-西湖夜奔/</id>
     <published>2018-12-09T04:45:17.000Z</published>
     <updated>2019-09-28T07:55:39.083Z</updated>
     
@@ -361,21 +413,21 @@
     </summary>
     
     
-      <category term="游记向" scheme="http://yoursite.com/categories/%E6%B8%B8%E8%AE%B0%E5%90%91/"/>
+      <category term="游记向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%B8%B8%E8%AE%B0%E5%90%91/"/>
     
     
-      <category term="西湖" scheme="http://yoursite.com/tags/%E8%A5%BF%E6%B9%96/"/>
+      <category term="西湖" scheme="https://gitee.com/yefcion/Blog/tags/%E8%A5%BF%E6%B9%96/"/>
     
-      <category term="豆瓣" scheme="http://yoursite.com/tags/%E8%B1%86%E7%93%A3/"/>
+      <category term="豆瓣" scheme="https://gitee.com/yefcion/Blog/tags/%E8%B1%86%E7%93%A3/"/>
     
-      <category term="夜行" scheme="http://yoursite.com/tags/%E5%A4%9C%E8%A1%8C/"/>
+      <category term="夜行" scheme="https://gitee.com/yefcion/Blog/tags/%E5%A4%9C%E8%A1%8C/"/>
     
   </entry>
   
   <entry>
     <title>OpenCV 读取视频并跳帧保存为图片</title>
-    <link href="http://yoursite.com/2018/07/31/103-OpenCV%E8%AF%BB%E5%8F%96%E8%A7%86%E9%A2%91%E5%B9%B6%E8%B7%B3%E5%B8%A7%E4%BF%9D%E5%AD%98%E4%B8%BA%E5%9B%BE%E7%89%87/"/>
-    <id>http://yoursite.com/2018/07/31/103-OpenCV读取视频并跳帧保存为图片/</id>
+    <link href="https://gitee.com/yefcion/Blog/2018/07/31/103-OpenCV%E8%AF%BB%E5%8F%96%E8%A7%86%E9%A2%91%E5%B9%B6%E8%B7%B3%E5%B8%A7%E4%BF%9D%E5%AD%98%E4%B8%BA%E5%9B%BE%E7%89%87/"/>
+    <id>https://gitee.com/yefcion/Blog/2018/07/31/103-OpenCV读取视频并跳帧保存为图片/</id>
     <published>2018-07-31T04:45:17.000Z</published>
     <updated>2019-09-28T07:41:14.512Z</updated>
     
@@ -388,25 +440,25 @@
     </summary>
     
     
-      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+      <category term="技术向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="OpenCV" scheme="http://yoursite.com/tags/OpenCV/"/>
+      <category term="OpenCV" scheme="https://gitee.com/yefcion/Blog/tags/OpenCV/"/>
     
-      <category term="C++" scheme="http://yoursite.com/tags/C/"/>
+      <category term="C++" scheme="https://gitee.com/yefcion/Blog/tags/C/"/>
     
-      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+      <category term="图像处理" scheme="https://gitee.com/yefcion/Blog/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
-      <category term="视频" scheme="http://yoursite.com/tags/%E8%A7%86%E9%A2%91/"/>
+      <category term="视频" scheme="https://gitee.com/yefcion/Blog/tags/%E8%A7%86%E9%A2%91/"/>
     
-      <category term="帧" scheme="http://yoursite.com/tags/%E5%B8%A7/"/>
+      <category term="帧" scheme="https://gitee.com/yefcion/Blog/tags/%E5%B8%A7/"/>
     
   </entry>
   
   <entry>
     <title>大报恩寺导览</title>
-    <link href="http://yoursite.com/2018/07/22/402-%E5%A4%A7%E6%8A%A5%E6%81%A9%E5%AF%BA%E5%AF%BC%E8%A7%88/"/>
-    <id>http://yoursite.com/2018/07/22/402-大报恩寺导览/</id>
+    <link href="https://gitee.com/yefcion/Blog/2018/07/22/402-%E5%A4%A7%E6%8A%A5%E6%81%A9%E5%AF%BA%E5%AF%BC%E8%A7%88/"/>
+    <id>https://gitee.com/yefcion/Blog/2018/07/22/402-大报恩寺导览/</id>
     <published>2018-07-22T04:45:17.000Z</published>
     <updated>2019-09-28T10:20:46.364Z</updated>
     
@@ -419,21 +471,21 @@
     </summary>
     
     
-      <category term="游记向" scheme="http://yoursite.com/categories/%E6%B8%B8%E8%AE%B0%E5%90%91/"/>
+      <category term="游记向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%B8%B8%E8%AE%B0%E5%90%91/"/>
     
     
-      <category term="大报恩寺" scheme="http://yoursite.com/tags/%E5%A4%A7%E6%8A%A5%E6%81%A9%E5%AF%BA/"/>
+      <category term="大报恩寺" scheme="https://gitee.com/yefcion/Blog/tags/%E5%A4%A7%E6%8A%A5%E6%81%A9%E5%AF%BA/"/>
     
-      <category term="景点" scheme="http://yoursite.com/tags/%E6%99%AF%E7%82%B9/"/>
+      <category term="景点" scheme="https://gitee.com/yefcion/Blog/tags/%E6%99%AF%E7%82%B9/"/>
     
-      <category term="建筑" scheme="http://yoursite.com/tags/%E5%BB%BA%E7%AD%91/"/>
+      <category term="建筑" scheme="https://gitee.com/yefcion/Blog/tags/%E5%BB%BA%E7%AD%91/"/>
     
   </entry>
   
   <entry>
     <title>OpenCV 绘制图片的三维空间显示图</title>
-    <link href="http://yoursite.com/2018/07/02/102-OpenCV-%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E7%9A%84%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E6%98%BE%E7%A4%BA%E5%9B%BE/"/>
-    <id>http://yoursite.com/2018/07/02/102-OpenCV-绘制图片的三维空间显示图/</id>
+    <link href="https://gitee.com/yefcion/Blog/2018/07/02/102-OpenCV-%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E7%9A%84%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E6%98%BE%E7%A4%BA%E5%9B%BE/"/>
+    <id>https://gitee.com/yefcion/Blog/2018/07/02/102-OpenCV-绘制图片的三维空间显示图/</id>
     <published>2018-07-02T04:45:17.000Z</published>
     <updated>2019-09-28T07:37:04.018Z</updated>
     
@@ -446,23 +498,23 @@
     </summary>
     
     
-      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+      <category term="技术向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="OpenCV" scheme="http://yoursite.com/tags/OpenCV/"/>
+      <category term="OpenCV" scheme="https://gitee.com/yefcion/Blog/tags/OpenCV/"/>
     
-      <category term="图像处理" scheme="http://yoursite.com/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
+      <category term="图像处理" scheme="https://gitee.com/yefcion/Blog/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+      <category term="python" scheme="https://gitee.com/yefcion/Blog/tags/python/"/>
     
-      <category term="matplot" scheme="http://yoursite.com/tags/matplot/"/>
+      <category term="matplot" scheme="https://gitee.com/yefcion/Blog/tags/matplot/"/>
     
   </entry>
   
   <entry>
     <title>Typro 使用入门</title>
-    <link href="http://yoursite.com/2018/05/24/101-Typora%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/"/>
-    <id>http://yoursite.com/2018/05/24/101-Typora使用入门/</id>
+    <link href="https://gitee.com/yefcion/Blog/2018/05/24/101-Typora%E4%BD%BF%E7%94%A8%E5%85%A5%E9%97%A8/"/>
+    <id>https://gitee.com/yefcion/Blog/2018/05/24/101-Typora使用入门/</id>
     <published>2018-05-24T04:45:17.000Z</published>
     <updated>2019-09-28T07:51:28.050Z</updated>
     
@@ -478,19 +530,19 @@
     </summary>
     
     
-      <category term="技术向" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+      <category term="技术向" scheme="https://gitee.com/yefcion/Blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="Typro" scheme="http://yoursite.com/tags/Typro/"/>
+      <category term="Typro" scheme="https://gitee.com/yefcion/Blog/tags/Typro/"/>
     
-      <category term="Markdown" scheme="http://yoursite.com/tags/Markdown/"/>
+      <category term="Markdown" scheme="https://gitee.com/yefcion/Blog/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title>继往开来，梳理人生，寻找自己的使命</title>
-    <link href="http://yoursite.com/2017/12/13/604-%E4%BD%9C%E4%B8%9A-%E6%A2%B3%E7%90%86%E4%BA%BA%E7%94%9F%EF%BC%8C%E5%AF%BB%E6%89%BE%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BD%BF%E5%91%BD/"/>
-    <id>http://yoursite.com/2017/12/13/604-作业-梳理人生，寻找自己的使命/</id>
+    <link href="https://gitee.com/yefcion/Blog/2017/12/13/604-%E4%BD%9C%E4%B8%9A-%E6%A2%B3%E7%90%86%E4%BA%BA%E7%94%9F%EF%BC%8C%E5%AF%BB%E6%89%BE%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BD%BF%E5%91%BD/"/>
+    <id>https://gitee.com/yefcion/Blog/2017/12/13/604-作业-梳理人生，寻找自己的使命/</id>
     <published>2017-12-13T04:45:17.000Z</published>
     <updated>2019-09-28T13:02:30.631Z</updated>
     
@@ -503,68 +555,14 @@
     </summary>
     
     
-      <category term="随笔向" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94%E5%90%91/"/>
+      <category term="随笔向" scheme="https://gitee.com/yefcion/Blog/categories/%E9%9A%8F%E7%AC%94%E5%90%91/"/>
     
     
-      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
+      <category term="总结" scheme="https://gitee.com/yefcion/Blog/tags/%E6%80%BB%E7%BB%93/"/>
     
-      <category term="人生" scheme="http://yoursite.com/tags/%E4%BA%BA%E7%94%9F/"/>
+      <category term="人生" scheme="https://gitee.com/yefcion/Blog/tags/%E4%BA%BA%E7%94%9F/"/>
     
-      <category term="使命" scheme="http://yoursite.com/tags/%E4%BD%BF%E5%91%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2017.10.29 日记</title>
-    <link href="http://yoursite.com/2017/10/29/603-2017.10.29%E6%97%A5%E8%AE%B0/"/>
-    <id>http://yoursite.com/2017/10/29/603-2017.10.29日记/</id>
-    <published>2017-10-29T04:45:17.000Z</published>
-    <updated>2019-09-28T13:14:26.560Z</updated>
-    
-    <content type="html"><![CDATA[<p>时间奇怪如很多东西，似箭、如梭、小白马。最近觉得像地铁，远看进站缓缓，从面前刮过才发觉极速呼啸的可怕。马上十月就过去了，这一号线不知刮走了我多少青春😂_硬性装逼，笑哭_。6月底毕业，7月1正式工作，_所谓的踏上社会_。如今三个月实习期已过，马上就能拿到我的正式工资，这下应该能余点钱了。</p><p>7月真是肆无忌惮的一个月。早早找到工作进入公司，新手保护期基本上没做什么正事。研究PCB板子，AD用了半个月，后来不了了之。唯一收获是刷完了七季<code>权力的游戏</code>。</p><p>8月开始干活、9月开始上学。认真做事了，学了些简单实用的东西。以前你问我怎么分零火线、UPS是干什么的、交换机怎么用，我肯定不知道。你问我学历是什么，本二通信专业毕业、研究生在读。上面那些问题都不会，羞愧、丢人，自觉辱没了_大学生<em>、</em>研究生_的名头。</p><p><strong>越来越高的年龄和学历</strong>与<strong>原地踏步的能力</strong>，是我在读书阶段最基本的矛盾。</p><p>工作内容属强电，说实话技术含量有一点，不高，危险性有一点，极低。好处是基本的生活用电常识是学到了，对于我这类生活白痴倒是挺受用的。这从一定程度上转化了一部分矛盾，但真正的转化还很远。对我自己而言，衡量这一矛盾转化进度的硬性指标是<code>赚到手的钱</code>……<em>我太实在了</em>  (-_-)</p><p>学校这边课程上没什么好说的，现阶段的课像本科一样上。在学校里认识新同学、师兄姐，这点是非常开心的，我非常珍惜。自我总结原因是，身处工作环境却不愿完全脱离学生身份，因而极力想保留一份在学校里的存在感。</p><p>出淮海入河海，唱完水之歌，我也是个水之子。只记得校歌里唱，<strong>大哉河海奔前程</strong>。像是在说学校非家，因而对你不挽留，前途广、竞争强，你就上吧。大概也是因为我这种奇怪的解读，所以对河海我也是没什么归属感😂</p><p>10月工作进正轨，做的活变多，深度也有增加，能认真审视自己。这4个月，工作上承蒙同事照顾，学了很多实用的东西；学习上怪自己想学的多且杂，又没韧性，毫无建树；生活上体会到经济独立的欢愉，除了被拖工资时有点煎熬。</p><p>我审视过自己的学习情况，有小聪明，没大智慧，追求技巧，想走捷径，喜欢规划和总结，却贪享安乐。</p><p>Quora上一个问题，<a href="http://www.zhangzishi.cc/20171029dl.html" target="_blank" rel="noopener">人们在20来岁时应该懂得的道理</a>。提到说记录 20 岁的自己，不然老之将至，今日将军战岂堪。</p>]]></content>
-    
-    <summary type="html">
-    
-      关于房子的所见所闻
-    
-    </summary>
-    
-    
-      <category term="随笔向" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94%E5%90%91/"/>
-    
-    
-      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="日记" scheme="http://yoursite.com/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-      <category term="总结" scheme="http://yoursite.com/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有人住高楼</title>
-    <link href="http://yoursite.com/2017/10/13/603-%E6%9C%89%E4%BA%BA%E4%BD%8F%E9%AB%98%E6%A5%BC/"/>
-    <id>http://yoursite.com/2017/10/13/603-有人住高楼/</id>
-    <published>2017-10-13T04:45:17.000Z</published>
-    <updated>2019-09-28T13:20:03.871Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>有人住高楼，有人处深沟，有人光万丈，有人一身锈。  </p></blockquote><p>前天晚上到宿舍听歌没多久，被一阵急促有力敲门声惊醒，警察带着物业过来查危房。住的公司宿舍三室一厅，客厅隔成的一个单间属于违规改造是危房，检查、拍照、登记之后让拆除。我答应告知公司，又询问得知南京全市范围排查整改危房。我首先想到的是群租房，每个单间用学生床隔成3对上下铺，我宿舍规模的房最多可住20人。再问得知，上下铺也是违规，莫名担心。</p><p>政府排查违规改造住房是好事，减少安全隐患；房东一房低价多租没做错，钱能多收点；房客维持生存低价租房更是无可厚非。看上去谁都没错，可是政府排查，一堆人没房住这样的事情必然会发生。我没足够的知识去分辨对错，我只知道如非生活所迫没人会跟20个人挤一间房，灰色产业不知解决了多少政府没能解决的民生问题。这两天又被北京清理低端人口的新闻命中。低端人口这个名词真让人绝望，当它从政府流出的时那就太让人恶心了。</p><p>人生像杠杆，高走低收。小时候以为自己无所不能，因而立志高远，开始过人生才发觉自己的低能。越长大越意识到这点，不断调整自己的心理预期。现在我揣着走上中产的目标，活在知识、技能学习的焦虑里，以期走到杠杆的中心位置，让能力直视境遇，让目标等于现实。接着却被一堆现状围堵：幼儿园、学校、住房，每个新闻的出现都会引发媒体舆论的关注、媒体的高潮。但是事件却从未被根治，像走马灯一样，隔两年拉出来跑一圈，虐童幼儿园层出不穷、豫章书院不断接力、低端人口从北上广挨个清……</p><p>本想努力摆脱一种环境，结果却像从一种绝望向另一种绝望的奔忙，同时还会看到很多投机者妖异的表演。（我对一群搞直播的妖怪有很严格的看不上。但是资本和流量的倾轧很让人恶心。）不知是媒体让我焦虑还是事实确实如此，前者让人恼火，后者让人绝望。</p><p>我大概积累了很深的负面情绪，本来我只是想抱怨当下火热的知识经济让人痴迷又焦虑，可是一结合自己就想多了。</p>]]></content>
-    
-    <summary type="html">
-    
-      关于房子的所见所闻
-    
-    </summary>
-    
-    
-      <category term="随笔向" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94%E5%90%91/"/>
-    
-    
-      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-      <category term="现实" scheme="http://yoursite.com/tags/%E7%8E%B0%E5%AE%9E/"/>
-    
-      <category term="社会" scheme="http://yoursite.com/tags/%E7%A4%BE%E4%BC%9A/"/>
+      <category term="使命" scheme="https://gitee.com/yefcion/Blog/tags/%E4%BD%BF%E5%91%BD/"/>
     
   </entry>
   
