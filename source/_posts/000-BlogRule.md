@@ -6,8 +6,7 @@ tags:
 - 规则
 categories: 建站规约
 description: my blog server
-cover_img: http://m.qpic.cn/psb?/V10z9tn33iz4ON/zvFyy9mcMXAG567So*KyQsGsFoNUuAvu3kPqxOJOQEY!/b/dFMBAAAAAAAA&bo=3AXoAwAAAAARFxI!&rf=viewer_4
-feature_img:
+cover_img: img/hexo.jpg
 ---
 
 

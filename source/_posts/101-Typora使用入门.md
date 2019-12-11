@@ -93,7 +93,7 @@ Preferences -> Editor1
 
 在`Image Drag & Drop`后打上勾就可以了，如图所示：
 
-![img](http://upload-images.jianshu.io/upload_images/1182605-1cbd9bb6f1ed0be4.gif?imageMogr2/auto-orient/strip)
+![img](img/1182605-1cbd9bb6f1ed0be4.gif)
 
 #### 插入URL连接
 

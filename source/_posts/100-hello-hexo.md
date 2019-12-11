@@ -4,8 +4,10 @@ date: 2019-09-27 22:54:30
 tags:
 - 网站
 categories: 技术向
-cover_img: http://m.qpic.cn/psb?/V10z9tn33iz4ON/CbRjVMW*uFCrdteA7r13mArSAKS.5FRjLRUBRT3g0Oc!/b/dEABAAAAAAAA&bo=3AXoAwAAAAARFxI!&rf=viewer_4
+cover_img: img/psb.jpg
 ---
+
+
 
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 

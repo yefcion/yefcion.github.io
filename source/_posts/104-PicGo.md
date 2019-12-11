@@ -37,32 +37,32 @@ cover_img: http://m.qpic.cn/psb?/V10z9tn33iz4ON/jAbPWYwB0jblsm4yfhCdgFLhs66goczD
 
 点击 git 主页右上角的 `+` 创建 `New repository`；
 
-![](https://raw.githubusercontent.com/yefcion/PicData/master/img/20190311222018.png)
+![](img/20190311222018.png)
 
 填写仓库信息，例如我就创建了一个 `cloudimg` 的仓库。这里注意，仓库得设置为  `Public` 因为后面通过客户端访问算是外部访问，因此无法访问  `Private` ，这样的话图片传上来之后只能存储不能显示。所以要设置为 `Public`。
 
-![](https://raw.githubusercontent.com/yefcion/PicData/master/img/20190311222514.png)
+![](img/20190311222514.png)
 
 ### 1.2 创建 token 并复制保存
 
 此时仓库已经建立，点击右上角头像，然后进入设置；
 
-![](https://raw.githubusercontent.com/yefcion/PicData/master/img/20190311222925.png)
+![](img/20190311222925.png)
 
 在页面最下找到 `Developer settings`，点击进入；
 
-![](https://raw.githubusercontent.com/yefcion/PicData/master/img/1552314691232.png)
+![](img/1552314691232.png)
 
 创建 token；
 
-![](https://raw.githubusercontent.com/yefcion/PicData/master/img/20190311223317.png)
+![](img/20190311223317.png)
 填 description（也是随心填），勾选复选框 repo ，接着到页面底部 `Generate token` 就完成了；
 
-![](https://raw.githubusercontent.com/yefcion/PicData/master/img/1552314907794.png)
+![](img/1552314907794.png)
 
 然后复制生成一串字符 token，这个 token 只出现一次，所以要保存一下（我一般记在微信收藏）。
 
-![](https://raw.githubusercontent.com/yefcion/PicData/master/img/20190311223901.png)
+![](img/20190311223901.png)
 
 ## 2. PicGo 客户端配置
 
@@ -78,7 +78,7 @@ Win版下载链接：[百度云](https://pan.baidu.com/s/17KycPMoqNCnc1cR_yQO8nQ
 
 先上图
 
-![](https://raw.githubusercontent.com/yefcion/PicData/master/img/20190311224443.png)
+![](img/20190311224443.png)
 
 - 用户名 即你的用户名 如我的 `yefcion`
 - 仓库名 即你的仓库名 如我的 `PicData`
@@ -93,7 +93,7 @@ Win版下载链接：[百度云](https://pan.baidu.com/s/17KycPMoqNCnc1cR_yQO8nQ
 
 然后关于上传的快捷键设置。默认的是 Mac 按键，推荐改成 `Ctrl + alt +c `。
 
-![](https://raw.githubusercontent.com/yefcion/PicData/master/img/20190311224935.png)
+![](img/20190311224935.png)
 
 综上，操作完成。
 
