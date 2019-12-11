@@ -75,12 +75,12 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: hexo-casper
 
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  # repo: git@github.com:yefcion/yefcion.github.io.git
-  repo: https://gitee.com/yefcion/Blog
+  repo: git@github.com:yefcion/yefcion.github.io.git
   branch: master
 
 codeblock:
