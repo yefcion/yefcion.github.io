@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yefcion.gitee.io/blog/"/>
-  <updated>2019-12-15T15:18:18.000Z</updated>
+  <updated>2020-01-05T08:59:53.357Z</updated>
   <id>https://yefcion.gitee.io/blog/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>离线使用维基百科（无需FQ）</title>
+    <link href="https://yefcion.gitee.io/blog/2020/01/05/109-%E7%A6%BB%E7%BA%BF%E4%BD%BF%E7%94%A8%E7%BB%B4%E5%9F%BA%E7%99%BE%E7%A7%91/"/>
+    <id>https://yefcion.gitee.io/blog/2020/01/05/109-离线使用维基百科/</id>
+    <published>2020-01-05T08:58:37.000Z</published>
+    <updated>2020-01-05T08:59:53.357Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文根据 <a href="https://www.cnblogs.com/ma-ming/" target="_blank" rel="noopener">精美的石头会唱歌</a> 的博客总结，原文见 <a href="https://www.cnblogs.com/ma-ming/p/11963081.html" target="_blank" rel="noopener">离线版的维基百科</a> 。</p><h3 id="1-下载-Kiwix"><a href="#1-下载-Kiwix" class="headerlink" title="1. 下载 Kiwix"></a>1. 下载 Kiwix</h3><p>拥有图形化界面的维基百科数据库驱动。</p><p>官网地址：<a href="https://www.kiwix.org/en/" target="_blank" rel="noopener">https://www.kiwix.org/en/</a></p><p>下载地址：<a href="https://mirrors.dotsrc.org/kiwix/release/kiwix-desktop/" target="_blank" rel="noopener">https://mirrors.dotsrc.org/kiwix/release/kiwix-desktop/</a></p><p>下载完成后解压即可使用</p><h3 id="2-下载-维基百科的离线数据包"><a href="#2-下载-维基百科的离线数据包" class="headerlink" title="2. 下载  维基百科的离线数据包"></a>2. 下载  维基百科的离线数据包</h3><p>下载地址：<a href="http://download.kiwix.org/zim/wikipedia/?C=S;O=D" target="_blank" rel="noopener">http://download.kiwix.org/zim/wikipedia/?C=S;O=D</a></p><p>下载完成后使用 Kiwix 打开</p><h3 id="3-使用-维基百科"><a href="#3-使用-维基百科" class="headerlink" title="3. 使用 维基百科"></a>3. 使用 维基百科</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本文根据 &lt;a href=&quot;https://www.cnblogs.com/ma-ming/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;精美的石头会唱歌&lt;/a&gt; 的博客总结，原文见 &lt;a href=&quot;https://www.cnblogs.com/ma
+      
+    
+    </summary>
+    
+    
+      <category term="技术向" scheme="https://yefcion.gitee.io/blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+    
+    
+      <category term="Wiki" scheme="https://yefcion.gitee.io/blog/tags/Wiki/"/>
+    
+  </entry>
   
   <entry>
     <title>20_Flag</title>
@@ -46,9 +72,9 @@
     <link href="https://yefcion.gitee.io/blog/2019/12/12/708-19-%E7%BB%9F%E8%AE%B0/"/>
     <id>https://yefcion.gitee.io/blog/2019/12/12/708-19-统记/</id>
     <published>2019-12-11T16:00:58.000Z</published>
-    <updated>2019-12-30T17:29:27.905Z</updated>
+    <updated>2020-01-05T09:01:06.754Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>写在前面</p><p>2019 年渐入尾声，本以为今年的欢愉或痛苦会因为我的健忘而不起波澜。结果在年尾，有人丢石头，吓我一跳。</p><p>今年很好奇别人的爱好，想听人讲自己的经历、见解，听到感兴趣的想去尝试。只是今年新认识的人不多，认识之后交流两次问完好奇便也不知如何继续下去。所以觉得以电影去探求经历可能更轻松一点。 </p><p>看了 200 多部电影，见识了 200 种平淡或浮夸的人生。我去消遣电影情节、解构导演意图、模仿/规避剧中行为，就假设我经历过那人生的一程又一程。我花了时间去做这些消遣，最后却不知道得到了什么。也不知我这平淡无奇的人生，值得多少精巧构思来填补。</p><p>去年我说要用数据去统计、规范自己，就尽力去做了。现在做起总结，有条理有记录很轻松。以后做事大概会更加目的导向，数据驱动。有得有失。</p></blockquote><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><ul><li><strong>读书 - 36 本，字数 621.55W</strong></li><li><strong>影视 - 270 部，去掉补标应该有 220 部</strong></li><li>摄影 - 每日一记 + 游记</li><li>出行 - 沪宁锡常</li><li>体重 - 均 62.16kg</li><li>睡眠<ul><li>入睡时间：01:29</li><li>睡眠时长：6h55m</li></ul></li><li>消费<ul><li><strong>年总：58472</strong></li><li>月均：4873</li><li>数码：3920</li></ul></li><li>收入<ul><li><strong>年总：46427</strong></li><li><strong>月均：3869</strong></li></ul></li></ul><h4 id="读书统计"><a href="#读书统计" class="headerlink" title="读书统计"></a>读书统计</h4><p><img src="img/2019-readList.jpg" alt="read_list"></p><h4 id="观影统计"><a href="#观影统计" class="headerlink" title="观影统计"></a>观影统计</h4><p><img src="img/2019-movie.jpg" alt="观影统计"></p><h4 id="每日一记"><a href="#每日一记" class="headerlink" title="每日一记"></a>每日一记</h4><p><img src="./img/2019-gridphotos.jpg" alt="每日一记"></p><h4 id="出行足迹"><a href="#出行足迹" class="headerlink" title="出行足迹"></a>出行足迹</h4><p><img src="img/map.jpg" alt="travel trace"></p><h4 id="睡眠数据"><a href="#睡眠数据" class="headerlink" title="睡眠数据"></a>睡眠数据</h4><img src="img/image-20191215205326887.png" alt="image-20191215205326887" style="zoom: 65%;"><h4 id="步数-amp-体重"><a href="#步数-amp-体重" class="headerlink" title="步数&amp;体重"></a>步数&amp;体重</h4><img src="img/2019-w&step.jpg" alt="image-20191215211959657" style="zoom: 50%;"><h4 id="消费账单"><a href="#消费账单" class="headerlink" title="消费账单"></a>消费账单</h4><p><img src="img/image-20191215211959657.png" alt="image-20191215211959657"></p><h4 id="格志日记"><a href="#格志日记" class="headerlink" title="格志日记"></a>格志日记</h4><p><img src="./img/2019-gird.jpg" alt="grid"></p><h4 id="照片精选"><a href="#照片精选" class="headerlink" title="照片精选"></a>照片精选</h4><p><img src="img/2019-photos.jpg" alt="photos"></p><h3 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h3><p><img src="img/2019-rec-book.jpg" alt="movie"></p><p><img src="img/2019-rec-movie.jpg" alt="movie"></p><h3 id="遗憾"><a href="#遗憾" class="headerlink" title="遗憾"></a>遗憾</h3><p>即使买了喜欢的键盘，依然没有学会盲打，且打字速度不快</p><p>9 月宣言连两个月都没撑过就宣告破产</p><p>想选出我的年度十佳摄影作品，竟然凑<a href="https://tuchong.com/11378380/posts" target="_blank" rel="noopener">不齐</a></p><p>涛哥在我转正的时候要走了</p><p>没能去看草原夜空，来年想去世界尽头的冷酷仙境</p><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>滴答清单上完成了很多整洁的 task，一些日常习惯已养成</p><p>读书月均 3 本，继续保持</p><p>带数据逃离网站，知乎、酷安、微博（网易云、B 站在筹备），用蚂蚁宝卡塑造影分身</p><h3 id="精彩瞬间"><a href="#精彩瞬间" class="headerlink" title="精彩瞬间"></a>精彩瞬间</h3><p>学业结束，终身学习</p><p>Been a ZTEr</p><p>跟 ZTEr 拍视频，感受到视频的乐趣</p><p>王者荣耀，蔡姬王者</p><p>去孟小越那蹭小路学姐和小代学长的饭</p><p>和我喜欢的人彻夜长谈</p><p>跟珠珠清清老师带买衣服</p><p>与小田出行，并完成我对书房的一半幻想</p><p>和蛋蛋朵朵在一起的每一刻</p><p>读完了我看过最厚<a href="《斗破苍穹》、《雪中悍刀行》，天黑请闭嘴">^1</a>的一本出版书《南渡北归》，151 万字，前后跨度约 4 年</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>写在前面</p><p>2019 年渐入尾声，本以为今年的欢愉或痛苦会因为我的健忘而不起波澜。结果在年尾，有人丢石头，吓我一跳。</p><p>今年很好奇别人的爱好，想听人讲自己的经历、见解，听到感兴趣的想去尝试。只是今年新认识的人不多，认识之后交流两次问完好奇便也不知如何继续下去。所以觉得以电影去探求经历可能更轻松一点。 </p><p>看了 200 多部电影，见识了 200 种平淡或浮夸的人生。我去消遣电影情节、解构导演意图、模仿/规避剧中行为，就假设我经历过那人生的一程又一程。我花了时间去做这些消遣，最后却不知道得到了什么。也不知我这平淡无奇的人生，值得多少精巧构思来填补。</p><p>去年我说要用数据去统计、规范自己，就尽力去做了。现在做起总结，有条理有记录很轻松。以后做事大概会更加目的导向，数据驱动。有得有失。</p></blockquote><h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><h3 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h3><ul><li><strong>读书 - 36 本，字数 621.55W</strong></li><li><strong>影视 - 270 部，去掉补标应该有 220 部</strong></li><li>摄影 - 每日一记 + 游记</li><li>出行 - 沪宁锡常</li><li>体重 - 均 62.16kg</li><li>睡眠<ul><li>入睡时间：01:29</li><li>睡眠时长：6h55m</li></ul></li></ul><h4 id="读书统计"><a href="#读书统计" class="headerlink" title="读书统计"></a>读书统计</h4><p><img src="img/2019-readList.jpg" alt="read_list"></p><h4 id="观影统计"><a href="#观影统计" class="headerlink" title="观影统计"></a>观影统计</h4><p><img src="img/2019-movie.jpg" alt="观影统计"></p><h4 id="每日一记"><a href="#每日一记" class="headerlink" title="每日一记"></a>每日一记</h4><p><img src="./img/2019-gridphotos.jpg" alt="每日一记"></p><h4 id="出行足迹"><a href="#出行足迹" class="headerlink" title="出行足迹"></a>出行足迹</h4><p><img src="img/map.jpg" alt="travel trace"></p><h4 id="睡眠数据"><a href="#睡眠数据" class="headerlink" title="睡眠数据"></a>睡眠数据</h4><img src="img/image-20191215205326887.png" alt="image-20191215205326887" style="zoom: 65%;"><h4 id="步数-amp-体重"><a href="#步数-amp-体重" class="headerlink" title="步数&amp;体重"></a>步数&amp;体重</h4><img src="img/2019-w&step.jpg" alt="image-20191215211959657" style="zoom: 50%;"><h4 id="格志日记"><a href="#格志日记" class="headerlink" title="格志日记"></a>格志日记</h4><p><img src="./img/2019-gird.jpg" alt="grid"></p><h4 id="照片精选"><a href="#照片精选" class="headerlink" title="照片精选"></a>照片精选</h4><p><img src="img/2019-photos.jpg" alt="photos"></p><h3 id="推荐"><a href="#推荐" class="headerlink" title="推荐"></a>推荐</h3><p><img src="img/2019-rec-book.jpg" alt="movie"></p><p><img src="img/2019-rec-movie.jpg" alt="movie"></p><h3 id="遗憾"><a href="#遗憾" class="headerlink" title="遗憾"></a>遗憾</h3><p>即使买了喜欢的键盘，依然没有学会盲打，且打字速度不快</p><p>9 月宣言连两个月都没撑过就宣告破产</p><p>想选出我的年度十佳摄影作品，竟然凑<a href="https://tuchong.com/11378380/posts" target="_blank" rel="noopener">不齐</a></p><p>涛哥在我转正的时候要走了</p><p>没能去看草原夜空，来年想去世界尽头的冷酷仙境</p><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>滴答清单上完成了很多整洁的 task，一些日常习惯已养成</p><p>读书月均 3 本，继续保持</p><p>带数据逃离网站，知乎、酷安、微博（网易云、B 站在筹备），用蚂蚁宝卡塑造影分身</p><h3 id="精彩瞬间"><a href="#精彩瞬间" class="headerlink" title="精彩瞬间"></a>精彩瞬间</h3><p>学业结束，终身学习</p><p>Been a ZTEr</p><p>跟 ZTEr 拍视频，感受到视频的乐趣</p><p>王者荣耀，蔡姬王者</p><p>去孟小越那蹭小路学姐和小代学长的饭</p><p>和我喜欢的人彻夜长谈</p><p>跟珠珠清清老师带买衣服</p><p>与小田出行，并完成我对书房的一半幻想</p><p>和蛋蛋朵朵在一起的每一刻</p><p>读完了我看过最厚<a href="《斗破苍穹》、《雪中悍刀行》，天黑请闭嘴">^1</a>的一本出版书《南渡北归》，151 万字，前后跨度约 4 年</p>]]></content>
     
     <summary type="html">
     
@@ -508,9 +534,9 @@
     
       <category term="OpenCV" scheme="https://yefcion.gitee.io/blog/tags/OpenCV/"/>
     
-      <category term="图像处理" scheme="https://yefcion.gitee.io/blog/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
-    
       <category term="C++" scheme="https://yefcion.gitee.io/blog/tags/C/"/>
+    
+      <category term="图像处理" scheme="https://yefcion.gitee.io/blog/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
       <category term="视频" scheme="https://yefcion.gitee.io/blog/tags/%E8%A7%86%E9%A2%91/"/>
     
@@ -542,35 +568,6 @@
       <category term="景点" scheme="https://yefcion.gitee.io/blog/tags/%E6%99%AF%E7%82%B9/"/>
     
       <category term="建筑" scheme="https://yefcion.gitee.io/blog/tags/%E5%BB%BA%E7%AD%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>OpenCV 绘制图片的三维空间显示图</title>
-    <link href="https://yefcion.gitee.io/blog/2018/07/02/102-OpenCV-%E7%BB%98%E5%88%B6%E5%9B%BE%E7%89%87%E7%9A%84%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E6%98%BE%E7%A4%BA%E5%9B%BE/"/>
-    <id>https://yefcion.gitee.io/blog/2018/07/02/102-OpenCV-绘制图片的三维空间显示图/</id>
-    <published>2018-07-02T04:45:17.000Z</published>
-    <updated>2019-12-06T19:23:16.685Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>python 3.6 + opencv</p></blockquote><p>输入图片转为灰度图，使用numpy将其转化为数字矩阵<br>用matplot将矩阵在三维空间中绘制出来</p><p>输入图片：<br><img src="img/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nL3RpbmEuanBn.jpg" alt></p><p>输出效果：<br>俯视<br><img src="img/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nLzIwMTkwMzIxMTQwOTA2LnBuZw.jpg" alt></p><p>仰视<br><img src="img/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nLzIwMTkwMzIxMTQwODQ0LnBuZw.jpg" alt><br>侧面看</p><p><img src="img/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nLzIwMTkwMzIxMTQxMDE4LnBuZw.jpg" alt></p><p>代码如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">import numpy as np</span><br><span class="line">import cv2 as cv</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">from mpl_toolkits.mplot3d import Axes3D</span><br><span class="line">from matplotlib import cm</span><br><span class="line">from matplotlib.ticker import LinearLocator, FormatStrFormatter</span><br><span class="line"></span><br><span class="line">fig = plt.figure(figsize=(16,12))</span><br><span class="line">ax = fig.gca(projection=&quot;3d&quot;)</span><br><span class="line"></span><br><span class="line">img = cv.imread(&quot;tina.jpg&quot;)# 修改图片位置</span><br><span class="line">img = cv.cvtColor(img,cv.COLOR_BGR2GRAY)</span><br><span class="line">imgd = np.array(img)      # image类 转 numpy</span><br><span class="line"></span><br><span class="line"># 准备数据</span><br><span class="line">sp = img.shape</span><br><span class="line">h = int(sp[0])#height(rows) of image</span><br><span class="line">w = int(sp[1])#width(colums) of image</span><br><span class="line"></span><br><span class="line">x = np.arange(0,w,1)</span><br><span class="line">y = np.arange(0,h,1)</span><br><span class="line">x,y = np.meshgrid(x,y)</span><br><span class="line">z = imgd</span><br><span class="line">surf = ax.plot_surface(x, y, z, cmap=cm.coolwarm)  # cmap指color map</span><br><span class="line"></span><br><span class="line"># 自定义z轴</span><br><span class="line">ax.set_zlim(-10, 255)</span><br><span class="line">ax.zaxis.set_major_locator(LinearLocator(10))  # z轴网格线的疏密，刻度的疏密，20表示刻度的个数</span><br><span class="line">ax.zaxis.set_major_formatter(FormatStrFormatter(&apos;%.02f&apos;))  # 将z的value字符串转为float，保留2位小数</span><br><span class="line"></span><br><span class="line"># 设置坐标轴的label和标题</span><br><span class="line">ax.set_xlabel(&apos;x&apos;, size=15)</span><br><span class="line">ax.set_ylabel(&apos;y&apos;, size=15)</span><br><span class="line">ax.set_zlabel(&apos;z&apos;, size=15)</span><br><span class="line">ax.set_title(&quot;Surface plot&quot;, weight=&apos;bold&apos;, size=20)</span><br><span class="line"></span><br><span class="line"># 添加右侧的色卡条</span><br><span class="line">fig.colorbar(surf, shrink=0.6, aspect=8)  # shrink表示整体收缩比例，aspect仅对bar的宽度有影响，aspect值越大，bar越窄</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure><p>源码地址：<a href="https://github.com/yefcion/OpenCV-VS/tree/master/python-cv" target="_blank" rel="noopener">GitHub</a><br>CSDN下载地址：<a href="https://download.csdn.net/download/yefcion/10524135" target="_blank" rel="noopener">源码+图片</a></p>]]></content>
-    
-    <summary type="html">
-    
-      opencv
-    
-    </summary>
-    
-    
-      <category term="技术向" scheme="https://yefcion.gitee.io/blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
-    
-    
-      <category term="OpenCV" scheme="https://yefcion.gitee.io/blog/tags/OpenCV/"/>
-    
-      <category term="python" scheme="https://yefcion.gitee.io/blog/tags/python/"/>
-    
-      <category term="matplot" scheme="https://yefcion.gitee.io/blog/tags/matplot/"/>
-    
-      <category term="图像处理" scheme="https://yefcion.gitee.io/blog/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
     
   </entry>
   
