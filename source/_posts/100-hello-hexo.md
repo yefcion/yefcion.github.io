@@ -4,10 +4,12 @@ date: 2019-09-27 22:54:30
 tags:
 - 网站
 categories: 技术向
-cover_img: img/psb.jpg
+cover_img: https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/20200621224725.jpg
 ---
 
 
+
+![](https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/20200621224725.jpg)
 
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 

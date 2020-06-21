@@ -8,7 +8,7 @@ tags:
 - 图像处理
 categories: 技术向
 description: opencv
-cover_img: img/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nL3RpbmEuanBn.jpg
+cover_img: https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/opencv_img.jpg
 ---
 
 
@@ -19,17 +19,17 @@ cover_img: img/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0Y
 用matplot将矩阵在三维空间中绘制出来
 
 输入图片：
-![](img/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nL3RpbmEuanBn.jpg)
+![](img/opencv-1.jpg)
 
 输出效果：
 俯视
-![](img/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nLzIwMTkwMzIxMTQwOTA2LnBuZw.jpg)
+![](img/opencv-2.jpg)
 
 仰视
-![](img/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nLzIwMTkwMzIxMTQwODQ0LnBuZw.jpg)
+![](img/opencv-3.jpg)
 侧面看
 
-![](img/aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3llZmNpb24vUGljRGF0YS9tYXN0ZXIvaW1nLzIwMTkwMzIxMTQxMDE4LnBuZw.jpg)
+![](img/opencv-4.jpg)
 
 
 代码如下：

@@ -6,7 +6,7 @@ tags:
 - 规则
 categories: 建站规约
 description: my blog server
-cover_img: img/hexo.jpg
+cover_img: https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/hexo.jpg
 ---
 
 
