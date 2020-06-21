@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yefcion.gitee.io/blog/"/>
-  <updated>2020-01-07T14:52:49.347Z</updated>
+  <updated>2020-06-21T15:48:52.435Z</updated>
   <id>https://yefcion.gitee.io/blog/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux 中定时任务命令 crontab 简易使用</title>
+    <link href="https://yefcion.gitee.io/blog/2020/05/12/113-Linux_crontab/"/>
+    <id>https://yefcion.gitee.io/blog/2020/05/12/113-Linux_crontab/</id>
+    <published>2020-05-12T15:46:35.000Z</published>
+    <updated>2020-06-21T15:48:52.435Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考博客：<a href="https://www.cnblogs.com/ftl1012/p/crontab.html" target="_blank" rel="noopener">Linux crontab命令详解</a></p><h2 id="我的使用"><a href="#我的使用" class="headerlink" title="我的使用"></a>我的使用</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看现有定时任务并编辑</span></span><br><span class="line">crontab -e</span><br><span class="line"><span class="comment"># 注：此时是 vim 界面，直接 i 编辑即可开始设置定时任务</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 每隔 1 分钟打印一次时间到指定文件</span></span><br><span class="line">*/<span class="number">1</span> * * * * echo `date` &gt;&gt; /home/yefcion/Documents/time.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每小时执行指定脚本</span></span><br><span class="line"><span class="number">0</span> * * * * /bin/sh /home/yefcion/release.sh </span><br><span class="line"></span><br><span class="line"><span class="comment"># 当天 23 点，第二天 0 点到 7 点，每隔 1 分钟执行一次脚本</span></span><br><span class="line">* <span class="number">23</span>,<span class="number">00</span>-<span class="number">07</span>/<span class="number">1</span> * * * /bin/sh /home/script.sh</span><br></pre></td></tr></table></figure><h2 id="详细讲解"><a href="#详细讲解" class="headerlink" title="详细讲解"></a>详细讲解</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f1 f2 f3 f4 f5 program</span><br></pre></td></tr></table></figure><ul><li>其中 f1 是表示分钟，f2 表示小时，f3 表示一个月份中的第几日，f4 表示月份，f5 表示一个星期中的第几天。program 表示要执行的程序。</li><li>当 f1 为 * 时表示每分钟都要执行 program，f2 为 * 时表示每小时都要执行程序，其馀类推</li><li>当 f1 为 a-b 时表示从第 a 分钟到第 b 分钟这段时间内要执行，f2 为 a-b 时表示从第 a 到第 b 小时都要执行，其馀类推</li><li>当 f1 为 */n 时表示每 n 分钟个时间间隔执行一次，f2 为 */n 表示每 n 小时个时间间隔执行一次，其馀类推</li><li>当 f1 为 a, b, c,… 时表示第 a, b, c,… 分钟要执行，f2 为 a, b, c,… 时表示第 a, b, c…个小时要执行，其馀类推</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*    *    *    *    *</span><br><span class="line">-    -    -    -    -</span><br><span class="line">|    |    |    |    |</span><br><span class="line">|    |    |    |    +----- 星期中星期几 (0 - 7) (星期天 为0)</span><br><span class="line">|    |    |    +---------- 月份 (1 - 12) </span><br><span class="line">|    |    +--------------- 一个月中的第几天 (1 - 31)</span><br><span class="line">|    +-------------------- 小时 (0 - 23)</span><br><span class="line">+------------------------- 分钟 (0 - 59)</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 每月每天每小时的第 0 分钟执行一次 /bin/ls</span><br><span class="line">0 * * * * /bin/ls</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 在 12 月内, 每天的早上 6 点到 12 点，每隔 3 个小时 0 分钟执行一次 /usr/bin/backup</span><br><span class="line">0 6-12/3 * 12 * /usr/bin/backup</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 周一到周五每天下午 5:00 寄一封信给 alex@domain.name</span><br><span class="line">0 17 * * 1-5 mail -s "hi" alex@domain.name &lt; /tmp/maildata</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 每月每天的午夜 0 点 20 分, 2 点 20 分, 4 点 20 分....执行 echo "haha"</span><br><span class="line">20 0-23/2 * * * echo "haha"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 每小时的第一分执行 /home/bruce/backup这个文件 </span><br><span class="line">1 * * * * /home/bruce/backup</span><br></pre></td></tr></table></figure><p>注意：当程序在你所指定的时间执行后，系统会发一封邮件给当前的用户，显示该程序执行的内容，若是你不希望收到这样的邮件，请在每一行空一格之后加上 <code>&gt; /dev/null 2&gt;&amp;1</code> 即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20 03 * * * . /etc/profile;/bin/sh /var/www/runoob/test.sh &gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      Linux 中的定时任务
+    
+    </summary>
+    
+    
+      <category term="技术向" scheme="https://yefcion.gitee.io/blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+    
+    
+      <category term="Linux" scheme="https://yefcion.gitee.io/blog/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>离线使用维基百科（无需FQ）</title>
@@ -266,13 +289,13 @@
   </entry>
   
   <entry>
-    <title>Linux 中定时任务命令 crontab 简易使用</title>
-    <link href="https://yefcion.gitee.io/blog/2019/09/17/113-Linux_crontab/"/>
-    <id>https://yefcion.gitee.io/blog/2019/09/17/113-Linux_crontab/</id>
+    <title>Java-开发常用工具清单</title>
+    <link href="https://yefcion.gitee.io/blog/2019/09/17/112-Android-%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%B8%85%E5%8D%95/"/>
+    <id>https://yefcion.gitee.io/blog/2019/09/17/112-Android-开发常用工具清单/</id>
     <published>2019-09-17T05:00:58.000Z</published>
-    <updated>2020-06-21T15:41:46.742Z</updated>
+    <updated>2020-05-26T15:21:50.842Z</updated>
     
-    <content type="html"><![CDATA[<p>参考博客：<a href="https://www.cnblogs.com/ftl1012/p/crontab.html" target="_blank" rel="noopener">Linux crontab命令详解</a></p><h2 id="我的使用"><a href="#我的使用" class="headerlink" title="我的使用"></a>我的使用</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看现有定时任务并编辑</span></span><br><span class="line">crontab -e</span><br><span class="line"><span class="comment"># 注：此时是 vim 界面，直接 i 编辑即可开始设置定时任务</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 每隔 1 分钟打印一次时间到指定文件</span></span><br><span class="line">*/<span class="number">1</span> * * * * echo `date` &gt;&gt; /home/yefcion/Documents/time.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每小时执行指定脚本</span></span><br><span class="line"><span class="number">0</span> * * * * /bin/sh /home/yefcion/release.sh </span><br><span class="line"></span><br><span class="line"><span class="comment"># 当天 23 点，第二天 0 点到 7 点，每隔 1 分钟执行一次脚本</span></span><br><span class="line">* <span class="number">23</span>,<span class="number">00</span>-<span class="number">07</span>/<span class="number">1</span> * * * /bin/sh /home/script.sh</span><br></pre></td></tr></table></figure><h2 id="详细讲解"><a href="#详细讲解" class="headerlink" title="详细讲解"></a>详细讲解</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f1 f2 f3 f4 f5 program</span><br></pre></td></tr></table></figure><ul><li>其中 f1 是表示分钟，f2 表示小时，f3 表示一个月份中的第几日，f4 表示月份，f5 表示一个星期中的第几天。program 表示要执行的程序。</li><li>当 f1 为 * 时表示每分钟都要执行 program，f2 为 * 时表示每小时都要执行程序，其馀类推</li><li>当 f1 为 a-b 时表示从第 a 分钟到第 b 分钟这段时间内要执行，f2 为 a-b 时表示从第 a 到第 b 小时都要执行，其馀类推</li><li>当 f1 为 */n 时表示每 n 分钟个时间间隔执行一次，f2 为 */n 表示每 n 小时个时间间隔执行一次，其馀类推</li><li>当 f1 为 a, b, c,… 时表示第 a, b, c,… 分钟要执行，f2 为 a, b, c,… 时表示第 a, b, c…个小时要执行，其馀类推</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">*    *    *    *    *</span><br><span class="line">-    -    -    -    -</span><br><span class="line">|    |    |    |    |</span><br><span class="line">|    |    |    |    +----- 星期中星期几 (0 - 7) (星期天 为0)</span><br><span class="line">|    |    |    +---------- 月份 (1 - 12) </span><br><span class="line">|    |    +--------------- 一个月中的第几天 (1 - 31)</span><br><span class="line">|    +-------------------- 小时 (0 - 23)</span><br><span class="line">+------------------------- 分钟 (0 - 59)</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 每月每天每小时的第 0 分钟执行一次 /bin/ls</span><br><span class="line">0 * * * * /bin/ls</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 在 12 月内, 每天的早上 6 点到 12 点，每隔 3 个小时 0 分钟执行一次 /usr/bin/backup</span><br><span class="line">0 6-12/3 * 12 * /usr/bin/backup</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 周一到周五每天下午 5:00 寄一封信给 alex@domain.name</span><br><span class="line">0 17 * * 1-5 mail -s "hi" alex@domain.name &lt; /tmp/maildata</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 每月每天的午夜 0 点 20 分, 2 点 20 分, 4 点 20 分....执行 echo "haha"</span><br><span class="line">20 0-23/2 * * * echo "haha"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 每小时的第一分执行 /home/bruce/backup这个文件 </span><br><span class="line">1 * * * * /home/bruce/backup</span><br></pre></td></tr></table></figure><p>注意：当程序在你所指定的时间执行后，系统会发一封邮件给当前的用户，显示该程序执行的内容，若是你不希望收到这样的邮件，请在每一行空一格之后加上 <code>&gt; /dev/null 2&gt;&amp;1</code> 即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">20 03 * * * . /etc/profile;/bin/sh /var/www/runoob/test.sh &gt; /dev/null 2&gt;&amp;1</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>工具清单：</p><ul><li>IDE：Android Studio</li></ul><p>插件：</p><ul><li>Codota</li><li>KeyMap x</li><li>Android ButterKnife Injections (Support Kotlin) 配合依赖 BindView 使用</li></ul><p>依赖：</p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//    @BindView 配合使用 Android ButterKnife Injections (Support Kotlin)</span></span><br><span class="line">    implementation <span class="string">'com.jakewharton:butterknife:8.8.1'</span></span><br><span class="line">    annotationProcessor <span class="string">'com.jakewharton:butterknife-compiler:8.8.1'</span></span><br></pre></td></tr></table></figure><h3 id="BindView-使用"><a href="#BindView-使用" class="headerlink" title="@BindView 使用"></a>@BindView 使用</h3><p>依赖</p><p>插件</p><p>代码</p>]]></content>
     
     <summary type="html">
     
@@ -298,31 +321,6 @@
     <updated>2019-09-28T10:28:42.768Z</updated>
     
     <content type="html"><![CDATA[<p>工具清单：</p><ul><li>IDE：IDEA、Eclipse</li><li>编辑器：VScode、Notepad++</li><li>数据库：MySQL、Redis、MyBatis</li><li>环境相关：Maven、Tomcat、docker</li><li>数据库工具：NaviCat</li><li>测试检查：JUnit、KW</li><li>版本管理：Git、Gerrit、Github、TortoiseGit</li></ul><p>技术栈（目前接触到的）：</p><ul><li>Java</li><li>Shell</li><li>SQL</li><li>Redis</li><li>MyBatis</li><li>docker</li><li>SpringWMC</li><li>python</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      Java 常用 IDE
-    
-    </summary>
-    
-    
-      <category term="技术向" scheme="https://yefcion.gitee.io/blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
-    
-    
-      <category term="Java" scheme="https://yefcion.gitee.io/blog/tags/Java/"/>
-    
-      <category term="软件" scheme="https://yefcion.gitee.io/blog/tags/%E8%BD%AF%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java-开发常用工具清单</title>
-    <link href="https://yefcion.gitee.io/blog/2019/09/17/112-Android-%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%B8%85%E5%8D%95/"/>
-    <id>https://yefcion.gitee.io/blog/2019/09/17/112-Android-开发常用工具清单/</id>
-    <published>2019-09-17T05:00:58.000Z</published>
-    <updated>2020-05-26T15:21:50.842Z</updated>
-    
-    <content type="html"><![CDATA[<p>工具清单：</p><ul><li>IDE：Android Studio</li></ul><p>插件：</p><ul><li>Codota</li><li>KeyMap x</li><li>Android ButterKnife Injections (Support Kotlin) 配合依赖 BindView 使用</li></ul><p>依赖：</p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//    @BindView 配合使用 Android ButterKnife Injections (Support Kotlin)</span></span><br><span class="line">    implementation <span class="string">'com.jakewharton:butterknife:8.8.1'</span></span><br><span class="line">    annotationProcessor <span class="string">'com.jakewharton:butterknife-compiler:8.8.1'</span></span><br></pre></td></tr></table></figure><h3 id="BindView-使用"><a href="#BindView-使用" class="headerlink" title="@BindView 使用"></a>@BindView 使用</h3><p>依赖</p><p>插件</p><p>代码</p>]]></content>
     
     <summary type="html">
     
