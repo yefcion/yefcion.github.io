@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yefcion.gitee.io/blog/"/>
-  <updated>2020-06-21T15:48:52.435Z</updated>
+  <updated>2020-06-21T16:12:37.610Z</updated>
   <id>https://yefcion.gitee.io/blog/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码同时推送到 GitHub 和 Gitee</title>
+    <link href="https://yefcion.gitee.io/blog/2020/06/16/114-%E4%BB%A3%E7%A0%81%E5%90%8C%E6%97%B6%E6%8E%A8%E9%80%81%E5%88%B0GitHub%E5%92%8CGitee/"/>
+    <id>https://yefcion.gitee.io/blog/2020/06/16/114-代码同时推送到GitHub和Gitee/</id>
+    <published>2020-06-16T15:08:35.000Z</published>
+    <updated>2020-06-21T16:12:37.610Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>写在前面</p><p>本文运行前提：已有 GitHub 仓库，并在 Gitee 上克隆了该仓库。GitHub 和 Gitee 用的同一个邮箱。</p></blockquote><h2 id="配置全局环境"><a href="#配置全局环境" class="headerlink" title="配置全局环境"></a>配置全局环境</h2><p>首先配置本地邮箱用户名等</p><p>然后生成 ssh-key 并在两个网站加入这个 key</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></span><br></pre></td></tr></table></figure><p>在 key 生成的路径(我的是 <code>C:\Users\yefci\.ssh</code>)下新建 config 文件，里面添加内容如下</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># gitee</span></span><br><span class="line">Host gitee.com</span><br><span class="line">HostName gitee.com</span><br><span class="line">IdentityFile C:\Users\yefci\.ssh\id_rsa</span><br><span class="line"></span><br><span class="line"><span class="comment"># github</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">IdentityFile C:\Users\yefci\.ssh\id_rsa</span><br></pre></td></tr></table></figure><h2 id="配置项目"><a href="#配置项目" class="headerlink" title="配置项目"></a>配置项目</h2><p>然后到想要的目录下拉一份项目代码，这里的项目是 <code>git@gitee.com:yefcion/Poweron.git</code></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1 查看仓库信息</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2 删除原有远程仓库，然后添加两个远程仓库</span></span><br><span class="line">git remote rm origin</span><br><span class="line">git remote add github git@github.com:yefcion/Poweron.git</span><br><span class="line">git remote add github git@gitee.com:yefcion/Poweron.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2 拉代码，合并两个仓库的历史记录</span></span><br><span class="line">git pull gitee master --allow-unrelated-histories</span><br><span class="line">git pull github master --allow-unrelated-histories</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3 push 代码</span></span><br><span class="line">git push gitee master</span><br><span class="line">git push github master</span><br></pre></td></tr></table></figure><p>对于提交操作，为了避免以后每次提交都 push 两次，可以写个脚本一起提交</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 脚本内容</span></span><br><span class="line">vim push.sh</span><br><span class="line"><span class="built_in">echo</span> Gitee</span><br><span class="line">git push gitee master</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> GitHub</span><br><span class="line">git push github master</span><br><span class="line"></span><br><span class="line"><span class="comment"># 提交代码</span></span><br><span class="line">sh push.sh</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      Linux 中的定时任务
+    
+    </summary>
+    
+    
+      <category term="技术向" scheme="https://yefcion.gitee.io/blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
+    
+    
+      <category term="Linux" scheme="https://yefcion.gitee.io/blog/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux 中定时任务命令 crontab 简易使用</title>
@@ -528,38 +551,6 @@
       <category term="研究生" scheme="https://yefcion.gitee.io/blog/tags/%E7%A0%94%E7%A9%B6%E7%94%9F/"/>
     
       <category term="统计" scheme="https://yefcion.gitee.io/blog/tags/%E7%BB%9F%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一场源自豆瓣的：西湖夜奔</title>
-    <link href="https://yefcion.gitee.io/blog/2018/12/09/403-%E8%A5%BF%E6%B9%96%E5%A4%9C%E5%A5%94/"/>
-    <id>https://yefcion.gitee.io/blog/2018/12/09/403-西湖夜奔/</id>
-    <published>2018-12-09T04:45:17.000Z</published>
-    <updated>2020-06-21T14:58:11.705Z</updated>
-    
-    <content type="html"><![CDATA[<p>余拏一小友，拥毳衣炉火，往湖心亭看雪</p><p>这次杭州之旅源于张岱的《湖心亭看雪》，契机是豆瓣主题 #视频·冬天里的第一场雪#，一位豆友的回复。</p><p>下午一点获悉西湖初雪，随即与好友商量一番，便起了夜奔西湖的心思。五点定了行程筹备出发，赶了赶高铁，晚九点半抵达杭州。出地铁寒气扑面、雪花纷飞、惊喜万分，便觉我这场湖心亭梦寻成了。到宾馆安顿收拾停当，十一点出发西湖，开始一场雪夜漫步。</p><p>从南宋御街出发，路古朴、银杏宜人，见到了这次旅途中成百上千雪人中的第一个。外面天极冷，初时雪落如撒盐，打在伞上沙沙作响，随后雪花渐大，看到了我对冬天的第一意象：路灯下的雪花纷飞。</p><p>后于涌金公园近西湖畔，顺时针环湖向前。撑伞、踩雪，到柳月优风，看到小朋友凌晨堆雪，到柳浪闻莺，遇夫妻一双，雪夜极似红拂。我与阿毛互叹，莫说相公痴，更有痴似相公者何止二人。</p><p><img src="https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/snow_red.png" alt="红拂夜奔"><br>继续向前，目标雷峰塔。一路谈金庸、红楼、八卦、歌曲，像极了曲苑杂坛，好友博闻强识且健谈，我开心且享受。看着雷峰塔的影子行至景区，结果景区关闭。于是夜闯雷峰塔景区，躲过一波巡逻人员见到一面“夕照毓秀”的墙壁，便哼起了河海校歌，钟灵毓秀石头城。之后继续违规在景区内晃荡，又来了一波巡查，无奈只能退出去，回去的路上才发现有座亭子下面吊了三颗摄像头😂</p><p>出雷峰塔看看时间靠近两点，行程约西湖四分之一，纠结一会是否要走完西湖，想一想还得留余力第二天泛舟湖心亭便放弃了。于是返程，哼唱冰雨、校歌，途中偶遇两个跌落凡尘的柚子，捡一颗好看的带了回去。</p><p>至此西湖夜奔结束。是夜，满足了我对雪夜、西湖的意象，勾起了看通行红楼梦和87红楼梦剧的兴趣。</p><p>第二日，从观荷区近西湖，逆时针行走。看孤山、行白堤、过断桥，进平湖秋月，乘游船、登湖心亭。路上行人比肩接踵，绿杨白堤，断桥踩雪。</p><p>张岱崇祯五年，用一篇《湖心亭看雪》写下人生之大寂寞，386年后哄来我们看雪。登岸，湖心亭极小，10分钟即可绕行一周。见虫二碑，见湖心亭牌，见一姑娘美丽动人。</p><p><img src="https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/girl_in_lake.png" alt="湖心姑娘"><br>回望西湖景色，雾凇沆砀，天与云与山与水，上下一白。湖上影子，惟长堤一痕、断桥两座，其上人影绰绰，便知隔世。</p><p><img src="https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/one_white_lake.png" alt="上下一白"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;余拏一小友，拥毳衣炉火，往湖心亭看雪&lt;/p&gt;
-&lt;p&gt;这次杭州之旅源于张岱的《湖心亭看雪》，契机是豆瓣主题 #视频·冬天里的第一场雪#，一位豆友的回复。&lt;/p&gt;
-&lt;p&gt;下午一点获悉西湖初雪，随即与好友商量一番，便起了夜奔西湖的心思。五点定了行程筹备出发，赶了赶高铁，晚九点半抵
-      
-    
-    </summary>
-    
-    
-      <category term="游记向" scheme="https://yefcion.gitee.io/blog/categories/%E6%B8%B8%E8%AE%B0%E5%90%91/"/>
-    
-    
-      <category term="西湖" scheme="https://yefcion.gitee.io/blog/tags/%E8%A5%BF%E6%B9%96/"/>
-    
-      <category term="豆瓣" scheme="https://yefcion.gitee.io/blog/tags/%E8%B1%86%E7%93%A3/"/>
-    
-      <category term="夜行" scheme="https://yefcion.gitee.io/blog/tags/%E5%A4%9C%E8%A1%8C/"/>
     
   </entry>
   
