@@ -7,7 +7,7 @@ tags:
 - 网络
 categories: 技术向
 description: 关于如何上网
-cover_img: https://raw.githubusercontent.com/yefcion/PicData/master/img/huaban (1).jpeg
+cover_img: https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/huaban (1).jpeg
 ---
 
 
