@@ -1,11 +1,10 @@
 ---
 title: Linux 中定时任务命令 crontab 简易使用
-date: 2019-09-17 13:00:58
+date: 2020-05-12 23:46:35
 tags:
-- Java
-- 软件
+- Linux
 categories: 技术向
-description: Java 常用 IDE
+description: Linux 中的定时任务
 cover_img: https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/linux_crontab.jpg
 ---
 
