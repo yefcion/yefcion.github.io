@@ -191,9 +191,9 @@
       <category term="技术向" scheme="https://yefcion.gitee.io/blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="MySQL" scheme="https://yefcion.gitee.io/blog/tags/MySQL/"/>
-    
       <category term="Java" scheme="https://yefcion.gitee.io/blog/tags/Java/"/>
+    
+      <category term="MySQL" scheme="https://yefcion.gitee.io/blog/tags/MySQL/"/>
     
       <category term="MyBatis" scheme="https://yefcion.gitee.io/blog/tags/MyBatis/"/>
     
@@ -225,9 +225,9 @@
       <category term="技术向" scheme="https://yefcion.gitee.io/blog/categories/%E6%8A%80%E6%9C%AF%E5%90%91/"/>
     
     
-      <category term="MySQL" scheme="https://yefcion.gitee.io/blog/tags/MySQL/"/>
-    
       <category term="Java" scheme="https://yefcion.gitee.io/blog/tags/Java/"/>
+    
+      <category term="MySQL" scheme="https://yefcion.gitee.io/blog/tags/MySQL/"/>
     
       <category term="MyBatis" scheme="https://yefcion.gitee.io/blog/tags/MyBatis/"/>
     
@@ -317,12 +317,12 @@
   
   <entry>
     <title>Java-开发常用工具清单</title>
-    <link href="https://yefcion.gitee.io/blog/2019/09/17/112-Android-%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%B8%85%E5%8D%95/"/>
-    <id>https://yefcion.gitee.io/blog/2019/09/17/112-Android-开发常用工具清单/</id>
+    <link href="https://yefcion.gitee.io/blog/2019/09/17/107-Java-%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%B8%85%E5%8D%95/"/>
+    <id>https://yefcion.gitee.io/blog/2019/09/17/107-Java-开发常用工具清单/</id>
     <published>2019-09-17T05:00:58.000Z</published>
-    <updated>2020-05-26T15:21:50.842Z</updated>
+    <updated>2019-09-28T10:28:42.768Z</updated>
     
-    <content type="html"><![CDATA[<p>工具清单：</p><ul><li>IDE：Android Studio</li></ul><p>插件：</p><ul><li>Codota</li><li>KeyMap x</li><li>Android ButterKnife Injections (Support Kotlin) 配合依赖 BindView 使用</li></ul><p>依赖：</p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//    @BindView 配合使用 Android ButterKnife Injections (Support Kotlin)</span></span><br><span class="line">    implementation <span class="string">'com.jakewharton:butterknife:8.8.1'</span></span><br><span class="line">    annotationProcessor <span class="string">'com.jakewharton:butterknife-compiler:8.8.1'</span></span><br></pre></td></tr></table></figure><h3 id="BindView-使用"><a href="#BindView-使用" class="headerlink" title="@BindView 使用"></a>@BindView 使用</h3><p>依赖</p><p>插件</p><p>代码</p>]]></content>
+    <content type="html"><![CDATA[<p>工具清单：</p><ul><li>IDE：IDEA、Eclipse</li><li>编辑器：VScode、Notepad++</li><li>数据库：MySQL、Redis、MyBatis</li><li>环境相关：Maven、Tomcat、docker</li><li>数据库工具：NaviCat</li><li>测试检查：JUnit、KW</li><li>版本管理：Git、Gerrit、Github、TortoiseGit</li></ul><p>技术栈（目前接触到的）：</p><ul><li>Java</li><li>Shell</li><li>SQL</li><li>Redis</li><li>MyBatis</li><li>docker</li><li>SpringWMC</li><li>python</li></ul>]]></content>
     
     <summary type="html">
     
@@ -342,12 +342,12 @@
   
   <entry>
     <title>Java-开发常用工具清单</title>
-    <link href="https://yefcion.gitee.io/blog/2019/09/17/107-Java-%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%B8%85%E5%8D%95/"/>
-    <id>https://yefcion.gitee.io/blog/2019/09/17/107-Java-开发常用工具清单/</id>
+    <link href="https://yefcion.gitee.io/blog/2019/09/17/112-Android-%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%E6%B8%85%E5%8D%95/"/>
+    <id>https://yefcion.gitee.io/blog/2019/09/17/112-Android-开发常用工具清单/</id>
     <published>2019-09-17T05:00:58.000Z</published>
-    <updated>2019-09-28T10:28:42.768Z</updated>
+    <updated>2020-05-26T15:21:50.842Z</updated>
     
-    <content type="html"><![CDATA[<p>工具清单：</p><ul><li>IDE：IDEA、Eclipse</li><li>编辑器：VScode、Notepad++</li><li>数据库：MySQL、Redis、MyBatis</li><li>环境相关：Maven、Tomcat、docker</li><li>数据库工具：NaviCat</li><li>测试检查：JUnit、KW</li><li>版本管理：Git、Gerrit、Github、TortoiseGit</li></ul><p>技术栈（目前接触到的）：</p><ul><li>Java</li><li>Shell</li><li>SQL</li><li>Redis</li><li>MyBatis</li><li>docker</li><li>SpringWMC</li><li>python</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>工具清单：</p><ul><li>IDE：Android Studio</li></ul><p>插件：</p><ul><li>Codota</li><li>KeyMap x</li><li>Android ButterKnife Injections (Support Kotlin) 配合依赖 BindView 使用</li></ul><p>依赖：</p><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//    @BindView 配合使用 Android ButterKnife Injections (Support Kotlin)</span></span><br><span class="line">    implementation <span class="string">'com.jakewharton:butterknife:8.8.1'</span></span><br><span class="line">    annotationProcessor <span class="string">'com.jakewharton:butterknife-compiler:8.8.1'</span></span><br></pre></td></tr></table></figure><h3 id="BindView-使用"><a href="#BindView-使用" class="headerlink" title="@BindView 使用"></a>@BindView 使用</h3><p>依赖</p><p>插件</p><p>代码</p>]]></content>
     
     <summary type="html">
     
