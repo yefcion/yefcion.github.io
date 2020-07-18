@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="//www.googletagmanager.com">
+	<link rel="preconnect" href="//zz.bdstatic.com">
+	<link rel="preconnect" href="//sp0.baidu.com">
+	<link rel="preconnect" href="//www.google-analytics.com">
+	<link rel="preconnect" href="//cdn1.lncld.net">
+	<link rel="preconnect" href="//unpkg.com">
+	<link rel="preconnect" href="//app-router.leancloud.cn">
+	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
+	<link rel="preconnect" href="//gravatar.loli.net">
+
+	<title>Win10 上用 VirtualBox 安装 CentOS 使用 Docker 安装 mysql/redis 全过程记录 | 一均七声</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="青实">
+	<meta name="description" content="在 linux 上使用 docker 部署环境">
+
+	
+	<meta name="keywords" content>
+	
+
+	
+	<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/a.png">
+	<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/a.png">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+
+	<meta property="og:site_name" content="一均七声">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Win10 上用 VirtualBox 安装 CentOS 使用 Docker 安装 mysql/redis 全过程记录 | 一均七声">
+	<meta property="og:description" content="在 linux 上使用 docker 部署环境">
+	<meta property="og:url" content="https://yefcion.gitee.io/blog/2020/07/18/116-VirtualBox安装CentOS使用Docker全过程记录/">
+
+	
+	<meta property="article:published_time" content="2020-07-18T21:07:00+08:00"> 
+	<meta property="article:author" content="青实">
+	<meta property="article:published_first" content="一均七声, /2020/07/18/116-VirtualBox安装CentOS使用Docker全过程记录/">
+	
+
+	
+	
+	<link rel="stylesheet" href="/css/allinonecss.min.css">
+
+	
+	
+	
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header post-site-header outer">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                
+                <a class="site-nav-logo" href="/" title="一均七声">
+                    <img src="https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/header.png" alt="一均七声">
+                </a>
+                
+                
+            </li>
+            
+            
+            <li>
+                <a href="/about" title="ABOUT">ABOUT</a>
+            </li>
+            
+            <li>
+                <a href="/archives" title="ARCHIVES">ARCHIVES</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button-area">
+        <a href="#search" class="search-button">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="search-button">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    
+    
+    
+    
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<div id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <div class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2020-07-18T13:26:35.000Z">
+                    2020-07-18
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                <a href="/categories/技术向/">技术向</a>&nbsp;&nbsp;
+                
+                
+            </div>
+            <h1 class="post-full-title">Win10 上用 VirtualBox 安装 CentOS 使用 Docker 安装 mysql/redis 全过程记录</h1>
+        </header>
+        <div class="post-full no-image">
+            
+            <div class="post-full-content">
+                <article id="photoswipe" class="markdown-body">
+                    <h2 id="在-VirtualBox-上安装-CentOS7-系统"><a href="#在-VirtualBox-上安装-CentOS7-系统" class="headerlink" title="在 VirtualBox 上安装 CentOS7 系统"></a>在 VirtualBox 上安装 CentOS7 系统</h2><p>安装虚拟机 VirtualBox(VB)，安装过程简单不值得说</p>
+<p>下载 <a href="https://mirrors.tuna.tsinghua.edu.cn/centos/7.8.2003/isos/x86_64/" target="_blank" rel="noopener">CentOS7.8 镜像</a>并安装系统。一堆 IOS 中，DVD 是完整版，mini 是精简版，由于是在虚拟机装个人建议装 mini 版，如果需要额外软件自己装就好了。</p>
+<p>注意，装好 VB 后镜像列表里如果没有 64bit 版本，可能是因为电脑本机虚拟化没开 &amp; win8 以上电脑启动了 Hyper-V 服务。前者到 BIOS 中开启 CPU 虚拟化，后者在 Windows 服务（任务管理器-服务-窗口最下打开服务按钮）中关闭 Hyper-V 主机服务即可。</p>
+<p>安装 CentOS 的界面使图形界面，根据提示操作就可以，最后有设置 root 用户和密码的地方，设置一下并记住</p>
+<h2 id="配置虚拟机-和-CentOS-的网络关联"><a href="#配置虚拟机-和-CentOS-的网络关联" class="headerlink" title="配置虚拟机 和 CentOS 的网络关联"></a>配置虚拟机 和 CentOS 的网络关联</h2><p>在虚拟机中使用 CenOS 体验极差，建议先配置 SSH，然后在本地 PC 使用远程工具 Mobaxterm 进行远程连接使用命令行操作。</p>
+<p>首先在 PC cmd 命令行中 ipconfig 查看当前机器上的 ip，可以看到一条 VirtualBox Only 即为 VB 上系统的 ip</p>
+<p>然后在 VB 中设置-全局设定-网络，NAT 穿越 - 高级，新增一条网络转发，第一个格子的 ip 填上面的 ip，第二格子 ip 填 127.0.0.1</p>
+<p>（中间如果出现 ip 变化的情况就到 windows 的网络适配器中写固定 ip，不要动态获取）</p>
+<p>之后就可以使用远程工具连接了，建议使用免费的 Mobaxterm，新建 Session，ip 是上面 win cmd 中 VB 的 ip，用户 root，端口号 22</p>
+<p>（我使用时候默认开了 ssh 连接）</p>
+<h2 id="配置-CentOS-镜像源"><a href="#配置-CentOS-镜像源" class="headerlink" title="配置 CentOS 镜像源"></a>配置 CentOS 镜像源</h2><p>更改 yum 镜像源为：清华镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 备份原镜像</span></span><br><span class="line">sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak</span><br><span class="line"></span><br><span class="line">sudo <span class="built_in">echo</span>  &gt; /etc/yum.repos.d/CentOS-Base.repo</span><br><span class="line"></span><br><span class="line">vim /etc/yum.repos.d/CentOS-Base.repo</span><br><span class="line"></span><br><span class="line"><span class="comment"># -------------------------------------</span></span><br><span class="line"><span class="comment"># CentOS-Base.repo</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The mirror system uses the connecting IP address of the client and the</span></span><br><span class="line"><span class="comment"># update status of each mirror to pick mirrors that are updated to and</span></span><br><span class="line"><span class="comment"># geographically close to the client.  You should use this for CentOS updates</span></span><br><span class="line"><span class="comment"># unless you are manually picking other mirrors.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># If the mirrorlist= does not work for you, as a fall back you can try the</span></span><br><span class="line"><span class="comment"># remarked out baseurl= line instead.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[base]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Base</span><br><span class="line">baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/<span class="variable">$releasever</span>/os/<span class="variable">$basearch</span>/</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span></span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"><span class="comment">#released updates</span></span><br><span class="line">[updates]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Updates</span><br><span class="line">baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/<span class="variable">$releasever</span>/updates/<span class="variable">$basearch</span>/</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span></span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that may be useful</span></span><br><span class="line">[extras]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Extras</span><br><span class="line">baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/<span class="variable">$releasever</span>/extras/<span class="variable">$basearch</span>/</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span></span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#additional packages that extend functionality of existing packages</span></span><br><span class="line">[centosplus]</span><br><span class="line">name=CentOS-<span class="variable">$releasever</span> - Plus</span><br><span class="line">baseurl=https://mirrors.tuna.tsinghua.edu.cn/centos/<span class="variable">$releasever</span>/centosplus/<span class="variable">$basearch</span>/</span><br><span class="line"><span class="comment">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus</span></span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"><span class="comment"># -------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 更新软件包缓存</span></span><br><span class="line"></span><br><span class="line">sudo yum makecache</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注：可能会出现 gpgkey could not found 的报错，原因是上面脚本中 gpgkey 路径不对，根据自己系统中的的路径改一下</p>
+<p>gpgkey 的路径是 <code>/etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</code>，把上面脚本中的 4 处 file:/// 都改掉</p>
+</blockquote>
+<p>精简版的 CentOS 软件少的可怜，推荐安装一些必备的软件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 网卡配置，之前使用 ip addr</span></span><br><span class="line">yum install ifconfig</span><br><span class="line"></span><br><span class="line"><span class="comment"># 文本编辑，乌干达儿童感谢你</span></span><br><span class="line">yum install vim</span><br><span class="line"></span><br><span class="line"><span class="comment"># 端口检查</span></span><br><span class="line">yum install telnet</span><br></pre></td></tr></table></figure>
+
+<h2 id="在-CentOS-中安装-docker"><a href="#在-CentOS-中安装-docker" class="headerlink" title="在 CentOS 中安装 docker"></a>在 CentOS 中安装 docker</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用安装脚本</span></span><br><span class="line"><span class="comment"># curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</span></span><br><span class="line">curl -sSL https://get.daocloud.io/docker | sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动 docker</span></span><br><span class="line">sudo systemctl start docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 验证是否正确安装 Docker Engine-Community</span></span><br><span class="line">sudo docker run hello-world</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 镜像加速</span></span><br><span class="line">vim /etc/docker/daemon.json</span><br><span class="line"></span><br><span class="line">&#123;<span class="string">"registry-mirrors"</span>:[<span class="string">"https://prll5wtk.mirror.aliyuncs.com"</span>]&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启 docker 服务</span></span><br><span class="line">sudo systemctl deamon-reload</span><br><span class="line">sudo systemctl restart docker</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查加速器是否生效</span></span><br><span class="line">docker info</span><br></pre></td></tr></table></figure>
+
+<h2 id="在-docker-中装-mysql"><a href="#在-docker-中装-mysql" class="headerlink" title="在 docker 中装 mysql"></a>在 docker 中装 mysql</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 mysql 可用版本</span></span><br><span class="line">docker search mysql </span><br><span class="line"></span><br><span class="line"><span class="comment"># 拉取 mysql 镜像</span></span><br><span class="line">docker pull mysql:5.7.4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行容器</span></span><br><span class="line">docker run -itd --name mysql_574 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已运行的容器</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it mysql_574 bash</span><br></pre></td></tr></table></figure>
+
+<p>mysql 连不上可能的原因 16001</p>
+<ol>
+<li><p>CentOS 3306 端口没开</p>
+</li>
+<li><p>MySQL 用户授权</p>
+</li>
+</ol>
+<p>GRANT ALL PRIVILEGES ON <em>.</em> TO ‘root’@’%’ IDENTIFIED BY ‘root’ WITH GRANT OPTION; </p>
+<ol start="3">
+<li><p>VirtualBox 端口转发</p>
+</li>
+<li><p>开通 2375 端口</p>
+</li>
+</ol>
+<h2 id="在-docker-中装-redis"><a href="#在-docker-中装-redis" class="headerlink" title="在 docker 中装 redis"></a>在 docker 中装 redis</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看 redis 可用版本</span></span><br><span class="line">docker search redis </span><br><span class="line"></span><br><span class="line"><span class="comment"># 拉取 redis 镜像</span></span><br><span class="line">docker pull redis:3.2.9</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 运行容器</span></span><br><span class="line">docker run -itd --name redis_329 -p 6379:6379 redis</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看已运行的容器</span></span><br><span class="line">docker ps</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入容器</span></span><br><span class="line">docker <span class="built_in">exec</span> -it redis_329 bash</span><br></pre></td></tr></table></figure>
+
+
+                </article>
+                <ul class="tags-postTags">
+                    
+                    <li>
+                        <a href="/tags/linux/" rel="tag"># linux</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/docker/" rel="tag"># docker</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/mysql/" rel="tag"># mysql</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <nav id="gobottom" class="pagination">
+        
+        <span class="prev-next-post">·</span>
+        
+        <a class="next-post" title="多线程相关知识与实现" href="/2020/06/24/115-多线程/">
+            多线程相关知识与实现 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</div>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewbox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在-VirtualBox-上安装-CentOS7-系统"><span class="toc-text">在 VirtualBox 上安装 CentOS7 系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置虚拟机-和-CentOS-的网络关联"><span class="toc-text">配置虚拟机 和 CentOS 的网络关联</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置-CentOS-镜像源"><span class="toc-text">配置 CentOS 镜像源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-CentOS-中安装-docker"><span class="toc-text">在 CentOS 中安装 docker</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-docker-中装-mysql"><span class="toc-text">在 docker 中装 mysql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-docker-中装-redis"><span class="toc-text">在 docker 中装 redis</span></a></li></ol>
+    </div>
+</div>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+
+<article class="read-next-card" style="background-image: url(http://r.photo.store.qq.com/psb?/V10z9tn33iz4ON/YCv4KTqvwgjwp5NbG8CR04XMTXd9Qe96m8wCrj3gPUo!/r/dL4AAAAAAAAA)">
+  <header class="read-next-card-header">
+    <small class="read-next-card-header-sitetitle">&mdash; 一均七声 &mdash;</small>
+    <h3 class="read-next-card-header-title">最新文章</h3>
+  </header>
+  <div class="read-next-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
+      <path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/>
+    </svg>
+  </div>
+  <div class="read-next-card-content">
+    <ul>
+      
+      
+      
+      <li>
+        <a href="/2020/07/18/116-VirtualBox安装CentOS使用Docker全过程记录/">Win10 上用 VirtualBox 安装 CentOS 使用 Docker 安装 mysql/redis 全过程记录</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/2020/06/24/115-多线程/">多线程相关知识与实现</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="/2020/06/16/114-代码同时推送到GitHub和Gitee/">代码同时推送到 GitHub 和 Gitee</a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+  </div>
+  <footer class="read-next-card-footer">
+    <a href="/archives">  MORE  → </a>
+  </footer>
+</article>
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(http://r.photo.store.qq.com/psb?/V10z9tn33iz4ON/YCv4KTqvwgjwp5NbG8CR04XMTXd9Qe96m8wCrj3gPUo!/r/dL4AAAAAAAAA)">
+    <header class="read-next-card-header tagcloud-card">
+        <h3 class="read-next-card-header-title">分类</h3>
+    </header>
+    <div class="read-next-card-content">
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/书影向/">书影向</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/建站规约/">建站规约</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术向/">技术向</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/游记向/">游记向</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/纪年/">纪年</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔向/">随笔向</a></li></ul>
+    </div>
+</article>
+
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(http://r.photo.store.qq.com/psb?/V10z9tn33iz4ON/YCv4KTqvwgjwp5NbG8CR04XMTXd9Qe96m8wCrj3gPUo!/r/dL4AAAAAAAAA)">
+	<header class="read-next-card-header tagcloud-card">
+		<h3 class="read-next-card-header-title">标签云</h3>
+	</header>
+	<div class="read-next-card-content-ext">
+		<a href="/tags/Android/" style="font-size: 14px;">Android</a> <a href="/tags/Bandwagon/" style="font-size: 14px;">Bandwagon</a> <a href="/tags/Blog/" style="font-size: 14px;">Blog</a> <a href="/tags/C/" style="font-size: 14px;">C++</a> <a href="/tags/English/" style="font-size: 14px;">English</a> <a href="/tags/Excel/" style="font-size: 14px;">Excel</a> <a href="/tags/GitHub/" style="font-size: 16.5px;">GitHub</a> <a href="/tags/Gitee/" style="font-size: 14px;">Gitee</a> <a href="/tags/Java/" style="font-size: 24px;">Java</a> <a href="/tags/Linux/" style="font-size: 14px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 14px;">Markdown</a> <a href="/tags/MyBatis/" style="font-size: 16.5px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 19px;">MySQL</a> <a href="/tags/OpenCV/" style="font-size: 16.5px;">OpenCV</a> <a href="/tags/PicGo/" style="font-size: 14px;">PicGo</a> <a href="/tags/SpringBoot/" style="font-size: 14px;">SpringBoot</a> <a href="/tags/Typro/" style="font-size: 14px;">Typro</a> <a href="/tags/VPS/" style="font-size: 14px;">VPS</a> <a href="/tags/Wiki/" style="font-size: 14px;">Wiki</a> <a href="/tags/ZTE/" style="font-size: 16.5px;">ZTE</a> <a href="/tags/bat/" style="font-size: 14px;">bat</a> <a href="/tags/docker/" style="font-size: 14px;">docker</a> <a href="/tags/git/" style="font-size: 14px;">git</a> <a href="/tags/linux/" style="font-size: 14px;">linux</a> <a href="/tags/matplot/" style="font-size: 14px;">matplot</a> <a href="/tags/mysql/" style="font-size: 14px;">mysql</a> <a href="/tags/python/" style="font-size: 14px;">python</a> <a href="/tags/七堇年/" style="font-size: 14px;">七堇年</a> <a href="/tags/书籍/" style="font-size: 21.5px;">书籍</a> <a href="/tags/人生/" style="font-size: 14px;">人生</a> <a href="/tags/使命/" style="font-size: 14px;">使命</a> <a href="/tags/出行/" style="font-size: 14px;">出行</a> <a href="/tags/同学/" style="font-size: 14px;">同学</a> <a href="/tags/图像处理/" style="font-size: 16.5px;">图像处理</a> <a href="/tags/图床/" style="font-size: 14px;">图床</a> <a href="/tags/夕阳/" style="font-size: 14px;">夕阳</a> <a href="/tags/多线程/" style="font-size: 14px;">多线程</a> <a href="/tags/夜行/" style="font-size: 14px;">夜行</a> <a href="/tags/大学/" style="font-size: 19px;">大学</a> <a href="/tags/大报恩寺/" style="font-size: 14px;">大报恩寺</a> <a href="/tags/家庭/" style="font-size: 14px;">家庭</a> <a href="/tags/小说/" style="font-size: 16.5px;">小说</a> <a href="/tags/师兄/" style="font-size: 14px;">师兄</a> <a href="/tags/帧/" style="font-size: 14px;">帧</a> <a href="/tags/年记/" style="font-size: 14px;">年记</a> <a href="/tags/建筑/" style="font-size: 14px;">建筑</a> <a href="/tags/影评/" style="font-size: 14px;">影评</a> <a href="/tags/思考/" style="font-size: 14px;">思考</a> <a href="/tags/总结/" style="font-size: 24px;">总结</a> <a href="/tags/感悟/" style="font-size: 14px;">感悟</a> <a href="/tags/排序/" style="font-size: 14px;">排序</a> <a href="/tags/摄影/" style="font-size: 14px;">摄影</a> <a href="/tags/散文/" style="font-size: 14px;">散文</a> <a href="/tags/整理/" style="font-size: 14px;">整理</a> <a href="/tags/日记/" style="font-size: 14px;">日记</a> <a href="/tags/时间/" style="font-size: 16.5px;">时间</a> <a href="/tags/景点/" style="font-size: 14px;">景点</a> <a href="/tags/毕业/" style="font-size: 14px;">毕业</a> <a href="/tags/河海大学/" style="font-size: 14px;">河海大学</a> <a href="/tags/泰山/" style="font-size: 14px;">泰山</a> <a href="/tags/清单/" style="font-size: 14px;">清单</a> <a href="/tags/清明/" style="font-size: 14px;">清明</a> <a href="/tags/牛振岭/" style="font-size: 14px;">牛振岭</a> <a href="/tags/玩客云/" style="font-size: 14px;">玩客云</a> <a href="/tags/现实/" style="font-size: 14px;">现实</a> <a href="/tags/生活/" style="font-size: 19px;">生活</a> <a href="/tags/研究生/" style="font-size: 16.5px;">研究生</a> <a href="/tags/硬件/" style="font-size: 14px;">硬件</a> <a href="/tags/社会/" style="font-size: 14px;">社会</a> <a href="/tags/算法/" style="font-size: 14px;">算法</a> <a href="/tags/统计/" style="font-size: 14px;">统计</a> <a href="/tags/网站/" style="font-size: 16.5px;">网站</a> <a href="/tags/网络/" style="font-size: 16.5px;">网络</a> <a href="/tags/葛亮/" style="font-size: 14px;">葛亮</a> <a href="/tags/西湖/" style="font-size: 14px;">西湖</a> <a href="/tags/规则/" style="font-size: 14px;">规则</a> <a href="/tags/视频/" style="font-size: 14px;">视频</a> <a href="/tags/计划/" style="font-size: 14px;">计划</a> <a href="/tags/译本/" style="font-size: 14px;">译本</a> <a href="/tags/诗词/" style="font-size: 14px;">诗词</a> <a href="/tags/豆瓣/" style="font-size: 14px;">豆瓣</a> <a href="/tags/软件/" style="font-size: 16.5px;">软件</a> <a href="/tags/青春/" style="font-size: 14px;">青春</a> <a href="/tags/高中/" style="font-size: 16.5px;">高中</a> <a href="/tags/龙应台/" style="font-size: 14px;">龙应台</a>
+	</div>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay">
+    <div class="search-form">
+        
+        <div class="search-overlay-logo">
+        	<img src="https://cdn.jsdelivr.net/gh/yefcion/PicData@master/img/a.png" alt="一均七声">
+        </div>
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<div class="copyright">
+			<a href="/" title="一均七声">一均七声 &copy; 2020</a>
+			
+				
+			        <span hidden="true" id="/2020/07/18/116-VirtualBox安装CentOS使用Docker全过程记录/" class="leancloud-visitors" data-flag-title="Win10 上用 VirtualBox 安装 CentOS 使用 Docker 安装 mysql/redis 全过程记录">
+			            <span>阅读量 </span>
+			            <span class="leancloud-visitors-count">0</span>
+			        </span>
+	    		
+    		
+		</div>
+		<nav class="site-footer-nav">
+			
+			<a href="https://hexo.io" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+			<a href="https://github.com/xzhih/hexo-theme-casper" title="Casper" target="_blank" rel="noopener">Casper</a>
+		</nav>
+	</div>
+</footer>
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister()
+            }
+        })
+    }
+</script>
+
+
+<script id="scriptLoad" src="/js/allinone.min.js" async></script>
+
+
+
+
+
+
+<script>
+    document.getElementById('scriptLoad').addEventListener('load', function () {
+        var bLazy = new Blazy()
+    })
+</script>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+
+
+<script id="valineScript" src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+<script>
+    document.getElementById('valineScript').addEventListener("load", function() {
+        new Valine({
+            el: '#comment' ,
+            verify: false,
+            notify: false,
+            appId: '',
+            appKey: '',
+            placeholder: 'Just go go',
+            pageSize: 10,
+            avatar: 'mm',
+            visitor: true
+        })
+    });
+</script>
+
+
+
+
+
+<script>
+    document.getElementById('scriptLoad').addEventListener('load', function(){
+        searchFunc("/")
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
